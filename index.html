@@ -3,38 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
 <title>MindLab — AI-Powered Experiential Learning</title>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
-/* =========================================================
-   GLOBAL
-========================================================= */
-
 :root{
   --bg:#F3F4FA;
-  --white:#FFFFFF;
+  --w:#fff;
   --lav:#F0EEFF;
   --blue:#EDF5FF;
   --mint:#ECF8F3;
   --yellow:#FFF6E5;
-
-  --primary:#5966D8;
-  --primary-dark:#4653C5;
-
-  --text:#25283A;
-  --muted:#687086;
-  --border:#E6E8F0;
-
-  --shadow:0 12px 35px rgba(37,40,58,.08);
-  --radius:20px;
+  --p:#5966D8;
+  --pd:#4653C5;
+  --t:#25283A;
+  --m:#687086;
+  --b:#E6E8F0;
+  --sh:0 12px 35px rgba(37,40,58,.08);
+  --r:20px;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html{
   scroll-behavior:smooth;
@@ -43,8 +33,9 @@ html{
 body{
   margin:0;
   background:var(--bg);
-  color:var(--text);
+  color:var(--t);
   font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  overflow-x:hidden;
 }
 
 button{
@@ -57,13 +48,12 @@ a{
 }
 
 .hidden{
-  display:none !important;
+  display:none!important;
 }
 
-
-/* =========================================================
+/* =========================
    COMMON
-========================================================= */
+========================= */
 
 .brand{
   display:flex;
@@ -77,15 +67,14 @@ a{
   width:36px;
   height:36px;
   border-radius:11px;
-  background:var(--primary);
-  color:white;
+  background:var(--p);
+  color:#fff;
   display:grid;
   place-items:center;
 }
 
 .mark i{
   width:20px;
-  height:20px;
 }
 
 .btn{
@@ -102,55 +91,49 @@ a{
 }
 
 .primary{
-  background:var(--primary);
-  color:white;
-  box-shadow:0 8px 20px rgba(89,102,216,.2);
+  background:var(--p);
+  color:#fff;
+  box-shadow:0 8px 20px #5966d833;
 }
 
 .primary:hover{
-  background:var(--primary-dark);
+  background:var(--pd);
 }
 
 .soft{
-  background:white;
-  color:var(--text);
-  border:1px solid var(--border);
+  background:#fff;
+  color:var(--t);
+  border:1px solid var(--b);
 }
 
-
-/* =========================================================
-   LANDING NAVBAR
-========================================================= */
+/* =========================
+   LANDING NAV
+========================= */
 
 .lnav{
   height:74px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   padding:0 6%;
-
   position:sticky;
   top:0;
   z-index:50;
-
-  background:rgba(243,244,250,.92);
+  background:#f3f4faeb;
   backdrop-filter:blur(14px);
-
-  border-bottom:1px solid rgba(230,232,240,.7);
+  border-bottom:1px solid #e6e8f0b3;
 }
 
 .links{
   display:flex;
   gap:28px;
-
-  color:var(--muted);
+  color:var(--m);
   font-size:14px;
   font-weight:600;
 }
 
 .links a:hover{
-  color:var(--text);
+  color:var(--t);
 }
 
 .actions{
@@ -165,17 +148,14 @@ a{
   cursor:pointer;
 }
 
-
-/* =========================================================
+/* =========================
    LANDING HERO
-========================================================= */
+========================= */
 
 .hero{
   max-width:1180px;
   margin:auto;
-
   padding:82px 30px 75px;
-
   display:grid;
   grid-template-columns:1.05fr .95fr;
   gap:70px;
@@ -186,17 +166,12 @@ a{
   display:inline-flex;
   gap:8px;
   align-items:center;
-
   padding:8px 12px;
-
   border-radius:999px;
-
   background:var(--lav);
-  color:var(--primary);
-
+  color:var(--p);
   font-size:12px;
   font-weight:800;
-
   margin-bottom:20px;
 }
 
@@ -208,22 +183,18 @@ a{
   font-size:clamp(42px,5.5vw,68px);
   line-height:1.03;
   letter-spacing:-2.7px;
-
   margin:0 0 22px;
 }
 
 .hero h1 span{
-  color:var(--primary);
+  color:var(--p);
 }
 
 .hero p{
   font-size:18px;
   line-height:1.65;
-
-  color:var(--muted);
-
+  color:var(--m);
   max-width:610px;
-
   margin:0 0 30px;
 }
 
@@ -237,45 +208,32 @@ a{
   display:flex;
   gap:8px;
   align-items:center;
-
-  color:var(--muted);
-
+  color:var(--m);
   font-size:12px;
-
   margin-top:17px;
 }
 
 .note i{
   width:15px;
-  color:#48A77A;
+  color:#48a77a;
 }
 
-
-/* =========================================================
-   HERO MOCKUP
-========================================================= */
-
-.visual{
-  position:relative;
-}
+/* =========================
+   LANDING MOCKUP
+========================= */
 
 .mock{
-  background:white;
-
-  border:1px solid var(--border);
+  background:#fff;
+  border:1px solid var(--b);
   border-radius:26px;
-
-  box-shadow:var(--shadow);
-
+  box-shadow:var(--sh);
   padding:18px;
-
   transform:rotate(1deg);
 }
 
 .mtop{
   display:flex;
   justify-content:space-between;
-
   padding:2px 3px 15px;
 }
 
@@ -287,26 +245,21 @@ a{
 .dots span{
   width:7px;
   height:7px;
-
   border-radius:50%;
-
-  background:#D9DCE6;
+  background:#d9dce6;
 }
 
 .mtitle{
   font-size:12px;
-  color:var(--muted);
+  color:var(--m);
   font-weight:700;
 }
 
 .bubble{
   padding:17px 19px;
-
   border-radius:17px;
-
   font-size:14px;
   line-height:1.55;
-
   margin-bottom:12px;
 }
 
@@ -321,54 +274,46 @@ a{
 
 .notice{
   background:var(--mint);
-
   padding:16px;
-
   border-radius:17px;
-
   font-size:13px;
-  color:#4F6259;
-
+  color:#4f6259;
   line-height:1.5;
 }
 
 .notice strong{
   display:block;
-  color:#2D7658;
-
+  color:#2d7658;
   margin-bottom:5px;
+}
+
+.visual{
+  position:relative;
 }
 
 .float{
   position:absolute;
-
   right:-16px;
   bottom:15px;
-
-  background:white;
-
+  background:#fff;
   padding:13px 16px;
-
-  border:1px solid var(--border);
+  border:1px solid var(--b);
   border-radius:15px;
-
-  box-shadow:var(--shadow);
-
+  box-shadow:var(--sh);
   font-size:12px;
   font-weight:800;
 }
 
-
-/* =========================================================
+/* =========================
    LANDING SECTIONS
-========================================================= */
+========================= */
 
 .section{
   padding:90px 30px;
 }
 
 .tint{
-  background:white;
+  background:#fff;
 }
 
 .inner{
@@ -378,60 +323,44 @@ a{
 
 .head{
   text-align:center;
-
   max-width:700px;
-
   margin:0 auto 45px;
 }
 
 .kicker{
-  color:var(--primary);
-
+  color:var(--p);
   font-size:12px;
-
   font-weight:800;
-
   text-transform:uppercase;
-
   letter-spacing:1px;
 }
 
 .head h2{
   font-size:38px;
-
   letter-spacing:-1.2px;
-
   margin:10px 0 13px;
 }
 
 .head p{
-  color:var(--muted);
-
+  color:var(--m);
   line-height:1.65;
-
   margin:0;
 }
 
-
-/* =========================================================
-   LANDING CARDS
-========================================================= */
+/* =========================
+   CARDS
+========================= */
 
 .grid3{
   display:grid;
-
   grid-template-columns:repeat(3,1fr);
-
   gap:18px;
 }
 
 .icard{
   padding:27px;
-
   border-radius:20px;
-
-  border:1px solid var(--border);
-
+  border:1px solid var(--b);
   background:var(--bg);
 }
 
@@ -450,139 +379,101 @@ a{
 .ibox{
   width:42px;
   height:42px;
-
   border-radius:13px;
-
-  background:white;
-
+  background:#fff;
   display:grid;
   place-items:center;
-
   margin-bottom:18px;
 }
 
 .ibox i{
   width:20px;
-
-  color:var(--primary);
+  color:var(--p);
 }
 
 .icard h3{
   margin:0 0 9px;
-
   font-size:18px;
 }
 
 .icard p{
   margin:0;
-
-  color:var(--muted);
-
+  color:var(--m);
   line-height:1.6;
-
   font-size:14px;
 }
 
-
-/* =========================================================
+/* =========================
    LEARNING LOOP
-========================================================= */
+========================= */
 
 .loop{
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   gap:10px;
-
   flex-wrap:wrap;
 }
 
 .step{
-  background:white;
-
-  border:1px solid var(--border);
-
+  background:#fff;
+  border:1px solid var(--b);
   padding:15px 18px;
-
   border-radius:14px;
-
   font-weight:800;
-
   font-size:14px;
-
-  box-shadow:0 5px 16px rgba(37,40,58,.04);
+  box-shadow:0 5px 16px #25283a0a;
 }
 
 .arrow{
-  color:var(--primary);
-
+  color:var(--p);
   font-weight:900;
 }
 
-
-/* =========================================================
+/* =========================
    FEATURE
-========================================================= */
+========================= */
 
 .feature{
   display:grid;
-
   grid-template-columns:.9fr 1.1fr;
-
   gap:55px;
-
   align-items:center;
 }
 
 .feature h2{
   font-size:39px;
-
   line-height:1.12;
-
   letter-spacing:-1.3px;
-
   margin:10px 0 16px;
 }
 
 .feature p{
-  color:var(--muted);
-
+  color:var(--m);
   line-height:1.7;
 }
 
 .points{
   display:grid;
-
   gap:11px;
-
   margin-top:22px;
 }
 
 .point{
   display:flex;
-
   gap:11px;
-
   align-items:flex-start;
-
   font-size:14px;
 }
 
 .check{
   width:22px;
   height:22px;
-
   border-radius:7px;
-
   background:var(--mint);
-
-  color:#368D68;
-
+  color:#368d68;
   display:grid;
   place-items:center;
-
   flex:none;
 }
 
@@ -590,64 +481,49 @@ a{
   width:14px;
 }
 
-
-/* =========================================================
-   FEATURE DEMO
-========================================================= */
+/* =========================
+   DEMO
+========================= */
 
 .demo{
-  background:white;
-
-  border:1px solid var(--border);
-
+  background:#fff;
+  border:1px solid var(--b);
   border-radius:25px;
-
   padding:22px;
-
-  box-shadow:var(--shadow);
+  box-shadow:var(--sh);
 }
 
 .drow{
   display:flex;
-
   gap:10px;
-
   margin-bottom:14px;
 }
 
 .av{
   width:34px;
   height:34px;
-
   border-radius:11px;
-
   display:grid;
   place-items:center;
-
   flex:none;
 }
 
 .av.ai{
   background:var(--lav);
-  color:var(--primary);
+  color:var(--p);
 }
 
 .av.you{
   background:var(--blue);
-  color:#4770B8;
-
+  color:#4770b8;
   margin:0;
 }
 
 .db{
   padding:13px 15px;
-
   border-radius:15px;
-
   font-size:13px;
-
   line-height:1.55;
-
   max-width:85%;
 }
 
@@ -657,149 +533,289 @@ a{
 
 .db.you{
   background:var(--blue);
-
   margin-left:auto;
 }
 
 .dnotice{
   background:var(--mint);
-
   border-radius:15px;
-
   padding:14px;
-
   font-size:12px;
-
-  color:#4F6259;
+  color:#4f6259;
 }
 
 .dnotice strong{
   display:block;
-
-  color:#2D7658;
-
+  color:#2d7658;
   margin-bottom:5px;
 }
 
-
-/* =========================================================
-   WHY SECTION
-========================================================= */
+/* =========================
+   STATS
+========================= */
 
 .mini{
   display:grid;
-
   grid-template-columns:repeat(4,1fr);
-
   gap:12px;
-
   margin-top:30px;
 }
 
 .stat{
-  background:white;
-
-  border:1px solid var(--border);
-
+  background:#fff;
+  border:1px solid var(--b);
   padding:19px;
-
   border-radius:17px;
 }
 
 .stat strong{
   font-size:22px;
-
   display:block;
-
   margin-bottom:5px;
 }
 
 .stat span{
   font-size:12px;
-
-  color:var(--muted);
+  color:var(--m);
 }
 
-
-/* =========================================================
-   CTA
-========================================================= */
+/* =========================
+   CTA + FOOTER
+========================= */
 
 .cta{
   margin:0 30px 80px;
-
   border-radius:28px;
-
   background:var(--lav);
-
   padding:65px 30px;
-
   text-align:center;
 }
 
 .cta h2{
   font-size:42px;
-
   letter-spacing:-1.5px;
-
   margin:0 0 12px;
 }
 
 .cta p{
-  color:var(--muted);
-
+  color:var(--m);
   margin:0 auto 25px;
-
   max-width:550px;
-
   line-height:1.6;
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
 footer{
   padding:28px 6%;
-
-  border-top:1px solid var(--border);
-
+  border-top:1px solid var(--b);
   display:flex;
-
   justify-content:space-between;
-
-  color:var(--muted);
-
+  color:var(--m);
   font-size:12px;
 }
 
 .footerlinks{
   display:flex;
-
   gap:20px;
 }
 
+/* =========================
+   MOBILE LANDING MENU
+========================= */
 
-/* =========================================================
+.landing-mobile-menu{
+  display:none;
+  position:absolute;
+  left:4%;
+  right:4%;
+  top:68px;
+  background:#fff;
+  border:1px solid var(--b);
+  border-radius:16px;
+  padding:10px;
+  box-shadow:var(--sh);
+  z-index:60;
+}
+
+.landing-mobile-menu.show{
+  display:block;
+}
+
+.landing-mobile-menu a,
+.landing-mobile-menu button{
+  display:block;
+  width:100%;
+  padding:12px;
+  border:0;
+  background:none;
+  text-align:left;
+  border-radius:10px;
+  font-weight:650;
+  color:var(--m);
+  cursor:pointer;
+}
+
+.landing-mobile-menu a:hover,
+.landing-mobile-menu button:hover{
+  background:var(--bg);
+  color:var(--t);
+}
+
+/* =========================
+   AI STUDENT CHOICE
+========================= */
+
+.modechoice{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:20px;
+}
+
+.choice{
+  border:1px solid var(--b);
+  background:#fff;
+  border-radius:18px;
+  padding:20px;
+  text-align:left;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.choice:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--sh);
+  border-color:#d5d9ee;
+}
+
+.choice .choiceicon{
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:var(--lav);
+  color:var(--p);
+  margin-bottom:12px;
+}
+
+.choice.voice .choiceicon{
+  background:var(--mint);
+  color:#368d68;
+}
+
+.choice strong{
+  display:block;
+  font-size:15px;
+  margin-bottom:5px;
+}
+
+.choice small{
+  color:var(--m);
+  font-size:11px;
+  line-height:1.5;
+}
+
+/* =========================
+   VOICE UI
+========================= */
+
+.voicebox{
+  margin-top:18px;
+  border:1px dashed #cfd4e4;
+  border-radius:18px;
+  padding:18px;
+  background:var(--bg);
+}
+
+.voicecontrols{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.record{
+  min-width:150px;
+}
+
+.record.recording{
+  background:#d95757;
+  box-shadow:none;
+}
+
+.recorddot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:currentColor;
+  display:inline-block;
+  margin-right:6px;
+}
+
+.voice-status{
+  font-size:12px;
+  color:var(--m);
+}
+
+.transcript{
+  margin-top:14px;
+  background:#fff;
+  border:1px solid var(--b);
+  border-radius:14px;
+  padding:14px;
+  font-size:13px;
+  line-height:1.55;
+  min-height:48px;
+}
+
+.audio-preview{
+  width:100%;
+  margin-top:12px;
+}
+
+.modeback{
+  border:0;
+  background:none;
+  color:var(--p);
+  font-weight:700;
+  cursor:pointer;
+  padding:0;
+  margin-bottom:15px;
+  font-size:12px;
+}
+
+.soon{
+  display:inline-flex;
+  align-items:center;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#f3f0e8;
+  color:#8a6d30;
+  font-size:9px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.micnote{
+  font-size:11px;
+  color:var(--m);
+  margin-top:10px;
+}
+
+/* =========================
    APP SIDEBAR
-========================================================= */
+========================= */
 
 .sidebar{
   position:fixed;
-
   left:0;
   top:0;
   bottom:0;
-
   width:245px;
-
-  background:white;
-
-  border-right:1px solid var(--border);
-
+  background:#fff;
+  border-right:1px solid var(--b);
   padding:22px 15px;
-
   z-index:40;
 }
 
@@ -809,177 +825,90 @@ footer{
 
 .label{
   font-size:10px;
-
   text-transform:uppercase;
-
   letter-spacing:1px;
-
   font-weight:800;
-
-  color:#9AA0B3;
-
+  color:#9aa0b3;
   padding:0 10px 9px;
 }
 
 .snav{
   display:grid;
-
   gap:5px;
 }
 
 .snav button{
   width:100%;
-
   border:0;
-
   background:transparent;
-
-  color:var(--muted);
-
+  color:var(--m);
   display:flex;
-
   gap:11px;
-
   align-items:center;
-
   padding:11px 10px;
-
   border-radius:11px;
-
   cursor:pointer;
-
   text-align:left;
-
   font-weight:650;
-
   font-size:13px;
 }
 
 .snav button:hover{
   background:var(--bg);
-
-  color:var(--text);
+  color:var(--t);
 }
 
 .snav button.active{
   background:var(--lav);
-
-  color:var(--primary);
+  color:var(--p);
 }
 
 .snav i{
   width:18px;
 }
 
-.sbottom{
-  position:absolute;
-
-  bottom:20px;
-
-  left:15px;
-  right:15px;
-
-  background:var(--blue);
-
-  padding:14px;
-
-  border-radius:14px;
-
-  font-size:11px;
-
-  color:var(--muted);
-
-  line-height:1.45;
-}
-
-.sbottom strong{
-  display:block;
-
-  color:var(--text);
-
-  font-size:12px;
-}
-
-
-/* =========================================================
+/* =========================
    APP MAIN
-========================================================= */
+========================= */
 
-.main{
+.appmain{
   margin-left:245px;
+  min-height:100vh;
 }
 
 .top{
-  height:65px;
-
-  background:rgba(243,244,250,.9);
-
-  backdrop-filter:blur(12px);
-
-  border-bottom:1px solid var(--border);
-
+  height:68px;
   display:flex;
-
   align-items:center;
-
-  justify-content:space-between;
-
   padding:0 28px;
-
+  background:#fff;
+  border-bottom:1px solid var(--b);
   position:sticky;
-
   top:0;
-
   z-index:30;
 }
 
-.crumb{
-  font-size:13px;
+.menuBtn{
+  display:none;
+  border:0;
+  background:none;
+  cursor:pointer;
+  margin-right:10px;
+}
 
-  color:var(--muted);
+.crumb{
+  color:var(--m);
+  font-size:13px;
 }
 
 .crumb strong{
-  color:var(--text);
-}
-
-.topactions{
-  display:flex;
-
-  gap:9px;
-}
-
-.topicon{
-  border:1px solid var(--border);
-
-  background:white;
-
-  width:36px;
-  height:36px;
-
-  border-radius:10px;
-
-  display:grid;
-
-  place-items:center;
-
-  cursor:pointer;
-
-  color:var(--muted);
+  color:var(--t);
 }
 
 .content{
   padding:30px;
-
   max-width:1250px;
-
-  margin:auto;
 }
-
-
-/* =========================================================
-   APP PAGES
-========================================================= */
 
 .page{
   display:none;
@@ -991,347 +920,161 @@ footer{
 
 .ptitle{
   display:flex;
-
   justify-content:space-between;
-
-  align-items:flex-end;
-
+  align-items:center;
   margin-bottom:24px;
 }
 
 .ptitle h1{
-  font-size:29px;
-
-  margin:0 0 5px;
+  font-size:30px;
+  letter-spacing:-1px;
+  margin:0 0 6px;
 }
 
 .ptitle p{
+  color:var(--m);
   margin:0;
-
-  color:var(--muted);
-
   font-size:13px;
 }
 
+/* =========================
+   APP CARDS
+========================= */
+
 .card{
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-radius:var(--radius);
-
+  background:#fff;
+  border:1px solid var(--b);
+  border-radius:20px;
   padding:22px;
-
-  box-shadow:0 5px 18px rgba(37,40,58,.035);
+  box-shadow:0 5px 20px #25283a06;
 }
 
-.lav{
-  background:var(--lav);
-}
-
-.blue{
-  background:var(--blue);
-}
-
-.mint{
-  background:var(--mint);
-}
-
-.yellow{
+.card.yellow{
   background:var(--yellow);
 }
 
 .cardhead{
   display:flex;
-
   justify-content:space-between;
-
   align-items:center;
-
-  margin-bottom:17px;
+  margin-bottom:18px;
 }
 
 .cardhead h3{
   margin:0;
-
   font-size:16px;
 }
 
 .muted{
-  color:var(--muted);
+  color:var(--m);
 }
 
-
-/* =========================================================
-   DASHBOARD
-========================================================= */
-
-.dash{
+.dashboardgrid{
   display:grid;
-
-  grid-template-columns:1.35fr .65fr;
-
+  grid-template-columns:1.15fr .85fr;
   gap:18px;
 }
 
-.stats{
+.modegrid{
   display:grid;
-
   grid-template-columns:repeat(3,1fr);
-
-  gap:12px;
+  gap:15px;
 }
 
-.statbox{
-  padding:17px;
-
-  border-radius:15px;
-
-  border:1px solid var(--border);
-
-  background:white;
-}
-
-.statbox strong{
-  font-size:25px;
-
-  display:block;
-}
-
-.statbox span{
-  font-size:11px;
-
-  color:var(--muted);
-}
-
-.activity{
-  display:flex;
-
-  justify-content:space-between;
-
-  padding:13px 0;
-
-  border-bottom:1px solid var(--border);
-}
-
-.activity:last-child{
-  border:0;
-}
-
-.aleft{
-  display:flex;
-
-  gap:11px;
-
-  align-items:center;
-}
-
-.aicon{
-  width:35px;
-  height:35px;
-
-  border-radius:10px;
-
-  background:var(--lav);
-
-  display:grid;
-
-  place-items:center;
-
-  color:var(--primary);
-}
-
-.activity strong{
-  display:block;
-
-  font-size:12px;
-}
-
-.activity span{
-  font-size:10px;
-
-  color:var(--muted);
-}
-
-.modes{
-  display:grid;
-
-  gap:10px;
-}
-
-.modebtn{
-  display:flex;
-
-  gap:12px;
-
-  align-items:center;
-
-  padding:13px;
-
-  border:1px solid var(--border);
-
-  border-radius:14px;
-
-  background:white;
-
+.modecard{
+  border:1px solid var(--b);
+  border-radius:18px;
+  padding:20px;
+  background:#fff;
   cursor:pointer;
-
-  text-align:left;
+  transition:.2s;
 }
 
-.modebtn:hover{
-  transform:translateY(-1px);
+.modecard:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--sh);
 }
 
-.modebtn i{
-  color:var(--primary);
-
-  width:19px;
-}
-
-.modebtn strong{
-  display:block;
-
-  font-size:13px;
-}
-
-.modebtn small{
-  color:var(--muted);
-
-  font-size:11px;
-}
-
-
-/* =========================================================
-   MODE HERO
-========================================================= */
-
-.modehero{
+.modecard .modeicon{
+  width:42px;
+  height:42px;
   display:grid;
-
-  grid-template-columns:1fr .8fr;
-
-  gap:18px;
-
-  margin-bottom:18px;
-}
-
-.intro{
-  padding:28px;
-
-  border-radius:22px;
-
+  place-items:center;
+  border-radius:13px;
   background:var(--lav);
-
-  border:1px solid #E1DEFA;
+  color:var(--p);
+  margin-bottom:14px;
 }
 
-.intro h2{
-  font-size:27px;
-
-  margin:0 0 10px;
+.modecard:nth-child(2) .modeicon{
+  background:var(--blue);
 }
 
-.intro p,
-.prompt p{
-  color:var(--muted);
-
-  line-height:1.65;
-
-  font-size:13px;
+.modecard:nth-child(3) .modeicon{
+  background:var(--yellow);
 }
 
-.pill{
-  display:inline-block;
-
-  padding:6px 9px;
-
-  border-radius:8px;
-
-  background:white;
-
-  color:var(--primary);
-
-  font-size:10px;
-
-  font-weight:800;
-
-  margin-bottom:13px;
+.modecard h3{
+  margin:0 0 7px;
+  font-size:15px;
 }
 
-.prompt{
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-radius:22px;
-
-  padding:23px;
-}
-
-.prompt h3{
-  font-size:14px;
-
-  margin:0 0 9px;
-}
-
-.anotice{
-  padding:16px;
-
-  border-radius:16px;
-
-  background:var(--mint);
-
+.modecard p{
+  margin:0;
+  color:var(--m);
   font-size:12px;
-
-  color:#4F6259;
-
   line-height:1.55;
 }
 
-.anotice strong{
-  display:block;
-
-  color:#2D7658;
-
-  margin-bottom:5px;
-}
-
-
-/* =========================================================
-   AI STUDENT CHAT
-========================================================= */
+/* =========================
+   CHAT
+========================= */
 
 .chat{
   display:grid;
-
-  gap:13px;
-
+  gap:14px;
   margin-bottom:18px;
 }
 
 .msg{
   display:flex;
-
-  gap:10px;
-
   align-items:flex-start;
+  gap:10px;
 }
 
 .msg.user{
   justify-content:flex-end;
 }
 
+.cav{
+  width:34px;
+  height:34px;
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  flex:none;
+}
+
+.cav.ai{
+  background:var(--lav);
+  color:var(--p);
+}
+
+.cav.user{
+  background:var(--blue);
+  color:#4770b8;
+}
+
+.cav i{
+  width:17px;
+}
+
 .chatbubble{
-  max-width:78%;
-
   padding:14px 16px;
-
   border-radius:16px;
-
   font-size:13px;
-
   line-height:1.6;
+  max-width:78%;
 }
 
 .chatbubble.ai{
@@ -1342,337 +1085,206 @@ footer{
   background:var(--blue);
 }
 
-.cav{
-  width:31px;
-  height:31px;
-
-  border-radius:9px;
-
-  display:grid;
-
-  place-items:center;
-
-  flex:none;
-}
-
-.cav.ai{
-  background:var(--lav);
-
-  color:var(--primary);
-}
-
-.cav.user{
-  background:var(--blue);
-
-  color:#4770B8;
-}
-
-
-/* =========================================================
-   COMPOSER
-========================================================= */
-
 .composer{
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-radius:18px;
-
-  padding:10px;
-
   display:flex;
-
-  gap:9px;
-
+  gap:10px;
   align-items:flex-end;
 }
 
 .composer textarea{
-  border:0;
-
-  outline:0;
-
-  resize:none;
-
   flex:1;
+  min-height:58px;
+  resize:none;
+  border:1px solid var(--b);
+  border-radius:14px;
+  padding:13px;
+  outline:none;
+  font:inherit;
+  font-size:13px;
+  background:#fff;
+}
 
-  min-height:60px;
-
-  font:13px inherit;
-
-  color:var(--text);
-
-  padding:7px;
+.composer textarea:focus{
+  border-color:#b9bff0;
+  box-shadow:0 0 0 3px #5966d815;
 }
 
 .send{
-  width:42px;
-  height:42px;
-
-  border:0;
-
-  border-radius:12px;
-
-  background:var(--primary);
-
-  color:white;
-
+  height:46px;
+  width:48px;
+  padding:0;
   display:grid;
-
   place-items:center;
-
-  cursor:pointer;
 }
 
-.send:disabled{
-  opacity:.5;
-
-  cursor:not-allowed;
+.send i{
+  width:18px;
 }
 
-.foot{
-  display:flex;
-
-  justify-content:space-between;
-
+.counter{
   font-size:10px;
-
-  color:var(--muted);
-
-  padding:5px;
+  color:var(--m);
+  text-align:right;
+  margin-top:5px;
 }
 
-
-/* =========================================================
+/* =========================
    REPORT
-========================================================= */
+========================= */
 
 .reporttop{
   display:grid;
-
-  grid-template-columns:.45fr 1fr;
-
+  grid-template-columns:190px 1fr;
   gap:18px;
-
   margin-bottom:18px;
 }
 
 .scorecard{
   background:var(--lav);
-
-  border-radius:22px;
-
+  border-radius:20px;
   padding:25px;
-
   text-align:center;
 }
 
 .score{
-  font-size:55px;
-
+  font-size:54px;
   font-weight:850;
-
-  color:var(--primary);
+  color:var(--p);
 }
 
 .summary{
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-radius:22px;
-
-  padding:24px;
+  background:#fff;
+  border:1px solid var(--b);
+  border-radius:20px;
+  padding:25px;
 }
 
 .summary h2{
   margin:0 0 8px;
-
-  font-size:20px;
+  font-size:21px;
 }
 
 .summary p{
   margin:0;
-
-  color:var(--muted);
-
-  font-size:13px;
-
+  color:var(--m);
   line-height:1.6;
+  font-size:13px;
 }
 
 .reportgrid{
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
   gap:18px;
 }
 
 .li{
   display:flex;
-
   gap:9px;
-
-  font-size:12px;
-
-  line-height:1.5;
-
-  margin:10px 0;
+  align-items:flex-start;
+  font-size:13px;
+  line-height:1.55;
+  margin-bottom:12px;
 }
 
 .good{
-  color:#3B9A70;
+  color:#368d68;
+  width:17px;
+  flex:none;
 }
 
 .warn{
-  color:#B37B20;
+  color:#c68b2d;
+  width:17px;
+  flex:none;
 }
 
 .concept{
-  margin-bottom:13px;
+  margin-bottom:16px;
 }
 
 .crow{
   display:flex;
-
   justify-content:space-between;
-
-  font-size:11px;
-
-  margin-bottom:6px;
+  font-size:12px;
+  margin-bottom:7px;
 }
 
-.bar{
+.bar,
+.line{
   height:7px;
-
-  background:#ECEEF4;
-
+  background:#eceef5;
   border-radius:99px;
-
   overflow:hidden;
 }
 
-.bar span{
+.bar span,
+.line span{
   display:block;
-
   height:100%;
-
-  background:var(--primary);
-
+  background:var(--p);
   border-radius:99px;
 }
 
-
-/* =========================================================
+/* =========================
    LEARNER MAP
-========================================================= */
+========================= */
 
 .mapgrid{
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
   gap:18px;
 }
 
 .node{
-  padding:17px;
-
+  padding:16px;
+  border:1px solid var(--b);
   border-radius:15px;
-
-  background:white;
-
-  border:1px solid var(--border);
-
-  margin-bottom:10px;
+  background:#fff;
+  margin-bottom:12px;
 }
 
 .nhead{
   display:flex;
-
   justify-content:space-between;
-
-  font-size:12px;
-
-  font-weight:800;
+  gap:15px;
+  font-size:13px;
+  font-weight:750;
+  margin-bottom:7px;
 }
 
 .node small{
-  display:block;
-
-  color:var(--muted);
-
-  margin-top:6px;
-
-  font-size:10px;
+  color:var(--m);
+  font-size:11px;
 }
 
-.line{
-  height:6px;
-
-  background:#ECEEF4;
-
-  border-radius:99px;
-
-  margin-top:10px;
-}
-
-.line span{
-  display:block;
-
-  height:100%;
-
-  background:var(--primary);
-
-  border-radius:99px;
-}
-
-
-/* =========================================================
+/* =========================
    TOAST
-========================================================= */
+========================= */
 
 .toast{
   position:fixed;
-
-  right:22px;
-  bottom:22px;
-
-  background:var(--text);
-
-  color:white;
-
-  padding:12px 15px;
-
+  left:50%;
+  bottom:25px;
+  transform:translate(-50%,20px);
+  background:#25283A;
+  color:#fff;
+  padding:12px 16px;
   border-radius:12px;
-
   font-size:12px;
-
-  box-shadow:var(--shadow);
-
-  z-index:100;
-
   opacity:0;
-
-  transform:translateY(10px);
-
   pointer-events:none;
-
   transition:.25s;
+  z-index:100;
 }
 
 .toast.show{
   opacity:1;
-
-  transform:none;
+  transform:translate(-50%,0);
 }
 
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:900px){
 
@@ -1686,7 +1298,6 @@ footer{
 
   .hero{
     grid-template-columns:1fr;
-
     gap:40px;
   }
 
@@ -1702,142 +1313,191 @@ footer{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .sidebar{
-    transform:translateX(-100%);
-
-    transition:.25s;
+  .modegrid{
+    grid-template-columns:1fr;
   }
 
-  .sidebar.open{
-    transform:none;
+  .dashboardgrid{
+    grid-template-columns:1fr;
   }
 
-  .main{
-    margin-left:0;
-  }
-
-  .mobiletoggle{
-    display:grid !important;
-  }
-
-  .dash,
-  .modehero,
-  .reporttop,
   .reportgrid,
   .mapgrid{
     grid-template-columns:1fr;
   }
-
-  .stats{
-    grid-template-columns:1fr;
-  }
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
   .lnav{
     padding:0 18px;
+    height:68px;
   }
 
-  .actions .soft{
+  .lnav .actions{
     display:none;
   }
 
   .hero{
-    padding:50px 20px 60px;
+    padding:55px 18px 55px;
+  }
+
+  .section{
+    padding:65px 18px;
+  }
+
+  .cta{
+    margin:0 18px 55px;
+    padding:45px 20px;
   }
 
   .hero h1{
-    font-size:43px;
-
-    letter-spacing:-1.8px;
+    font-size:clamp(38px,12vw,54px);
+    letter-spacing:-2px;
   }
 
   .hero p{
     font-size:16px;
   }
 
-  .section{
-    padding:65px 20px;
-  }
-
-  .head h2,
-  .feature h2,
-  .cta h2{
-    font-size:31px;
-  }
-
-  .cta{
-    margin:0 20px 55px;
-
-    padding:48px 20px;
-  }
-
-  .arrow{
-    display:none;
-  }
-
-  .step{
-    padding:12px;
-
-    font-size:12px;
-  }
-
-  footer{
-    padding:25px 20px;
-
-    display:block;
-  }
-
-  .footerlinks{
-    margin-top:10px;
-  }
-
-  .content{
-    padding:20px 15px;
-  }
-
-  .top{
-    padding:0 15px;
-  }
-
-  .ptitle{
-    display:block;
-  }
-
-  .ptitle .btn{
-    margin-top:14px;
+  .herob .btn{
+    width:100%;
   }
 
   .float{
-    right:0;
+    right:8px;
+    bottom:8px;
+  }
+
+  .mini{
+    grid-template-columns:1fr 1fr;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .footerlinks{
+    flex-wrap:wrap;
+  }
+
+  .modechoice{
+    grid-template-columns:1fr;
+  }
+
+  .voicecontrols{
+    align-items:stretch;
+  }
+
+  .record{
+    width:100%;
+  }
+
+  .top{
+    padding:0 14px;
+  }
+
+  .crumb{
+    max-width:55vw;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .content{
+    padding:20px 14px;
+  }
+
+  .ptitle{
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .ptitle h1{
+    font-size:24px;
+  }
+
+  .modehero{
+    grid-template-columns:1fr;
+  }
+
+  .chatbubble{
+    max-width:88%;
+  }
+
+  .composer{
+    gap:7px;
+  }
+
+  .send{
+    width:44px;
+    flex:none;
+  }
+
+  .composer textarea{
+    min-width:0;
+  }
+
+  .sidebar{
+    width:min(285px,88vw);
+    transform:translateX(-100%);
+    transition:.25s;
+    box-shadow:none;
+  }
+
+  .sidebar.open{
+    transform:translateX(0);
+    box-shadow:15px 0 40px rgba(37,40,58,.12);
+  }
+
+  .appmain{
+    margin-left:0;
+  }
+
+  .menuBtn{
+    display:block;
+  }
+
+  .reporttop{
+    grid-template-columns:1fr;
+  }
+
+  .scorecard{
+    padding:20px;
+  }
+
+  .score{
+    font-size:46px;
+  }
+
+  .landing-mobile-menu{
+    top:62px;
   }
 }
 </style>
 </head>
 
-
 <body>
 
+<!-- =====================================================
+     LANDING PAGE
+===================================================== -->
 
-<!-- =========================================================
-     PUBLIC HOMEPAGE
-========================================================= -->
+<section id="landing">
 
-<section id="landing" class="landing">
-
-
-  <!-- NAVBAR -->
   <nav class="lnav">
 
     <a href="#" class="brand" onclick="showLanding();return false;">
       <span class="mark">
         <i data-lucide="brain-circuit"></i>
       </span>
-
       MindLab
     </a>
-
 
     <div class="links">
       <a href="#how">How it works</a>
@@ -1845,99 +1505,68 @@ footer{
       <a href="#why">Why MindLab</a>
     </div>
 
-
     <div class="actions">
-
-      <button class="btn soft" onclick="enterApp()">
-        Demo
-      </button>
-
-      <button class="btn primary" onclick="enterApp()">
-        Get Started
-      </button>
-
+      <button class="btn soft" onclick="enterApp()">Demo</button>
+      <button class="btn primary" onclick="enterApp()">Get Started</button>
     </div>
 
-
-    <button
-      class="mobile"
-      onclick="toast('Scroll down to explore MindLab.')"
-      aria-label="Menu"
-    >
+    <button class="mobile" onclick="toggleLandingMenu()" aria-label="Open menu">
       <i data-lucide="menu"></i>
     </button>
 
+    <div id="landingMenu" class="landing-mobile-menu">
+      <a href="#how" onclick="closeLandingMenu()">How it works</a>
+      <a href="#modes" onclick="closeLandingMenu()">Learning modes</a>
+      <a href="#why" onclick="closeLandingMenu()">Why MindLab</a>
+      <button onclick="closeLandingMenu();enterApp()">Get Started</button>
+    </div>
+
   </nav>
 
-
   <!-- HERO -->
+
   <section class="hero">
 
     <div>
 
       <div class="eyebrow">
         <i data-lucide="sparkles"></i>
-        AI-powered experiential learning
+        AI-Powered Experiential Learning
       </div>
-
 
       <h1>
         AI shouldn't just teach you.
-        <br>
         <span>It should make you think.</span>
       </h1>
 
-
       <p>
-        MindLab turns learning into an active experience where students
-        explain, experiment, discover and solve — while AI analyses how
-        they think and adapts what comes next.
+        MindLab turns learning from passive consumption into
+        active thinking, explaining, experimenting and discovering.
       </p>
 
-
       <div class="herob">
-
-        <button
-          class="btn primary"
-          onclick="enterApp()"
-        >
-          Start Learning
-          <i
-            data-lucide="arrow-right"
-            style="width:16px;vertical-align:middle"
-          ></i>
+        <button class="btn primary" onclick="enterApp()">
+          Explore MindLab
+          <i data-lucide="arrow-right" style="width:16px;vertical-align:middle"></i>
         </button>
 
-
-        <button
-          class="btn soft"
-          onclick="scrollToSection('how')"
-        >
+        <a class="btn soft" href="#how">
           See how it works
-        </button>
-
+        </a>
       </div>
 
-
       <div class="note">
-
         <i data-lucide="check-circle-2"></i>
-
-        Built around active learning,
-        not passive content consumption.
-
+        Learn by doing, not just watching.
       </div>
 
     </div>
 
-
-    <!-- HERO MOCKUP -->
     <div class="visual">
 
       <div class="mock">
 
         <div class="mtop">
-
           <div class="dots">
             <span></span>
             <span></span>
@@ -1945,139 +1574,95 @@ footer{
           </div>
 
           <div class="mtitle">
-            MindLab · AI Student
+            AI Student
           </div>
-
         </div>
-
 
         <div class="bubble ai">
-
-          <b style="color:var(--primary);font-size:11px">
-            AI STUDENT
-          </b>
-
-          <br><br>
-
-          “I think Binary Search should work on any array
-          because we keep dividing it in half.
-          Am I missing something?”
-
+          Hey! I'm trying to understand Binary Search.
+          I think it should work even if the array isn't sorted.
+          Am I missing something?
         </div>
-
 
         <div class="bubble you">
-
-          <b>Your turn.</b>
-
-          <br>
-
-          Explain why the array needs to be sorted.
-
+          Yes. The array needs to be sorted because...
         </div>
 
-
         <div class="notice">
-
-          <strong>
-            What MindLab notices
-          </strong>
-
-          The learner understands divide-and-conquer,
-          but may need to explore why sorted order makes
-          half the search space safely discardable.
-
+          <strong>What MindLab noticed</strong>
+          You understand divide-and-conquer, but the reason
+          sorted order allows half the search space to be removed
+          could use more exploration.
         </div>
 
       </div>
 
-
       <div class="float">
-        🧠 Learning through thinking
+        Understanding · 82%
       </div>
 
     </div>
 
   </section>
 
-
   <!-- PROBLEM -->
-  <section class="section tint">
+
+  <section id="how" class="section tint">
 
     <div class="inner">
 
       <div class="head">
-
-        <div class="kicker">
-          The problem
-        </div>
+        <div class="kicker">The problem</div>
 
         <h2>
-          More content doesn't always mean more learning.
+          Learning shouldn't stop at the answer.
         </h2>
 
         <p>
-          Digital education has made information easier to access.
-          But students can still remain passive — watching, reading
-          and getting answers without deeply reasoning through a concept.
+          Traditional digital learning can tell us whether an answer
+          is right or wrong, but often misses the reasoning behind it.
         </p>
-
       </div>
-
 
       <div class="grid3">
 
         <div class="icard">
-
           <div class="ibox">
-            <i data-lucide="play-circle"></i>
+            <i data-lucide="play"></i>
           </div>
 
-          <h3>
-            Consume
-          </h3>
+          <h3>Passive consumption</h3>
 
           <p>
-            Students watch lectures, read notes and move from one
-            piece of content to the next.
+            Students watch, read and consume information without
+            always actively processing it.
           </p>
-
         </div>
 
-
         <div class="icard">
-
           <div class="ibox">
-            <i data-lucide="bot"></i>
+            <i data-lucide="clipboard-check"></i>
           </div>
 
-          <h3>
-            Ask AI
-          </h3>
+          <h3>Answer-focused</h3>
 
           <p>
-            AI can produce an answer instantly — sometimes before
-            the student has had a chance to think.
+            Most systems measure the final answer instead of
+            understanding the student's reasoning.
           </p>
-
         </div>
 
-
         <div class="icard">
-
           <div class="ibox">
-            <i data-lucide="help-circle"></i>
+            <i data-lucide="brain"></i>
           </div>
 
-          <h3>
-            Miss the “why”
-          </h3>
+          <h3>Hidden gaps</h3>
 
           <p>
-            Systems often know what answer was wrong,
-            but not the reasoning behind the mistake.
+            A student can get an answer right while still having
+            an incomplete mental model.
           </p>
-
         </div>
 
       </div>
@@ -2086,29 +1671,23 @@ footer{
 
   </section>
 
+  <!-- LOOP -->
 
-  <!-- HOW IT WORKS -->
-  <section id="how" class="section">
+  <section class="section">
 
     <div class="inner">
 
       <div class="head">
-
-        <div class="kicker">
-          How it works
-        </div>
+        <div class="kicker">MindLab loop</div>
 
         <h2>
-          A learning loop designed around thinking.
+          Experience → Think → Learn
         </h2>
 
         <p>
-          MindLab makes the learner do something with a concept,
-          then uses the interaction to decide what should happen next.
+          Every interaction becomes a learning signal.
         </p>
-
       </div>
-
 
       <div class="loop">
 
@@ -2124,10 +1703,10 @@ footer{
         <div class="step">Analyse</div>
         <div class="arrow">→</div>
 
-        <div class="step">Adapt</div>
+        <div class="step">Diagnose</div>
         <div class="arrow">→</div>
 
-        <div class="step">Learn</div>
+        <div class="step">Adapt</div>
 
       </div>
 
@@ -2135,30 +1714,23 @@ footer{
 
   </section>
 
-
   <!-- MODES -->
+
   <section id="modes" class="section tint">
 
     <div class="inner">
 
       <div class="head">
-
-        <div class="kicker">
-          Learning modes
-        </div>
+        <div class="kicker">Learning modes</div>
 
         <h2>
-          Three ways to actively learn a concept.
+          Different ways to understand.
         </h2>
 
         <p>
-          Different concepts need different experiences.
-          MindLab provides multiple interaction styles instead
-          of one fixed lesson format.
+          MindLab is designed around active learning experiences.
         </p>
-
       </div>
-
 
       <div class="grid3">
 
@@ -2168,17 +1740,14 @@ footer{
             <i data-lucide="graduation-cap"></i>
           </div>
 
-          <h3>
-            Teach · AI Student
-          </h3>
+          <h3>Teach · AI Student</h3>
 
           <p>
-            Explain a concept to an AI student that asks questions,
-            makes believable mistakes and forces you to reason clearly.
+            Teach a confused AI student and strengthen your own
+            understanding by explaining concepts.
           </p>
 
         </div>
-
 
         <div class="icard">
 
@@ -2188,15 +1757,15 @@ footer{
 
           <h3>
             Discover · Knowledge Detective
+            <span class="soon">Coming Soon</span>
           </h3>
 
           <p>
-            Investigate clues, relationships and evidence to uncover
-            how a concept works instead of simply receiving the explanation.
+            Investigate clues and information to discover how
+            concepts work.
           </p>
 
         </div>
-
 
         <div class="icard">
 
@@ -2205,12 +1774,13 @@ footer{
           </div>
 
           <h3>
-            Experiment · Experiment Lab
+            Experiment Lab
+            <span class="soon">Coming Soon</span>
           </h3>
 
           <p>
-            Change variables, test predictions and observe outcomes
-            to build understanding through experimentation.
+            Change variables and observe outcomes to understand
+            concepts through experimentation.
           </p>
 
         </div>
@@ -2221,73 +1791,63 @@ footer{
 
   </section>
 
+  <!-- AI STUDENT FEATURE -->
 
-  <!-- KILLER FEATURE -->
-  <section class="section">
+  <section id="why" class="section">
 
     <div class="inner feature">
 
       <div>
 
-        <div class="kicker">
-          The killer feature
-        </div>
+        <div class="kicker">The killer feature</div>
 
         <h2>
-          What if students taught the AI?
+          What if you had to teach the AI?
         </h2>
 
         <p>
-          Instead of an AI tutor continuously explaining answers,
-          MindLab creates a confused “student” that the learner has to teach.
+          Instead of AI immediately giving students an answer,
+          MindLab creates a conversation where the student has
+          to explain, reason and correct the AI Student.
         </p>
-
-        <p>
-          As the student explains, MindLab can analyse the explanation
-          and interaction for signs of understanding, uncertainty and
-          probable conceptual gaps.
-        </p>
-
 
         <div class="points">
 
           <div class="point">
-
             <span class="check">
               <i data-lucide="check"></i>
             </span>
 
-            Student has to retrieve and explain the concept.
-
+            AI Student intentionally has believable misconceptions.
           </div>
 
-
           <div class="point">
-
             <span class="check">
               <i data-lucide="check"></i>
             </span>
 
-            AI asks targeted follow-up questions instead of
-            giving away the answer.
-
+            Follow-up questions challenge the student's reasoning.
           </div>
 
-
           <div class="point">
-
             <span class="check">
               <i data-lucide="check"></i>
             </span>
 
-            Responses become signals for the learner model.
+            Explanations become signals about conceptual understanding.
+          </div>
 
+          <div class="point">
+            <span class="check">
+              <i data-lucide="check"></i>
+            </span>
+
+            Students can type or use their voice.
           </div>
 
         </div>
 
       </div>
-
 
       <div class="demo">
 
@@ -2298,15 +1858,11 @@ footer{
           </div>
 
           <div class="db ai">
-
-            I understand that Binary Search divides
-            the array in half. So it should work even
-            if the array isn't sorted, right?
-
+            I think Binary Search works on any array
+            because we keep dividing it in half.
           </div>
 
         </div>
-
 
         <div class="drow">
 
@@ -2315,14 +1871,10 @@ footer{
           </div>
 
           <div class="db you">
-
-            No, because if it's sorted we know
-            which half cannot contain the value.
-
+            Actually, it needs sorted data because...
           </div>
 
         </div>
-
 
         <div class="drow">
 
@@ -2331,24 +1883,20 @@ footer{
           </div>
 
           <div class="db ai">
-
-            But why can you be sure that the discarded
-            half doesn't contain the value?
-
+            But why does sorted order let you discard
+            the entire other half?
           </div>
 
         </div>
 
-
         <div class="dnotice">
 
           <strong>
-            What MindLab notices
+            MindLab is learning about the learner.
           </strong>
 
-          The explanation shows a good grasp of comparison
-          and divide-and-conquer. The follow-up can probe
-          the learner's understanding of search-space elimination.
+          The conversation reveals more than a simple
+          right-or-wrong answer.
 
         </div>
 
@@ -2358,87 +1906,24 @@ footer{
 
   </section>
 
+  <!-- STATS -->
 
-  <!-- WHY MINDLAB -->
-  <section id="why" class="section tint">
+  <section class="section tint">
 
     <div class="inner">
 
       <div class="head">
-
-        <div class="kicker">
-          Why MindLab
-        </div>
+        <div class="kicker">Beyond scores</div>
 
         <h2>
-          From “Did you get it?” to “How are you thinking?”
+          Build a learner model.
         </h2>
 
         <p>
-          MindLab's learner model focuses on concepts and reasoning
-          signals, helping the platform choose a more useful next activity.
+          MindLab aims to understand concepts, reasoning and
+          probable conceptual gaps over time.
         </p>
-
       </div>
-
-
-      <div class="grid3">
-
-        <div class="icard">
-
-          <div class="ibox">
-            <i data-lucide="network"></i>
-          </div>
-
-          <h3>
-            Concept understanding
-          </h3>
-
-          <p>
-            Track how confidently a learner appears to understand
-            individual concepts, not just overall scores.
-          </p>
-
-        </div>
-
-
-        <div class="icard">
-
-          <div class="ibox">
-            <i data-lucide="scan-search"></i>
-          </div>
-
-          <h3>
-            Probable gaps
-          </h3>
-
-          <p>
-            Identify likely areas of confusion from explanations,
-            responses and interaction patterns.
-          </p>
-
-        </div>
-
-
-        <div class="icard">
-
-          <div class="ibox">
-            <i data-lucide="route"></i>
-          </div>
-
-          <h3>
-            Adaptive next step
-          </h3>
-
-          <p>
-            Recommend an activity based on what the learner
-            seems ready for next.
-          </p>
-
-        </div>
-
-      </div>
-
 
       <div class="mini">
 
@@ -2449,17 +1934,17 @@ footer{
 
         <div class="stat">
           <strong>Reasoning</strong>
-          <span>How the learner explains</span>
+          <span>How the learner explains ideas</span>
         </div>
 
         <div class="stat">
           <strong>Gaps</strong>
-          <span>Where more exploration may help</span>
+          <span>Where understanding may be incomplete</span>
         </div>
 
         <div class="stat">
-          <strong>Next</strong>
-          <span>What activity should come next</span>
+          <strong>Next Step</strong>
+          <span>What the learner should explore next</span>
         </div>
 
       </div>
@@ -2468,63 +1953,35 @@ footer{
 
   </section>
 
+  <!-- CTA -->
 
-  <!-- FINAL CTA -->
   <section class="cta">
 
     <h2>
-      Stop consuming. Start thinking.
+      Stop just consuming knowledge.
     </h2>
 
     <p>
-      Experience a different kind of AI-powered learning —
-      where the student actively constructs understanding.
+      Start interacting with it.
     </p>
 
-    <button
-      class="btn primary"
-      onclick="enterApp()"
-    >
-      Try the MindLab Demo
-
-      <i
-        data-lucide="arrow-right"
-        style="width:16px;vertical-align:middle"
-      ></i>
-
+    <button class="btn primary" onclick="enterApp()">
+      Try MindLab
+      <i data-lucide="arrow-right" style="width:16px;vertical-align:middle"></i>
     </button>
 
   </section>
 
-
-  <!-- FOOTER -->
   <footer>
 
-    <a
-      href="#"
-      class="brand"
-      onclick="showLanding();return false;"
-    >
-
-      <span class="mark">
-        <i data-lucide="brain-circuit"></i>
-      </span>
-
-      MindLab
-
-    </a>
-
+    <div>
+      © 2026 MindLab · Smart Education
+    </div>
 
     <div class="footerlinks">
-
-      <span>
-        AI-Powered Experiential Learning
-      </span>
-
-      <span>
-        SIH 2026
-      </span>
-
+      <a href="#how">How it works</a>
+      <a href="#modes">Learning modes</a>
+      <a href="#why">Why MindLab</a>
     </div>
 
   </footer>
@@ -2532,335 +1989,160 @@ footer{
 </section>
 
 
-
-<!-- =========================================================
-     APP / DASHBOARD
-========================================================= -->
+<!-- =====================================================
+     APPLICATION
+===================================================== -->
 
 <section id="app" class="hidden">
 
-
   <!-- SIDEBAR -->
+
   <aside id="sidebar" class="sidebar">
 
-    <a
-      href="#"
-      class="brand"
-      onclick="showLanding();return false;"
-    >
-
+    <a href="#" class="brand" onclick="showLanding();return false;">
       <span class="mark">
         <i data-lucide="brain-circuit"></i>
       </span>
 
       MindLab
-
     </a>
 
+    <div class="label">Workspace</div>
 
-    <div class="label">
-      Workspace
-    </div>
+    <nav class="snav">
 
-
-    <div class="snav">
-
-      <button
-        class="active"
-        data-page="dashboard"
-      >
+      <button data-page="dashboard" class="active">
         <i data-lucide="layout-dashboard"></i>
         Dashboard
       </button>
 
-
       <button data-page="ai-student">
-        <i data-lucide="bot"></i>
+        <i data-lucide="graduation-cap"></i>
         AI Student
       </button>
-
 
       <button data-page="detective">
         <i data-lucide="search"></i>
         Knowledge Detective
+        <span class="soon">Soon</span>
       </button>
-
 
       <button data-page="experiment">
         <i data-lucide="flask-conical"></i>
         Experiment Lab
+        <span class="soon">Soon</span>
       </button>
-
 
       <button data-page="map">
         <i data-lucide="network"></i>
         Learner Map
       </button>
 
-
       <button data-page="report">
-        <i data-lucide="bar-chart-3"></i>
+        <i data-lucide="chart-no-axes-column"></i>
         Understanding Report
       </button>
 
-    </div>
-
-
-    <div class="sbottom">
-
-      <strong>
-        MindLab Demo
-      </strong>
-
-      AI Student is functional in this prototype.
-      Other modes are presented as the next-stage experience.
-
-    </div>
+    </nav>
 
   </aside>
 
 
+  <!-- APP MAIN -->
 
-  <!-- MAIN APP -->
-  <main class="main">
+  <main class="appmain">
 
-
-    <!-- TOPBAR -->
     <header class="top">
 
-      <div
-        style="display:flex;gap:10px;align-items:center"
+      <button
+        class="menuBtn"
+        onclick="toggleSidebar()"
+        aria-label="Open sidebar"
       >
+        <i data-lucide="menu"></i>
+      </button>
 
-        <button
-          class="topicon mobiletoggle"
-          style="display:none"
-          onclick="toggleSidebar()"
-          aria-label="Open sidebar"
-        >
-          <i data-lucide="menu"></i>
-        </button>
-
-
-        <div id="crumb" class="crumb">
-
-          <strong>
-            Dashboard
-          </strong>
-
-          · Your learning space
-
-        </div>
-
-      </div>
-
-
-      <div class="topactions">
-
-        <button
-          class="topicon"
-          onclick="showLanding()"
-          title="Homepage"
-        >
-          <i data-lucide="home"></i>
-        </button>
-
-
-        <button
-          class="topicon"
-          onclick="toast('Demo mode — your progress is saved for this session.')"
-          title="Info"
-        >
-          <i data-lucide="info"></i>
-        </button>
-
+      <div id="crumb" class="crumb">
+        <strong>Dashboard</strong> · Your learning space
       </div>
 
     </header>
 
 
-
     <div class="content">
 
+      <!-- DASHBOARD -->
 
-      <!-- =====================================================
-           DASHBOARD PAGE
-      ====================================================== -->
-
-      <div
-        id="page-dashboard"
-        class="page active"
-      >
+      <div id="page-dashboard" class="page active">
 
         <div class="ptitle">
 
           <div>
-
-            <h1>
-              Good to see you.
-            </h1>
+            <h1>Welcome to MindLab</h1>
 
             <p>
-              Choose how you want to learn today.
+              Learn through interaction, not just information.
             </p>
-
           </div>
-
-
-          <button
-            class="btn primary"
-            onclick="openPage('ai-student')"
-          >
-            Start learning →
-          </button>
 
         </div>
 
+        <div class="dashboardgrid">
 
-        <div class="dash">
+          <div class="card">
 
-
-          <div
-            style="display:grid;gap:18px"
-          >
-
-
-            <!-- SNAPSHOT -->
-            <div class="card lav">
-
-              <div class="cardhead">
-
-                <h3>
-                  Your learning snapshot
-                </h3>
-
-                <span
-                  class="muted"
-                  style="font-size:11px"
-                >
-                  This session
-                </span>
-
-              </div>
-
-
-              <div class="stats">
-
-                <div class="statbox">
-
-                  <strong>
-                    4
-                  </strong>
-
-                  <span>
-                    Concepts explored
-                  </span>
-
-                </div>
-
-
-                <div class="statbox">
-
-                  <strong>
-                    82%
-                  </strong>
-
-                  <span>
-                    Understanding
-                  </span>
-
-                </div>
-
-
-                <div class="statbox">
-
-                  <strong>
-                    3
-                  </strong>
-
-                  <span>
-                    Learning modes
-                  </span>
-
-                </div>
-
-              </div>
-
+            <div class="cardhead">
+              <h3>Choose a learning experience</h3>
             </div>
 
+            <div class="modegrid">
 
-            <!-- RECENT LEARNING -->
-            <div class="card">
+              <div class="modecard" onclick="openPage('ai-student')">
 
-              <div class="cardhead">
+                <div class="modeicon">
+                  <i data-lucide="graduation-cap"></i>
+                </div>
+
+                <h3>Teach · AI Student</h3>
+
+                <p>
+                  Teach an AI student and strengthen your
+                  understanding through explanation.
+                </p>
+
+              </div>
+
+              <div class="modecard">
+
+                <div class="modeicon">
+                  <i data-lucide="search"></i>
+                </div>
 
                 <h3>
-                  Recent learning
+                  Discover · Knowledge Detective
+                  <span class="soon">Soon</span>
                 </h3>
 
-              </div>
-
-
-              <div class="activity">
-
-                <div class="aleft">
-
-                  <div class="aicon">
-                    <i data-lucide="bot"></i>
-                  </div>
-
-                  <div>
-
-                    <strong>
-                      Binary Search · AI Student
-                    </strong>
-
-                    <span>
-                      Understanding: 82%
-                    </span>
-
-                  </div>
-
-                </div>
-
-                <span
-                  class="muted"
-                  style="font-size:10px"
-                >
-                  Today
-                </span>
+                <p>
+                  Investigate clues to discover concepts yourself.
+                </p>
 
               </div>
 
+              <div class="modecard">
 
-              <div class="activity">
-
-                <div class="aleft">
-
-                  <div class="aicon">
-                    <i data-lucide="search"></i>
-                  </div>
-
-                  <div>
-
-                    <strong>
-                      Sorting Algorithms · Detective
-                    </strong>
-
-                    <span>
-                      Exploration started
-                    </span>
-
-                  </div>
-
+                <div class="modeicon">
+                  <i data-lucide="flask-conical"></i>
                 </div>
 
-                <span
-                  class="muted"
-                  style="font-size:10px"
-                >
-                  Yesterday
-                </span>
+                <h3>
+                  Experiment Lab
+                  <span class="soon">Soon</span>
+                </h3>
+
+                <p>
+                  Learn by changing variables and observing outcomes.
+                </p>
 
               </div>
 
@@ -2869,87 +2151,43 @@ footer{
           </div>
 
 
-
-          <!-- MODES -->
-          <div class="card blue">
+          <div class="card yellow">
 
             <div class="cardhead">
+              <h3>Your learner snapshot</h3>
+            </div>
 
-              <h3>
-                Choose a learning mode
-              </h3>
+            <div class="node">
+
+              <div class="nhead">
+                <span>Binary Search</span>
+                <span>82%</span>
+              </div>
+
+              <small>
+                Good conceptual understanding
+              </small>
+
+              <div class="line" style="margin-top:10px">
+                <span style="width:82%"></span>
+              </div>
 
             </div>
 
+            <div class="node">
 
-            <div class="modes">
+              <div class="nhead">
+                <span>Search-space elimination</span>
+                <span>62%</span>
+              </div>
 
+              <small>
+                Worth exploring further
+              </small>
 
-              <button
-                class="modebtn"
-                onclick="openPage('ai-student')"
-              >
-
-                <i data-lucide="bot"></i>
-
-                <div>
-
-                  <strong>
-                    Teach · AI Student
-                  </strong>
-
-                  <small>
-                    Learn by explaining
-                  </small>
-
-                </div>
-
-              </button>
-
-
-              <button
-                class="modebtn"
-                onclick="openPage('detective')"
-              >
-
-                <i data-lucide="search"></i>
-
-                <div>
-
-                  <strong>
-                    Discover · Knowledge Detective
-                  </strong>
-
-                  <small>
-                    Learn by investigating
-                  </small>
-
-                </div>
-
-              </button>
-
-
-              <button
-                class="modebtn"
-                onclick="openPage('experiment')"
-              >
-
-                <i data-lucide="flask-conical"></i>
-
-                <div>
-
-                  <strong>
-                    Experiment · Experiment Lab
-                  </strong>
-
-                  <small>
-                    Learn by testing
-                  </small>
-
-                </div>
-
-              </button>
-
+              <div class="line" style="margin-top:10px">
+                <span style="width:62%"></span>
+              </div>
 
             </div>
 
@@ -2960,107 +2198,154 @@ footer{
       </div>
 
 
+      <!-- AI STUDENT -->
 
-      <!-- =====================================================
-           AI STUDENT
-      ====================================================== -->
-
-      <div
-        id="page-ai-student"
-        class="page"
-      >
+      <div id="page-ai-student" class="page">
 
         <div class="ptitle">
 
           <div>
-
-            <h1>
-              AI Student
-            </h1>
+            <h1>AI Student</h1>
 
             <p>
-              Teach a confused student.
-              Your explanation becomes part of the learning signal.
+              Teach through explanation and reasoning.
             </p>
-
           </div>
-
-          <span class="pill">
-            TEACH MODE
-          </span>
 
         </div>
 
 
-        <div class="modehero">
+        <!-- CHOICE -->
+
+        <div id="aiChoiceView" class="card">
+
+          <div class="cardhead">
+            <h3>How would you like to explain?</h3>
+          </div>
+
+          <p class="muted" style="font-size:13px">
+            Choose how you want to interact with your AI Student.
+          </p>
+
+          <div class="modechoice">
+
+            <button
+              class="choice"
+              onclick="startAI('type')"
+            >
+
+              <div class="choiceicon">
+                <i data-lucide="keyboard"></i>
+              </div>
+
+              <strong>Type your answer</strong>
+
+              <small>
+                Write your explanation using the keyboard.
+              </small>
+
+            </button>
 
 
-          <div class="intro">
+            <button
+              class="choice voice"
+              onclick="startAI('voice')"
+            >
 
-            <span class="pill">
-              CURRENT CONCEPT · BINARY SEARCH
-            </span>
+              <div class="choiceicon">
+                <i data-lucide="mic"></i>
+              </div>
+
+              <strong>Use your voice</strong>
+
+              <small>
+                Explain naturally by speaking into your microphone.
+              </small>
+
+            </button>
+
+          </div>
+
+        </div>
 
 
-            <h2>
-              Can you teach the AI?
-            </h2>
+        <!-- TYPE MODE -->
+
+        <div id="aiTypeView" class="card hidden">
+
+          <button class="modeback" onclick="backToAIChoice()">
+            ← Choose another interaction method
+          </button>
+
+          <div class="cardhead">
+
+            <div>
+              <h3>AI Student · Binary Search</h3>
+
+              <span class="muted" style="font-size:11px">
+                Explain your reasoning. Don't worry about being perfect.
+              </span>
+            </div>
+
+          </div>
+
+          <div id="chat" class="chat"></div>
+
+          <div class="composer">
+
+            <textarea
+              id="response"
+              maxlength="500"
+              placeholder="Explain your reasoning..."
+              aria-label="Your explanation"
+            ></textarea>
+
+            <button
+              id="send"
+              class="btn primary send"
+              onclick="submitResponse()"
+              aria-label="Send response"
+            >
+              <i data-lucide="send"></i>
+            </button>
+
+          </div>
+
+          <div id="count" class="counter">
+            0 / 500
+          </div>
+
+        </div>
 
 
-            <p>
-              The AI student intentionally has an incomplete mental model.
-              Don't just give it the answer — explain why its thinking is wrong.
-            </p>
+        <!-- VOICE MODE -->
 
+        <div id="aiVoiceView" class="card hidden">
 
-            <div class="anotice">
+          <button class="modeback" onclick="backToAIChoice()">
+            ← Choose another interaction method
+          </button>
 
-              <strong>
-                MindLab's goal
-              </strong>
+          <div class="cardhead">
 
-              Analyse the explanation and follow-up reasoning
-              to estimate conceptual understanding and identify
-              probable gaps.
+            <div>
+              <h3>AI Student · Voice</h3>
 
+              <span class="muted" style="font-size:11px">
+                Explain your reasoning naturally using your voice.
+              </span>
             </div>
 
           </div>
 
 
-
-          <div class="prompt">
-
-            <h3>
-              Teaching challenge
-            </h3>
-
-            <p>
-              Explain why Binary Search requires a sorted array.
-              Start as if you were teaching someone who believes
-              dividing the array in half is enough.
-            </p>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- CHAT -->
-        <div class="card">
-
-          <div id="chat" class="chat">
-
+          <div class="chat">
 
             <div class="msg">
 
               <div class="cav ai">
-
                 <i data-lucide="bot"></i>
-
               </div>
-
 
               <div class="chatbubble ai">
 
@@ -3074,9 +2359,7 @@ footer{
 
                 <br><br>
 
-                <b>
-                  Am I missing something?
-                </b>
+                <b>Am I missing something?</b>
 
               </div>
 
@@ -3085,40 +2368,50 @@ footer{
           </div>
 
 
+          <div class="voicebox">
 
-          <div class="composer">
+            <div class="voicecontrols">
 
-            <textarea
-              id="response"
-              maxlength="500"
-              placeholder="Explain it to the AI student..."
-              aria-label="Your explanation"
-            ></textarea>
+              <button
+                id="recordBtn"
+                class="btn primary record"
+                onclick="toggleRecording()"
+              >
+                <i data-lucide="mic"></i>
+                Start speaking
+              </button>
+
+              <span
+                id="voiceStatus"
+                class="voice-status"
+              >
+                Ready — click the microphone to record.
+              </span>
+
+            </div>
 
 
-            <button
-              id="send"
-              class="send"
-              onclick="submitResponse()"
-              aria-label="Send"
+            <div
+              id="transcript"
+              class="transcript"
             >
-
-              <i data-lucide="send"></i>
-
-            </button>
-
-          </div>
+              Your speech transcript will appear here once
+              Whisper is connected.
+            </div>
 
 
-          <div class="foot">
+            <audio
+              id="audioPreview"
+              class="audio-preview hidden"
+              controls
+            ></audio>
 
-            <span>
-              Tip: teach the “why”, not just the rule.
-            </span>
 
-            <span id="count">
-              0 / 500
-            </span>
+            <div class="micnote">
+              Microphone access is handled by your browser.
+              Speech-to-text will be connected through the Python
+              backend using Whisper.
+            </div>
 
           </div>
 
@@ -3127,256 +2420,108 @@ footer{
       </div>
 
 
+      <!-- DETECTIVE -->
 
-      <!-- =====================================================
-           KNOWLEDGE DETECTIVE
-      ====================================================== -->
-
-      <div
-        id="page-detective"
-        class="page"
-      >
+      <div id="page-detective" class="page">
 
         <div class="ptitle">
 
           <div>
-
             <h1>
               Knowledge Detective
+              <span class="soon">Coming Soon</span>
             </h1>
 
             <p>
-              Discover a concept through clues, evidence and connections.
+              Discover concepts by investigating clues.
             </p>
-
           </div>
-
-          <span class="pill">
-            DISCOVER MODE
-          </span>
 
         </div>
 
+        <div class="card">
 
-        <div class="modehero">
+          <h3>Coming soon</h3>
 
-          <div
-            class="intro"
-            style="background:var(--blue);border-color:#DCE8F8"
-          >
-
-            <span class="pill">
-              CONCEPT MYSTERY
-            </span>
-
-            <h2>
-              Why does sorting matter?
-            </h2>
-
-            <p>
-              Follow clues and build the explanation yourself.
-              MindLab reveals evidence progressively rather than
-              giving the final answer immediately.
-            </p>
-
-
-            <button
-              class="btn primary"
-              onclick="toast('Detective mode prototype — clue sequence coming next.')"
-            >
-              Start investigation
-            </button>
-
-          </div>
-
-
-          <div class="prompt">
-
-            <h3>
-              Clue 01
-            </h3>
-
-            <p>
-              You have 16 numbers and need to find one value quickly.
-              What information would let you safely ignore half
-              after looking at the middle?
-            </p>
-
-          </div>
+          <p class="muted">
+            This mode will let learners investigate evidence,
+            connect clues and discover concepts instead of
+            receiving the explanation directly.
+          </p>
 
         </div>
 
       </div>
 
 
+      <!-- EXPERIMENT -->
 
-      <!-- =====================================================
-           EXPERIMENT LAB
-      ====================================================== -->
-
-      <div
-        id="page-experiment"
-        class="page"
-      >
+      <div id="page-experiment" class="page">
 
         <div class="ptitle">
 
           <div>
-
             <h1>
               Experiment Lab
+              <span class="soon">Coming Soon</span>
             </h1>
 
             <p>
-              Change variables, test a prediction and observe what happens.
+              Learn by changing variables and observing outcomes.
             </p>
 
           </div>
-
-          <span class="pill">
-            EXPERIMENT MODE
-          </span>
 
         </div>
 
+        <div class="card">
 
-        <div class="modehero">
+          <h3>Coming soon</h3>
 
-          <div
-            class="intro"
-            style="background:var(--mint);border-color:#D9EEE4"
-          >
-
-            <span class="pill">
-              BINARY SEARCH LAB
-            </span>
-
-            <h2>
-              What breaks when the array isn't sorted?
-            </h2>
-
-            <p>
-              Run the same search against different arrangements.
-              Compare the outcome with your prediction and uncover
-              the condition that makes the algorithm reliable.
-            </p>
-
-
-            <button
-              class="btn primary"
-              onclick="toast('Experiment Lab prototype — interactive simulator is next.')"
-            >
-              Run experiment
-            </button>
-
-          </div>
-
-
-          <div class="prompt">
-
-            <h3>
-              Your prediction
-            </h3>
-
-            <p>
-              If we remove the sorted-order guarantee,
-              will Binary Search always find the target?
-              Explain your prediction before running the test.
-            </p>
-
-          </div>
+          <p class="muted">
+            This mode will let students experiment with concepts
+            and observe the results of changing conditions.
+          </p>
 
         </div>
 
       </div>
 
 
+      <!-- LEARNER MAP -->
 
-      <!-- =====================================================
-           LEARNER MAP
-      ====================================================== -->
-
-      <div
-        id="page-map"
-        class="page"
-      >
+      <div id="page-map" class="page">
 
         <div class="ptitle">
 
           <div>
-
-            <h1>
-              Learner Map
-            </h1>
+            <h1>Learner Map</h1>
 
             <p>
-              A lightweight view of what MindLab currently
-              understands about your learning.
+              Your evolving concept model.
             </p>
-
           </div>
 
         </div>
 
-
         <div class="mapgrid">
-
 
           <div class="card">
 
             <div class="cardhead">
-
-              <h3>
-                Concept understanding
-              </h3>
-
+              <h3>Concept understanding</h3>
             </div>
-
 
             <div class="node">
 
               <div class="nhead">
-
-                <span>
-                  Divide & conquer
-                </span>
-
-                <span>
-                  85%
-                </span>
-
+                <span>Sorted-data requirement</span>
+                <span>95%</span>
               </div>
 
-              <small>
-                Strong understanding
-              </small>
+              <small>Strong understanding</small>
 
-              <div class="line">
-                <span style="width:85%"></span>
-              </div>
-
-            </div>
-
-
-            <div class="node">
-
-              <div class="nhead">
-
-                <span>
-                  Middle element comparison
-                </span>
-
-                <span>
-                  90%
-                </span>
-
-              </div>
-
-              <small>
-                Strong understanding
-              </small>
-
-              <div class="line">
+              <div class="line" style="margin-top:10px">
                 <span style="width:90%"></span>
               </div>
 
@@ -3386,22 +2531,29 @@ footer{
             <div class="node">
 
               <div class="nhead">
-
-                <span>
-                  Search-space elimination
-                </span>
-
-                <span>
-                  62%
-                </span>
-
+                <span>Divide & conquer</span>
+                <span>85%</span>
               </div>
 
-              <small>
-                Worth exploring further
-              </small>
+              <small>Strong understanding</small>
 
-              <div class="line">
+              <div class="line" style="margin-top:10px">
+                <span style="width:85%"></span>
+              </div>
+
+            </div>
+
+
+            <div class="node">
+
+              <div class="nhead">
+                <span>Search-space elimination</span>
+                <span>62%</span>
+              </div>
+
+              <small>Worth exploring further</small>
+
+              <div class="line" style="margin-top:10px">
                 <span style="width:62%"></span>
               </div>
 
@@ -3410,26 +2562,22 @@ footer{
           </div>
 
 
-
           <div class="card yellow">
 
             <div class="cardhead">
-
-              <h3>
-                Next recommended path
-              </h3>
-
+              <h3>Next recommended path</h3>
             </div>
-
 
             <div
               class="anotice"
-              style="background:#FFF8E9"
+              style="background:#fff8e9;padding:16px;border-radius:15px"
             >
 
-              <strong style="color:#9A6A18">
+              <strong style="color:#9a6a18">
                 Experiment Lab
               </strong>
+
+              <br>
 
               Test what happens when the sorted-data guarantee
               is removed. This targets the concept that currently
@@ -3444,23 +2592,15 @@ footer{
       </div>
 
 
+      <!-- REPORT -->
 
-      <!-- =====================================================
-           REPORT
-      ====================================================== -->
-
-      <div
-        id="page-report"
-        class="page"
-      >
+      <div id="page-report" class="page">
 
         <div class="ptitle">
 
           <div>
 
-            <h1>
-              Understanding Report
-            </h1>
+            <h1>Understanding Report</h1>
 
             <p>
               What MindLab inferred from your explanation —
@@ -3473,7 +2613,6 @@ footer{
 
 
         <div class="reporttop">
-
 
           <div class="scorecard">
 
@@ -3509,21 +2648,13 @@ footer{
         </div>
 
 
-
         <div class="reportgrid">
 
-
-          <!-- STRENGTHS -->
           <div class="card">
 
             <div class="cardhead">
-
-              <h3>
-                Strengths
-              </h3>
-
+              <h3>Strengths</h3>
             </div>
-
 
             <div class="li">
 
@@ -3536,7 +2667,6 @@ footer{
 
             </div>
 
-
             <div class="li">
 
               <i
@@ -3547,7 +2677,6 @@ footer{
               Understands middle-element comparison.
 
             </div>
-
 
             <div class="li">
 
@@ -3563,18 +2692,11 @@ footer{
           </div>
 
 
-
-          <!-- AREA TO EXPLORE -->
           <div class="card">
 
             <div class="cardhead">
-
-              <h3>
-                Area to explore
-              </h3>
-
+              <h3>Area to explore</h3>
             </div>
-
 
             <div class="li">
 
@@ -3583,11 +2705,10 @@ footer{
                 data-lucide="alert-circle"
               ></i>
 
-              Search-space elimination —
-              why can half be discarded with confidence?
+              Search-space elimination — why can half be discarded
+              with confidence?
 
             </div>
-
 
             <div class="li">
 
@@ -3596,43 +2717,26 @@ footer{
                 data-lucide="alert-circle"
               ></i>
 
-              <b>
-                Probable conceptual gap:
-              </b>
-
-              the role of sorted order in guaranteeing
-              the discarded half cannot contain the target.
+              <b>Probable conceptual gap:</b>
+              the role of sorted order in guaranteeing the
+              discarded half cannot contain the target.
 
             </div>
 
           </div>
 
 
-
-          <!-- CONCEPT SIGNALS -->
           <div class="card">
 
             <div class="cardhead">
-
-              <h3>
-                Concept signals
-              </h3>
-
+              <h3>Concept signals</h3>
             </div>
-
 
             <div class="concept">
 
               <div class="crow">
-
-                <span>
-                  Sorted-data requirement
-                </span>
-
-                <b>
-                  95%
-                </b>
-
+                <span>Sorted-data requirement</span>
+                <b>95%</b>
               </div>
 
               <div class="bar">
@@ -3645,15 +2749,8 @@ footer{
             <div class="concept">
 
               <div class="crow">
-
-                <span>
-                  Divide & conquer
-                </span>
-
-                <b>
-                  85%
-                </b>
-
+                <span>Divide & conquer</span>
+                <b>85%</b>
               </div>
 
               <div class="bar">
@@ -3666,15 +2763,8 @@ footer{
             <div class="concept">
 
               <div class="crow">
-
-                <span>
-                  Search-space elimination
-                </span>
-
-                <b>
-                  62%
-                </b>
-
+                <span>Search-space elimination</span>
+                <b>62%</b>
               </div>
 
               <div class="bar">
@@ -3686,36 +2776,33 @@ footer{
           </div>
 
 
-
-          <!-- RECOMMENDATION -->
           <div class="card yellow">
 
             <div class="cardhead">
-
-              <h3>
-                Recommended next activity
-              </h3>
-
+              <h3>Recommended next activity</h3>
             </div>
 
-
             <div
-              class="anotice"
-              style="background:#FFF8E9"
+              style="
+                background:#fff8e9;
+                padding:16px;
+                border-radius:15px;
+              "
             >
 
-              <strong style="color:#9A6A18">
+              <strong style="color:#9a6a18">
                 Experiment Lab
               </strong>
 
-              Run an experiment comparing sorted and
-              unsorted arrays. The goal is to make the
-              hidden guarantee visible through experience.
+              <br><br>
+
+              Run an experiment comparing sorted and unsorted
+              arrays. The goal is to make the hidden guarantee
+              visible through experience.
 
             </div>
 
           </div>
-
 
         </div>
 
@@ -3728,53 +2815,31 @@ footer{
 </section>
 
 
-
-<!-- =========================================================
-     TOAST
-========================================================= -->
-
-<div
-  id="toast"
-  class="toast"
-></div>
-
+<div id="toast" class="toast"></div>
 
 
 <script>
-/* =========================================================
-   MINDLAB JAVASCRIPT
-========================================================= */
 
-const landing =
-  document.getElementById("landing");
+/* =====================================================
+   GLOBAL STATE
+===================================================== */
 
-const app =
-  document.getElementById("app");
-
-const sidebar =
-  document.getElementById("sidebar");
-
-const crumb =
-  document.getElementById("crumb");
-
-const response =
-  document.getElementById("response");
-
-const send =
-  document.getElementById("send");
-
-const count =
-  document.getElementById("count");
-
+const landing = document.getElementById("landing");
+const app = document.getElementById("app");
+const sidebar = document.getElementById("sidebar");
+const crumb = document.getElementById("crumb");
 
 let step = 0;
-
 let busy = false;
 
+let recording = false;
+let mediaRecorder = null;
+let audioChunks = [];
 
-/* =========================================================
-   ICON REFRESH
-========================================================= */
+
+/* =====================================================
+   ICONS
+===================================================== */
 
 function icons(){
 
@@ -3785,17 +2850,18 @@ function icons(){
 }
 
 
-/* =========================================================
-   SHOW HOMEPAGE
-========================================================= */
+/* =====================================================
+   LANDING / APP NAVIGATION
+===================================================== */
 
 function showLanding(){
 
   app.classList.add("hidden");
-
   landing.classList.remove("hidden");
 
   sidebar.classList.remove("open");
+
+  closeLandingMenu();
 
   window.scrollTo({
     top:0,
@@ -3807,14 +2873,9 @@ function showLanding(){
 }
 
 
-/* =========================================================
-   ENTER APP
-========================================================= */
-
 function enterApp(){
 
   landing.classList.add("hidden");
-
   app.classList.remove("hidden");
 
   openPage("dashboard");
@@ -3829,30 +2890,53 @@ function enterApp(){
 }
 
 
-/* =========================================================
-   LANDING PAGE SCROLL
-========================================================= */
-
 function scrollToSection(id){
 
-  const element =
-    document.getElementById(id);
-
-  if(element){
-
-    element.scrollIntoView({
+  document
+    .getElementById(id)
+    ?.scrollIntoView({
       behavior:"smooth",
       block:"start"
     });
 
+}
+
+
+/* =====================================================
+   LANDING MOBILE MENU
+===================================================== */
+
+function toggleLandingMenu(){
+
+  const menu =
+    document.getElementById("landingMenu");
+
+  if(!menu) return;
+
+  menu.classList.toggle("show");
+
+}
+
+
+/* =====================================================
+   CLOSE LANDING MENU
+===================================================== */
+
+function closeLandingMenu(){
+
+  const menu =
+    document.getElementById("landingMenu");
+
+  if(menu){
+    menu.classList.remove("show");
   }
 
 }
 
 
-/* =========================================================
-   MOBILE SIDEBAR
-========================================================= */
+/* =====================================================
+   SIDEBAR
+===================================================== */
 
 function toggleSidebar(){
 
@@ -3861,38 +2945,34 @@ function toggleSidebar(){
 }
 
 
-/* =========================================================
-   APP PAGE NAVIGATION
-========================================================= */
+/* =====================================================
+   APP PAGES
+===================================================== */
 
 function openPage(page){
 
   document
     .querySelectorAll(".page")
-    .forEach(element => {
-
-      element.classList.remove("active");
-
-    });
+    .forEach(x =>
+      x.classList.remove("active")
+    );
 
 
   const target =
     document.getElementById("page-" + page);
 
   if(target){
-
     target.classList.add("active");
-
   }
 
 
   document
     .querySelectorAll(".snav button")
-    .forEach(button => {
+    .forEach(x => {
 
-      button.classList.toggle(
+      x.classList.toggle(
         "active",
-        button.dataset.page === page
+        x.dataset.page === page
       );
 
     });
@@ -3959,117 +3039,472 @@ function openPage(page){
 }
 
 
-/* =========================================================
-   SIDEBAR EVENTS
-========================================================= */
+/* =====================================================
+   SIDEBAR BUTTON EVENTS
+===================================================== */
 
 document
   .querySelectorAll(".snav button")
   .forEach(button => {
 
-    button.addEventListener(
-      "click",
-      () => openPage(button.dataset.page)
-    );
+    button.onclick = () =>
+      openPage(button.dataset.page);
 
   });
 
 
-/* =========================================================
+/* =====================================================
    TOAST
-========================================================= */
+===================================================== */
 
 function toast(message){
 
-  const element =
+  const t =
     document.getElementById("toast");
 
-  element.textContent =
-    message;
+  t.textContent = message;
 
-  element.classList.add("show");
-
+  t.classList.add("show");
 
   clearTimeout(window.toastTimer);
-
 
   window.toastTimer =
     setTimeout(() => {
 
-      element.classList.remove("show");
+      t.classList.remove("show");
 
     },2400);
 
 }
 
 
-/* =========================================================
-   CHARACTER COUNT
-========================================================= */
+/* =====================================================
+   AI STUDENT CHOICE
+===================================================== */
 
-function updateCount(){
+function startAI(mode){
 
-  count.textContent =
-    response.value.length +
-    " / 500";
+  document
+    .getElementById("aiChoiceView")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("aiTypeView")
+    .classList.toggle(
+      "hidden",
+      mode !== "type"
+    );
+
+
+  document
+    .getElementById("aiVoiceView")
+    .classList.toggle(
+      "hidden",
+      mode !== "voice"
+    );
+
+
+  if(mode === "type"){
+
+    resetAI();
+
+    setTimeout(() => {
+
+      document
+        .getElementById("response")
+        ?.focus();
+
+    },100);
+
+  }
+
+
+  icons();
 
 }
 
 
-response.addEventListener(
-  "input",
-  updateCount
-);
+/* =====================================================
+   BACK TO CHOICE
+===================================================== */
+
+function backToAIChoice(){
+
+  stopRecordingIfNeeded();
 
 
-/* =========================================================
-   CTRL/CMD + ENTER
-========================================================= */
+  document
+    .getElementById("aiChoiceView")
+    .classList.remove("hidden");
 
-response.addEventListener(
-  "keydown",
-  event => {
 
-    if(
-      (event.ctrlKey || event.metaKey) &&
-      event.key === "Enter"
-    ){
+  document
+    .getElementById("aiTypeView")
+    .classList.add("hidden");
 
-      event.preventDefault();
 
-      submitResponse();
+  document
+    .getElementById("aiVoiceView")
+    .classList.add("hidden");
 
-    }
+
+  icons();
+
+}
+
+
+/* =====================================================
+   RESET AI STUDENT
+===================================================== */
+
+function resetAI(){
+
+  step = 0;
+  busy = false;
+
+
+  const chat =
+    document.getElementById("chat");
+
+
+  if(chat){
+
+    chat.innerHTML = `
+
+      <div class="msg">
+
+        <div class="cav ai">
+          <i data-lucide="bot"></i>
+        </div>
+
+        <div class="chatbubble ai">
+
+          Hey! I'm trying to understand Binary Search.
+
+          <br><br>
+
+          From what I understand, it works by repeatedly
+          dividing the array in half. So I think it should
+          work on any array, even if the elements aren't sorted.
+
+          <br><br>
+
+          <b>Am I missing something?</b>
+
+        </div>
+
+      </div>
+
+    `;
 
   }
-);
 
 
-/* =========================================================
-   HTML ESCAPE
-========================================================= */
+  const r =
+    document.getElementById("response");
 
-function esc(value){
+  const s =
+    document.getElementById("send");
 
-  return value.replace(
-    /[&<>"']/g,
 
-    character => ({
-      "&":"&amp;",
-      "<":"&lt;",
-      ">":"&gt;",
-      '"':"&quot;",
-      "'":"&#039;"
-    })[character]
+  if(r){
+    r.value = "";
+  }
 
+
+  if(s){
+    s.disabled = false;
+  }
+
+
+  updateCount();
+
+  icons();
+
+}
+
+
+/* =====================================================
+   TYPE INPUT
+===================================================== */
+
+const response =
+  document.getElementById("response");
+
+const send =
+  document.getElementById("send");
+
+const count =
+  document.getElementById("count");
+
+
+function updateCount(){
+
+  if(response && count){
+
+    count.textContent =
+      response.value.length +
+      " / 500";
+
+  }
+
+}
+
+
+if(response){
+
+  response.addEventListener(
+    "input",
+    updateCount
+  );
+
+
+  response.addEventListener(
+    "keydown",
+    event => {
+
+      if(
+        (event.ctrlKey || event.metaKey) &&
+        event.key === "Enter"
+      ){
+
+        event.preventDefault();
+
+        submitResponse();
+
+      }
+
+    }
   );
 
 }
 
 
-/* =========================================================
-   AI STUDENT RESPONSE
-========================================================= */
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function esc(value){
+
+  return value.replace(
+    /[&<>"']/g,
+    character => ({
+
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+
+    }[character])
+  );
+
+}
+
+
+/* =====================================================
+   VOICE RECORDING
+===================================================== */
+
+async function toggleRecording(){
+
+  if(recording){
+
+    stopRecordingIfNeeded();
+
+    return;
+
+  }
+
+
+  if(
+    !navigator.mediaDevices ||
+    !navigator.mediaDevices.getUserMedia
+  ){
+
+    toast(
+      "Microphone recording is not supported in this browser."
+    );
+
+    return;
+
+  }
+
+
+  try{
+
+    const stream =
+      await navigator
+        .mediaDevices
+        .getUserMedia({
+          audio:true
+        });
+
+
+    audioChunks = [];
+
+
+    mediaRecorder =
+      new MediaRecorder(stream);
+
+
+    mediaRecorder.ondataavailable =
+      event => {
+
+        if(event.data.size){
+
+          audioChunks.push(
+            event.data
+          );
+
+        }
+
+      };
+
+
+    mediaRecorder.onstop = () => {
+
+      stream
+        .getTracks()
+        .forEach(track =>
+          track.stop()
+        );
+
+
+      const blob =
+        new Blob(
+          audioChunks,
+          {
+            type:
+              mediaRecorder.mimeType ||
+              "audio/webm"
+          }
+        );
+
+
+      const url =
+        URL.createObjectURL(blob);
+
+
+      const audio =
+        document.getElementById(
+          "audioPreview"
+        );
+
+
+      audio.src = url;
+
+      audio.classList.remove(
+        "hidden"
+      );
+
+
+      document.getElementById(
+        "transcript"
+      ).textContent =
+        "Audio recorded successfully. " +
+        "Whisper transcription will be connected " +
+        "in the Python backend next.";
+
+
+      document.getElementById(
+        "voiceStatus"
+      ).textContent =
+        "Recording complete — ready for transcription";
+
+
+      icons();
+
+    };
+
+
+    mediaRecorder.start();
+
+    recording = true;
+
+
+    const button =
+      document.getElementById(
+        "recordBtn"
+      );
+
+
+    button.classList.add(
+      "recording"
+    );
+
+
+    button.innerHTML =
+      '<span class="recorddot"></span>' +
+      " Stop speaking";
+
+
+    document.getElementById(
+      "voiceStatus"
+    ).textContent =
+      "Listening… speak your explanation";
+
+
+  }
+
+  catch(error){
+
+    toast(
+      "Microphone permission was not granted."
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   STOP RECORDING
+===================================================== */
+
+function stopRecordingIfNeeded(){
+
+  if(
+    mediaRecorder &&
+    recording
+  ){
+
+    mediaRecorder.stop();
+
+    recording = false;
+
+
+    const button =
+      document.getElementById(
+        "recordBtn"
+      );
+
+
+    if(button){
+
+      button.classList.remove(
+        "recording"
+      );
+
+
+      button.innerHTML =
+        '<i data-lucide="mic"></i>' +
+        " Start speaking";
+
+    }
+
+
+    icons();
+
+  }
+
+}
+
+
+/* =====================================================
+   TYPE AI RESPONSE
+===================================================== */
 
 function submitResponse(){
 
@@ -4109,19 +3544,22 @@ function submitResponse(){
   const userMessage =
     document.createElement("div");
 
+
   userMessage.className =
     "msg user";
 
 
-  userMessage.innerHTML =
+  userMessage.innerHTML = `
 
-    '<div class="chatbubble user">' +
-      esc(text) +
-    '</div>' +
+    <div class="chatbubble user">
+      ${esc(text)}
+    </div>
 
-    '<div class="cav user">' +
-      '<i data-lucide="user"></i>' +
-    '</div>';
+    <div class="cav user">
+      <i data-lucide="user"></i>
+    </div>
+
+  `;
 
 
   chat.appendChild(
@@ -4134,27 +3572,33 @@ function submitResponse(){
   updateCount();
 
 
-  /* LOADING MESSAGE */
+  /* LOADING */
 
   const loading =
     document.createElement("div");
 
+
   loading.className =
     "msg";
+
 
   loading.id =
     "loading";
 
 
-  loading.innerHTML =
+  loading.innerHTML = `
 
-    '<div class="cav ai">' +
-      '<i data-lucide="bot"></i>' +
-    '</div>' +
+    <div class="cav ai">
+      <i data-lucide="bot"></i>
+    </div>
 
-    '<div class="chatbubble ai">' +
-      '<span class="muted">Thinking…</span>' +
-    '</div>';
+    <div class="chatbubble ai">
+      <span class="muted">
+        Thinking…
+      </span>
+    </div>
+
+  `;
 
 
   chat.appendChild(
@@ -4165,7 +3609,7 @@ function submitResponse(){
   icons();
 
 
-  /* SIMULATED AI DELAY */
+  /* SIMULATED CURRENT AI FLOW */
 
   setTimeout(() => {
 
@@ -4180,55 +3624,52 @@ function submitResponse(){
     if(step === 1){
 
       message =
-        'Okay, but <b>why does sorted order matter?</b> ' +
-        'If the middle value is smaller than the target, ' +
-        'what tells us that everything before it can be ignored?';
+        "Okay, but <b>why does sorted order matter?</b> " +
+        "If the middle value is smaller than the target, " +
+        "what tells us that everything before it can be ignored?";
 
     }
-
 
     else if(step === 2){
 
       message =
-        'I think I get the comparison part. ' +
-        'But explain this: <b>why are you allowed to throw away ' +
-        'the entire left half?</b> What guarantee does sorted order give you?';
+        "I think I get the comparison part. But explain this: " +
+        "<b>why are you allowed to throw away the entire left half?</b> " +
+        "What guarantee does sorted order give you?";
 
     }
-
 
     else{
 
       message =
-        'That makes sense. The important part is not simply ' +
-        '“divide in half” — it is that sorted order lets us ' +
-        'know which half cannot contain the target.' +
-
-        '<br><br>' +
-
-        '<b>I think I understand the key guarantee now.</b>';
+        "That makes sense. The important part is not simply " +
+        "“divide in half” — it is that sorted order lets us " +
+        "know which half cannot contain the target." +
+        "<br><br>" +
+        "<b>I think I understand the key guarantee now.</b>";
 
     }
 
 
-    /* AI MESSAGE */
-
     const aiMessage =
       document.createElement("div");
+
 
     aiMessage.className =
       "msg";
 
 
-    aiMessage.innerHTML =
+    aiMessage.innerHTML = `
 
-      '<div class="cav ai">' +
-        '<i data-lucide="bot"></i>' +
-      '</div>' +
+      <div class="cav ai">
+        <i data-lucide="bot"></i>
+      </div>
 
-      '<div class="chatbubble ai">' +
-        message +
-      '</div>';
+      <div class="chatbubble ai">
+        ${message}
+      </div>
+
+    `;
 
 
     chat.appendChild(
@@ -4244,27 +3685,25 @@ function submitResponse(){
     send.disabled = false;
 
 
-    /* OPEN REPORT AFTER THIRD RESPONSE */
+    /* OPEN REPORT AFTER 3 RESPONSES */
 
     if(step >= 3){
 
-      setTimeout(() => {
-
-        openPage("report");
-
-      },900);
+      setTimeout(
+        () => openPage("report"),
+        900
+      );
 
     }
-
 
   },850);
 
 }
 
 
-/* =========================================================
-   INITIAL ICON LOAD
-========================================================= */
+/* =====================================================
+   INITIALIZE ICONS
+===================================================== */
 
 icons();
 
