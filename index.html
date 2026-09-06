@@ -4151,8 +4151,39 @@ voiceRecognition.onresult = event => {
 
   }
 
+  /*
+   * Remove accidental repeated phrases produced
+   * by mobile Chrome.
+   */
+  const words = sessionFinal
+    .trim()
+    .split(/\s+/);
+
+  const cleanedWords = [];
+
+  for(const word of words){
+
+    const previous =
+      cleanedWords[cleanedWords.length - 1];
+
+    if(
+      !previous ||
+      word.toLowerCase() !==
+      previous.toLowerCase()
+    ){
+
+      cleanedWords.push(word);
+
+    }
+
+  }
+
+  sessionFinal =
+    cleanedWords.join(" ");
+
   finalTranscript =
-    (voiceSessionBase + " " + sessionFinal).trim();
+    (voiceSessionBase + " " + sessionFinal)
+      .trim();
 
   interimTranscript =
     sessionInterim.trim();
@@ -4160,8 +4191,8 @@ voiceRecognition.onresult = event => {
   updateTranscript();
 
   if(
-    finalTranscript.trim() ||
-    interimTranscript.trim()
+    finalTranscript ||
+    interimTranscript
   ){
 
     showVoiceActions(true);
@@ -4254,6 +4285,8 @@ voiceRecognition.onresult = event => {
      * If the user has not pressed Stop, restart it.
      */
     if(isRecording){
+      voiceSessionBase =
+        finalTranscript.trim();
 
       clearTimeout(voiceRestartTimer);
 
@@ -4361,6 +4394,7 @@ function startRecording(){
    */
   finalTranscript = "";
   interimTranscript = "";
+  voiceSessionBase = "";
 
 
   const transcript =
