@@ -4028,11 +4028,12 @@ let voiceRecognition = null;
 let voiceSupported = false;
 let isRecording = false;
 
-let finalTranscript = "";
+let finalTranscript = "";  
 let interimTranscript = "";
 
 let voiceRestartTimer = null;
 let voiceSessionBase = "";
+let voiceSessionText = "";
 
 /* =========================================================
    QUESTIONS
@@ -4131,40 +4132,62 @@ function setupVoiceRecognition(){
 
 voiceRecognition.onresult = event => {
 
-  let sessionFinal = "";
-  let sessionInterim = "";
+  let newFinal = "";
+  let newInterim = "";
 
-  for(let i = 0; i < event.results.length; i++){
+  /*
+   * IMPORTANT:
+   * Only process NEW results from this event.
+   * Mobile Chrome can resend older results.
+   */
+  for(
+    let i = event.resultIndex;
+    i < event.results.length;
+    i++
+  ){
 
     const result = event.results[i];
-    const text = result[0]?.transcript || "";
+
+    const text =
+      result[0]?.transcript || "";
 
     if(result.isFinal){
 
-      sessionFinal += text + " ";
+      newFinal += text + " ";
 
     }else{
 
-      sessionInterim += text;
+      newInterim += text;
 
     }
 
   }
 
-  /*
-   * Remove accidental repeated phrases produced
-   * by mobile Chrome.
-   */
-  const words = sessionFinal
-    .trim()
-    .split(/\s+/);
 
-  const cleanedWords = [];
+  /*
+   * Add only the newly-finalized speech.
+   */
+  if(newFinal){
+
+    voiceSessionText =
+      (voiceSessionText + " " + newFinal)
+        .trim();
+
+  }
+
+
+  /*
+   * Remove accidental consecutive duplicate words.
+   */
+  const words =
+    voiceSessionText.split(/\s+/);
+
+  const cleaned = [];
 
   for(const word of words){
 
     const previous =
-      cleanedWords[cleanedWords.length - 1];
+      cleaned[cleaned.length - 1];
 
     if(
       !previous ||
@@ -4172,23 +4195,26 @@ voiceRecognition.onresult = event => {
       previous.toLowerCase()
     ){
 
-      cleanedWords.push(word);
+      cleaned.push(word);
 
     }
 
   }
 
-  sessionFinal =
-    cleanedWords.join(" ");
+  voiceSessionText =
+    cleaned.join(" ");
+
 
   finalTranscript =
-    (voiceSessionBase + " " + sessionFinal)
+    (voiceSessionBase + " " + voiceSessionText)
       .trim();
 
   interimTranscript =
-    sessionInterim.trim();
+    newInterim.trim();
+
 
   updateTranscript();
+
 
   if(
     finalTranscript ||
@@ -4285,9 +4311,12 @@ voiceRecognition.onresult = event => {
      * If the user has not pressed Stop, restart it.
      */
     if(isRecording){
+      
       voiceSessionBase =
         finalTranscript.trim();
 
+      voiceSessionText = "";
+      
       clearTimeout(voiceRestartTimer);
 
       voiceRestartTimer =
@@ -4395,6 +4424,7 @@ function startRecording(){
   finalTranscript = "";
   interimTranscript = "";
   voiceSessionBase = "";
+  voiceSessionText = "";
 
 
   const transcript =
