@@ -17,3 +17,11 @@ def api_home():
         "success": True,
         "message": "MindLab API"
     })
+
+
+@app.route("/")
+def home():
+    return """
+    <h1>MindLab Backend</h1>
+    <p>Backend is running.</p>
+    """
