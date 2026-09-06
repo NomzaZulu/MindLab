@@ -4135,11 +4135,6 @@ voiceRecognition.onresult = event => {
   let newFinal = "";
   let newInterim = "";
 
-  /*
-   * IMPORTANT:
-   * Only process NEW results from this event.
-   * Mobile Chrome can resend older results.
-   */
   for(
     let i = event.resultIndex;
     i < event.results.length;
@@ -4153,7 +4148,7 @@ voiceRecognition.onresult = event => {
 
     if(result.isFinal){
 
-      newFinal += text + " ";
+      newFinal += text;
 
     }else{
 
@@ -4164,45 +4159,43 @@ voiceRecognition.onresult = event => {
   }
 
 
-  /*
-   * Add only the newly-finalized speech.
-   */
   if(newFinal){
 
-    voiceSessionText =
-      (voiceSessionText + " " + newFinal)
-        .trim();
+    newFinal = newFinal.trim();
 
-  }
-
-
-  /*
-   * Remove accidental consecutive duplicate words.
-   */
-  const words =
-    voiceSessionText.split(/\s+/);
-
-  const cleaned = [];
-
-  for(const word of words){
-
-    const previous =
-      cleaned[cleaned.length - 1];
-
+    /*
+     * Ignore the same final result if mobile
+     * Chrome sends it again.
+     */
     if(
-      !previous ||
-      word.toLowerCase() !==
-      previous.toLowerCase()
+      newFinal.toLowerCase() !==
+      voiceSessionText.trim().toLowerCase()
     ){
 
-      cleaned.push(word);
+      /*
+       * If Chrome sends a longer version of
+       * the same transcript, replace it instead
+       * of appending the old text again.
+       */
+      if(
+        newFinal.toLowerCase().startsWith(
+          voiceSessionText.trim().toLowerCase()
+        )
+      ){
+
+        voiceSessionText = newFinal;
+
+      }else{
+
+        voiceSessionText =
+          (voiceSessionText + " " + newFinal)
+            .trim();
+
+      }
 
     }
 
   }
-
-  voiceSessionText =
-    cleaned.join(" ");
 
 
   finalTranscript =
