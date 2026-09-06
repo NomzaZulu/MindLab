@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>MindLab — AI-Powered Experiential Learning</title>
+<title>OmniEdu — AI-Powered Experiential Learning</title>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -21,7 +21,6 @@
   --m:#687086;
   --b:#E6E8F0;
   --sh:0 12px 35px rgba(37,40,58,.08);
-  --r:20px;
 }
 
 *{box-sizing:border-box}
@@ -148,8 +147,40 @@ a{
   cursor:pointer;
 }
 
+.landing-mobile-menu{
+  display:none;
+  position:absolute;
+  left:4%;
+  right:4%;
+  top:68px;
+  background:#fff;
+  border:1px solid var(--b);
+  border-radius:16px;
+  padding:10px;
+  box-shadow:var(--sh);
+  z-index:60;
+}
+
+.landing-mobile-menu.show{
+  display:block;
+}
+
+.landing-mobile-menu a,
+.landing-mobile-menu button{
+  display:block;
+  width:100%;
+  padding:12px;
+  border:0;
+  background:none;
+  text-align:left;
+  border-radius:10px;
+  font-weight:650;
+  color:var(--m);
+  cursor:pointer;
+}
+
 /* =========================
-   LANDING HERO
+   HERO
 ========================= */
 
 .hero{
@@ -219,8 +250,12 @@ a{
 }
 
 /* =========================
-   LANDING MOCKUP
+   HERO MOCKUP
 ========================= */
+
+.visual{
+  position:relative;
+}
 
 .mock{
   background:#fff;
@@ -285,10 +320,6 @@ a{
   display:block;
   color:#2d7658;
   margin-bottom:5px;
-}
-
-.visual{
-  position:relative;
 }
 
 .float{
@@ -404,7 +435,7 @@ a{
 }
 
 /* =========================
-   LEARNING LOOP
+   LOOP
 ========================= */
 
 .loop{
@@ -580,7 +611,7 @@ a{
 }
 
 /* =========================
-   CTA + FOOTER
+   CTA
 ========================= */
 
 .cta{
@@ -604,6 +635,10 @@ a{
   line-height:1.6;
 }
 
+/* =========================
+   FOOTER
+========================= */
+
 footer{
   padding:28px 6%;
   border-top:1px solid var(--b);
@@ -616,191 +651,6 @@ footer{
 .footerlinks{
   display:flex;
   gap:20px;
-}
-
-/* =========================
-   MOBILE LANDING MENU
-========================= */
-
-.landing-mobile-menu{
-  display:none;
-  position:absolute;
-  left:4%;
-  right:4%;
-  top:68px;
-  background:#fff;
-  border:1px solid var(--b);
-  border-radius:16px;
-  padding:10px;
-  box-shadow:var(--sh);
-  z-index:60;
-}
-
-.landing-mobile-menu.show{
-  display:block;
-}
-
-.landing-mobile-menu a,
-.landing-mobile-menu button{
-  display:block;
-  width:100%;
-  padding:12px;
-  border:0;
-  background:none;
-  text-align:left;
-  border-radius:10px;
-  font-weight:650;
-  color:var(--m);
-  cursor:pointer;
-}
-
-.landing-mobile-menu a:hover,
-.landing-mobile-menu button:hover{
-  background:var(--bg);
-  color:var(--t);
-}
-
-/* =========================
-   AI STUDENT CHOICE
-========================= */
-
-.modechoice{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  margin-top:20px;
-}
-
-.choice{
-  border:1px solid var(--b);
-  background:#fff;
-  border-radius:18px;
-  padding:20px;
-  text-align:left;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.choice:hover{
-  transform:translateY(-2px);
-  box-shadow:var(--sh);
-  border-color:#d5d9ee;
-}
-
-.choice .choiceicon{
-  width:42px;
-  height:42px;
-  border-radius:13px;
-  display:grid;
-  place-items:center;
-  background:var(--lav);
-  color:var(--p);
-  margin-bottom:12px;
-}
-
-.choice.voice .choiceicon{
-  background:var(--mint);
-  color:#368d68;
-}
-
-.choice strong{
-  display:block;
-  font-size:15px;
-  margin-bottom:5px;
-}
-
-.choice small{
-  color:var(--m);
-  font-size:11px;
-  line-height:1.5;
-}
-
-/* =========================
-   VOICE UI
-========================= */
-
-.voicebox{
-  margin-top:18px;
-  border:1px dashed #cfd4e4;
-  border-radius:18px;
-  padding:18px;
-  background:var(--bg);
-}
-
-.voicecontrols{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.record{
-  min-width:150px;
-}
-
-.record.recording{
-  background:#d95757;
-  box-shadow:none;
-}
-
-.recorddot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:currentColor;
-  display:inline-block;
-  margin-right:6px;
-}
-
-.voice-status{
-  font-size:12px;
-  color:var(--m);
-}
-
-.transcript{
-  margin-top:14px;
-  background:#fff;
-  border:1px solid var(--b);
-  border-radius:14px;
-  padding:14px;
-  font-size:13px;
-  line-height:1.55;
-  min-height:48px;
-}
-
-.audio-preview{
-  width:100%;
-  margin-top:12px;
-}
-
-.modeback{
-  border:0;
-  background:none;
-  color:var(--p);
-  font-weight:700;
-  cursor:pointer;
-  padding:0;
-  margin-bottom:15px;
-  font-size:12px;
-}
-
-.soon{
-  display:inline-flex;
-  align-items:center;
-  padding:5px 8px;
-  border-radius:999px;
-  background:#f3f0e8;
-  color:#8a6d30;
-  font-size:9px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-}
-
-.micnote{
-  font-size:11px;
-  color:var(--m);
-  margin-top:10px;
 }
 
 /* =========================
@@ -995,12 +845,12 @@ footer{
   box-shadow:var(--sh);
 }
 
-.modecard .modeicon{
+.modeicon{
   width:42px;
   height:42px;
+  border-radius:13px;
   display:grid;
   place-items:center;
-  border-radius:13px;
   background:var(--lav);
   color:var(--p);
   margin-bottom:14px;
@@ -1008,110 +858,266 @@ footer{
 
 .modecard:nth-child(2) .modeicon{
   background:var(--blue);
+  color:#4770b8;
 }
 
 .modecard:nth-child(3) .modeicon{
   background:var(--yellow);
+  color:#a37b32;
 }
 
-.modecard h3{
-  margin:0 0 7px;
+.modecard strong{
+  display:block;
   font-size:15px;
+  margin-bottom:6px;
 }
 
 .modecard p{
-  margin:0;
-  color:var(--m);
   font-size:12px;
-  line-height:1.55;
+  line-height:1.5;
+  color:var(--m);
+  margin:0;
+}
+
+.modecard .soon{
+  margin-top:12px;
+}
+
+.snapshot{
+  display:grid;
+  gap:13px;
+}
+
+.snapshot-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:12px;
+}
+
+.snapshot-row span:first-child{
+  color:var(--m);
+}
+
+.progress{
+  height:7px;
+  border-radius:999px;
+  background:#eceef4;
+  overflow:hidden;
+  margin-top:7px;
+}
+
+.progress div{
+  height:100%;
+  background:var(--p);
+  border-radius:999px;
+}
+
+.kpi{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.kbox{
+  padding:15px;
+  border-radius:15px;
+  background:var(--bg);
+}
+
+.kbox strong{
+  font-size:20px;
+  display:block;
+}
+
+.kbox span{
+  font-size:10px;
+  color:var(--m);
 }
 
 /* =========================
-   CHAT
+   MODE CHOICE
 ========================= */
 
-.chat{
+.modechoice{
   display:grid;
+  grid-template-columns:repeat(2,1fr);
   gap:14px;
+  margin-top:20px;
+}
+
+.choice{
+  border:1px solid var(--b);
+  background:#fff;
+  border-radius:18px;
+  padding:20px;
+  text-align:left;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.choice:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--sh);
+  border-color:#d5d9ee;
+}
+
+.choiceicon{
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:var(--lav);
+  color:var(--p);
+  margin-bottom:12px;
+}
+
+.choice.voice .choiceicon{
+  background:var(--mint);
+  color:#368d68;
+}
+
+.choice strong{
+  display:block;
+  font-size:15px;
+  margin-bottom:5px;
+}
+
+.choice small{
+  color:var(--m);
+  font-size:11px;
+  line-height:1.5;
+}
+
+/* =========================
+   STUDENT CHAT
+========================= */
+
+.student{
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:18px;
+}
+
+.chatcard{
+  background:#fff;
+  border:1px solid var(--b);
+  border-radius:20px;
+  padding:22px;
+  min-height:560px;
+  display:flex;
+  flex-direction:column;
+}
+
+.chathead{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:17px;
+  border-bottom:1px solid var(--b);
   margin-bottom:18px;
+}
+
+.chathead-left{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+
+.chatavatar{
+  width:40px;
+  height:40px;
+  border-radius:13px;
+  background:var(--lav);
+  color:var(--p);
+  display:grid;
+  place-items:center;
+}
+
+.chathead strong{
+  font-size:14px;
+  display:block;
+}
+
+.chathead span{
+  font-size:10px;
+  color:var(--m);
+}
+
+.chat{
+  flex:1;
+  overflow:auto;
+  padding-right:4px;
 }
 
 .msg{
   display:flex;
-  align-items:flex-start;
   gap:10px;
+  margin-bottom:16px;
 }
 
-.msg.user{
-  justify-content:flex-end;
+.msg.you{
+  margin-left:40px;
 }
 
-.cav{
-  width:34px;
-  height:34px;
-  border-radius:11px;
-  display:grid;
-  place-items:center;
-  flex:none;
-}
-
-.cav.ai{
-  background:var(--lav);
-  color:var(--p);
-}
-
-.cav.user{
-  background:var(--blue);
-  color:#4770b8;
-}
-
-.cav i{
-  width:17px;
-}
-
-.chatbubble{
+.msgbubble{
+  max-width:82%;
   padding:14px 16px;
   border-radius:16px;
   font-size:13px;
   line-height:1.6;
-  max-width:78%;
 }
 
-.chatbubble.ai{
+.msg.ai .msgbubble{
   background:var(--lav);
 }
 
-.chatbubble.user{
+.msg.you .msgbubble{
   background:var(--blue);
+  margin-left:auto;
 }
 
-.composer{
+.msgtag{
+  font-size:9px;
+  font-weight:800;
+  color:var(--m);
+  margin-bottom:5px;
+}
+
+.inputarea{
+  border-top:1px solid var(--b);
+  padding-top:15px;
+  margin-top:14px;
+}
+
+.inputrow{
   display:flex;
-  gap:10px;
+  gap:9px;
   align-items:flex-end;
 }
 
-.composer textarea{
+.inputrow textarea{
   flex:1;
-  min-height:58px;
-  resize:none;
+  min-height:80px;
+  resize:vertical;
   border:1px solid var(--b);
   border-radius:14px;
-  padding:13px;
-  outline:none;
+  padding:12px;
   font:inherit;
   font-size:13px;
-  background:#fff;
+  outline:none;
 }
 
-.composer textarea:focus{
-  border-color:#b9bff0;
-  box-shadow:0 0 0 3px #5966d815;
+.inputrow textarea:focus{
+  border-color:#b7bce3;
+  box-shadow:0 0 0 3px #5966d812;
 }
 
 .send{
-  height:46px;
-  width:48px;
+  width:44px;
+  height:44px;
   padding:0;
   display:grid;
   place-items:center;
@@ -1121,108 +1127,332 @@ footer{
   width:18px;
 }
 
-.counter{
+.chatnote{
   font-size:10px;
   color:var(--m);
-  text-align:right;
+  margin-top:8px;
+}
+
+/* =========================
+   SIDE INFO
+========================= */
+
+.sidecard{
+  background:#fff;
+  border:1px solid var(--b);
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:18px;
+}
+
+.sidecard h3{
+  font-size:14px;
+  margin:0 0 15px;
+}
+
+.signal{
+  margin-bottom:15px;
+}
+
+.signal:last-child{
+  margin-bottom:0;
+}
+
+.signaltop{
+  display:flex;
+  justify-content:space-between;
+  font-size:11px;
+  margin-bottom:6px;
+}
+
+.signaltop span:last-child{
+  font-weight:800;
+  color:var(--p);
+}
+
+.signalbar{
+  height:8px;
+  background:#eceef4;
+  border-radius:999px;
+  overflow:hidden;
   margin-top:5px;
+}
+
+.signalbar div{
+  height:100%;
+  background:var(--p);
+  border-radius:999px;
+}
+
+/* =========================
+   VOICE MODE
+========================= */
+
+.voice-layout{
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:18px;
+}
+
+.voicechat{
+  background:#fff;
+  border:1px solid var(--b);
+  border-radius:20px;
+  padding:22px;
+}
+
+.voice-intro{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding-bottom:17px;
+  border-bottom:1px solid var(--b);
+  margin-bottom:18px;
+}
+
+.voice-intro .chatavatar{
+  flex:none;
+}
+
+.voice-intro strong{
+  display:block;
+  font-size:14px;
+}
+
+.voice-intro span{
+  display:block;
+  font-size:10px;
+  color:var(--m);
+  margin-top:3px;
+}
+
+.voice-question{
+  background:var(--lav);
+  border-radius:17px;
+  padding:17px;
+  font-size:13px;
+  line-height:1.6;
+  margin-bottom:18px;
+}
+
+.voice-question .msgtag{
+  margin-bottom:6px;
+}
+
+.voicebox{
+  border:1px dashed #cfd4e4;
+  border-radius:18px;
+  padding:18px;
+  background:var(--bg);
+}
+
+.voicecontrols{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.record{
+  min-width:160px;
+}
+
+.record.recording{
+  background:#d95757;
+  box-shadow:none;
+}
+
+.recorddot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:currentColor;
+  display:inline-block;
+  margin-right:6px;
+}
+
+.record.recording .recorddot{
+  animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{opacity:1}
+  50%{opacity:.3}
+}
+
+.voice-status{
+  font-size:12px;
+  color:var(--m);
+}
+
+.transcript{
+  margin-top:14px;
+  background:#fff;
+  border:1px solid var(--b);
+  border-radius:14px;
+  padding:14px;
+  font-size:13px;
+  line-height:1.55;
+  min-height:80px;
+  color:var(--t);
+}
+
+.transcript.empty{
+  color:#9298aa;
+}
+
+.voice-actions{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:13px;
+}
+
+.micnote{
+  font-size:11px;
+  color:var(--m);
+  margin-top:10px;
+  line-height:1.5;
+}
+
+.modeback{
+  border:0;
+  background:none;
+  color:var(--p);
+  font-weight:700;
+  cursor:pointer;
+  padding:0;
+  margin-bottom:15px;
+  font-size:12px;
+}
+
+.soon{
+  display:inline-flex;
+  align-items:center;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#f3f0e8;
+  color:#8a6d30;
+  font-size:9px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.voice-hint{
+  background:var(--mint);
+  border-radius:16px;
+  padding:16px;
+  font-size:12px;
+  line-height:1.6;
+  color:#4f6259;
+}
+
+.voice-hint strong{
+  display:block;
+  color:#2d7658;
+  margin-bottom:5px;
 }
 
 /* =========================
    REPORT
 ========================= */
 
-.reporttop{
+.reportgrid{
   display:grid;
-  grid-template-columns:190px 1fr;
+  grid-template-columns:1fr .9fr;
   gap:18px;
-  margin-bottom:18px;
 }
 
 .scorecard{
   background:var(--lav);
+  border:1px solid #dedafe;
   border-radius:20px;
   padding:25px;
-  text-align:center;
 }
 
 .score{
-  font-size:54px;
+  font-size:58px;
   font-weight:850;
+  letter-spacing:-3px;
   color:var(--p);
 }
 
+.scorelabel{
+  font-size:11px;
+  color:var(--m);
+}
+
 .summary{
+  margin-top:22px;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.reportcard{
   background:#fff;
   border:1px solid var(--b);
   border-radius:20px;
-  padding:25px;
+  padding:22px;
 }
 
-.summary h2{
-  margin:0 0 8px;
-  font-size:21px;
+.reportcard h3{
+  font-size:15px;
+  margin:0 0 17px;
 }
 
-.summary p{
-  margin:0;
-  color:var(--m);
-  line-height:1.6;
-  font-size:13px;
-}
-
-.reportgrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.li{
+.strength{
   display:flex;
-  gap:9px;
+  gap:10px;
   align-items:flex-start;
-  font-size:13px;
-  line-height:1.55;
-  margin-bottom:12px;
-}
-
-.good{
-  color:#368d68;
-  width:17px;
-  flex:none;
-}
-
-.warn{
-  color:#c68b2d;
-  width:17px;
-  flex:none;
-}
-
-.concept{
-  margin-bottom:16px;
-}
-
-.crow{
-  display:flex;
-  justify-content:space-between;
+  padding:11px 0;
+  border-bottom:1px solid #f0f1f5;
   font-size:12px;
-  margin-bottom:7px;
 }
 
-.bar,
-.line{
-  height:7px;
-  background:#eceef5;
-  border-radius:99px;
-  overflow:hidden;
+.strength:last-child{
+  border:0;
 }
 
-.bar span,
-.line span{
+.strength i{
+  width:17px;
+  color:#368d68;
+  flex:none;
+}
+
+.gapbox{
+  background:var(--yellow);
+  border:1px solid #f0dfba;
+  border-radius:16px;
+  padding:16px;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.gapbox strong{
   display:block;
-  height:100%;
-  background:var(--p);
-  border-radius:99px;
+  margin-bottom:6px;
+  color:#8a6d30;
+}
+
+.signal-list{
+  display:grid;
+  gap:13px;
+}
+
+.next{
+  background:var(--mint);
+  border:1px solid #d3eee1;
+  border-radius:16px;
+  padding:17px;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.next strong{
+  display:block;
+  color:#2d7658;
+  margin-bottom:5px;
 }
 
 /* =========================
@@ -1231,30 +1461,130 @@ footer{
 
 .mapgrid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(2,1fr);
   gap:18px;
 }
 
-.node{
-  padding:16px;
-  border:1px solid var(--b);
-  border-radius:15px;
+.mapcard{
   background:#fff;
-  margin-bottom:12px;
+  border:1px solid var(--b);
+  border-radius:20px;
+  padding:22px;
 }
 
-.nhead{
+.mapcard h3{
+  font-size:15px;
+  margin:0 0 18px;
+}
+
+.concept{
   display:flex;
-  justify-content:space-between;
-  gap:15px;
-  font-size:13px;
-  font-weight:750;
-  margin-bottom:7px;
+  align-items:center;
+  gap:11px;
+  margin-bottom:15px;
 }
 
-.node small{
-  color:var(--m);
+.concept:last-child{
+  margin-bottom:0;
+}
+
+.conceptname{
+  width:145px;
   font-size:11px;
+}
+
+.conceptbar{
+  flex:1;
+  height:8px;
+  background:#eceef4;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.conceptbar div{
+  height:100%;
+  border-radius:999px;
+  background:var(--p);
+}
+
+.conceptpct{
+  width:32px;
+  text-align:right;
+  font-size:10px;
+  font-weight:800;
+  color:var(--p);
+}
+
+.timeline{
+  display:grid;
+  gap:13px;
+}
+
+.titem{
+  display:flex;
+  gap:12px;
+  font-size:11px;
+}
+
+.tdot{
+  width:9px;
+  height:9px;
+  background:var(--p);
+  border-radius:50%;
+  margin-top:4px;
+  flex:none;
+}
+
+.titem strong{
+  display:block;
+  font-size:12px;
+  margin-bottom:3px;
+}
+
+.titem span{
+  color:var(--m);
+}
+
+/* =========================
+   COMING SOON
+========================= */
+
+.soonpage{
+  min-height:430px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+}
+
+.soonbox{
+  max-width:500px;
+  padding:40px;
+  background:#fff;
+  border:1px solid var(--b);
+  border-radius:24px;
+}
+
+.soonicon{
+  width:58px;
+  height:58px;
+  margin:0 auto 17px;
+  border-radius:18px;
+  background:var(--lav);
+  color:var(--p);
+  display:grid;
+  place-items:center;
+}
+
+.soonbox h2{
+  font-size:25px;
+  margin:0 0 9px;
+}
+
+.soonbox p{
+  color:var(--m);
+  font-size:13px;
+  line-height:1.6;
+  margin:0;
 }
 
 /* =========================
@@ -1263,57 +1593,67 @@ footer{
 
 .toast{
   position:fixed;
-  left:50%;
+  right:25px;
   bottom:25px;
-  transform:translate(-50%,20px);
   background:#25283A;
   color:#fff;
-  padding:12px 16px;
+  padding:13px 17px;
   border-radius:12px;
   font-size:12px;
+  font-weight:650;
+  box-shadow:var(--sh);
+  transform:translateY(100px);
   opacity:0;
-  pointer-events:none;
-  transition:.25s;
+  transition:.3s;
   z-index:100;
 }
 
 .toast.show{
+  transform:translateY(0);
   opacity:1;
-  transform:translate(-50%,0);
 }
 
 /* =========================
-   TABLET
+   APP / LANDING VISIBILITY
 ========================= */
 
-@media(max-width:900px){
+#landing{
+  display:block;
+}
 
-  .links{
-    display:none;
-  }
+#app{
+  display:none;
+}
 
-  .mobile{
-    display:block;
-  }
+body.appmode #landing{
+  display:none;
+}
+
+body.appmode #app{
+  display:block;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
 
   .hero{
     grid-template-columns:1fr;
-    gap:40px;
-  }
-
-  .grid3{
-    grid-template-columns:1fr;
+    gap:35px;
   }
 
   .feature{
     grid-template-columns:1fr;
   }
 
-  .mini{
-    grid-template-columns:repeat(2,1fr);
+  .student,
+  .voice-layout{
+    grid-template-columns:1fr;
   }
 
-  .modegrid{
+  .reportgrid{
     grid-template-columns:1fr;
   }
 
@@ -1321,138 +1661,39 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .reportgrid,
-  .mapgrid{
-    grid-template-columns:1fr;
-  }
 }
 
-/* =========================
-   MOBILE
-========================= */
+@media(max-width:800px){
 
-@media(max-width:600px){
-
-  .lnav{
-    padding:0 18px;
-    height:68px;
-  }
-
-  .lnav .actions{
+  .links,
+  .actions{
     display:none;
   }
 
-  .hero{
-    padding:55px 18px 55px;
+  .mobile{
+    display:block;
   }
 
-  .section{
-    padding:65px 18px;
+  .grid3{
+    grid-template-columns:1fr;
   }
 
-  .cta{
-    margin:0 18px 55px;
-    padding:45px 20px;
-  }
-
-  .hero h1{
-    font-size:clamp(38px,12vw,54px);
-    letter-spacing:-2px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-
-  .herob .btn{
-    width:100%;
-  }
-
-  .float{
-    right:8px;
-    bottom:8px;
+  .modegrid{
+    grid-template-columns:1fr;
   }
 
   .mini{
-    grid-template-columns:1fr 1fr;
-  }
-
-  footer{
-    flex-direction:column;
-    gap:15px;
-  }
-
-  .footerlinks{
-    flex-wrap:wrap;
-  }
-
-  .modechoice{
-    grid-template-columns:1fr;
-  }
-
-  .voicecontrols{
-    align-items:stretch;
-  }
-
-  .record{
-    width:100%;
-  }
-
-  .top{
-    padding:0 14px;
-  }
-
-  .crumb{
-    max-width:55vw;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-
-  .content{
-    padding:20px 14px;
-  }
-
-  .ptitle{
-    align-items:flex-start;
-    gap:10px;
-  }
-
-  .ptitle h1{
-    font-size:24px;
-  }
-
-  .modehero{
-    grid-template-columns:1fr;
-  }
-
-  .chatbubble{
-    max-width:88%;
-  }
-
-  .composer{
-    gap:7px;
-  }
-
-  .send{
-    width:44px;
-    flex:none;
-  }
-
-  .composer textarea{
-    min-width:0;
+    grid-template-columns:repeat(2,1fr);
   }
 
   .sidebar{
-    width:min(285px,88vw);
     transform:translateX(-100%);
     transition:.25s;
-    box-shadow:none;
+    box-shadow:var(--sh);
   }
 
   .sidebar.open{
     transform:translateX(0);
-    box-shadow:15px 0 40px rgba(37,40,58,.12);
   }
 
   .appmain{
@@ -1463,325 +1704,526 @@ footer{
     display:block;
   }
 
-  .reporttop{
-    grid-template-columns:1fr;
-  }
-
-  .scorecard{
+  .content{
     padding:20px;
   }
 
-  .score{
-    font-size:46px;
+  .top{
+    padding:0 18px;
   }
 
-  .landing-mobile-menu{
-    top:62px;
+  .modechoice{
+    grid-template-columns:1fr;
   }
+
+  .mapgrid{
+    grid-template-columns:1fr;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:12px;
+  }
+
+}
+
+@media(max-width:560px){
+
+  .hero{
+    padding:55px 20px;
+  }
+
+  .hero h1{
+    letter-spacing:-1.8px;
+  }
+
+  .section{
+    padding:65px 20px;
+  }
+
+  .cta{
+    margin:0 20px 55px;
+    padding:45px 20px;
+  }
+
+  .cta h2{
+    font-size:32px;
+  }
+
+  .head h2{
+    font-size:31px;
+  }
+
+  .feature h2{
+    font-size:31px;
+  }
+
+  .content{
+    padding:16px;
+  }
+
+  .ptitle{
+    align-items:flex-start;
+  }
+
+  .ptitle h1{
+    font-size:25px;
+  }
+
+  .chatcard,
+  .voicechat{
+    padding:15px;
+  }
+
+  .msg.you{
+    margin-left:15px;
+  }
+
+  .msgbubble{
+    max-width:90%;
+  }
+
+  .conceptname{
+    width:110px;
+  }
+
+  .voicecontrols{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .record{
+    width:100%;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- =====================================================
+<!-- =========================================================
      LANDING PAGE
-===================================================== -->
+========================================================= -->
 
-<section id="landing">
+<div id="landing">
 
-  <nav class="lnav">
+<nav class="lnav">
 
-    <a href="#" class="brand" onclick="showLanding();return false;">
-      <span class="mark">
-        <i data-lucide="brain-circuit"></i>
-      </span>
-      MindLab
-    </a>
+  <div class="brand">
+    <div class="mark">
+      <i data-lucide="brain"></i>
+    </div>
+    <span>OmniEdu</span>
+  </div>
 
-    <div class="links">
-      <a href="#how">How it works</a>
-      <a href="#modes">Learning modes</a>
-      <a href="#why">Why MindLab</a>
+  <div class="links">
+    <a href="#how">How it works</a>
+    <a href="#modes">Learning modes</a>
+    <a href="#why">Why OmniEdu</a>
+  </div>
+
+  <div class="actions">
+    <button class="btn soft" onclick="openApp()">Demo</button>
+    <button class="btn primary" onclick="openApp()">Get Started</button>
+  </div>
+
+  <button class="mobile" onclick="toggleLandingMenu()">
+    <i data-lucide="menu"></i>
+  </button>
+
+  <div class="landing-mobile-menu" id="landingMobileMenu">
+    <a href="#how" onclick="closeLandingMenu()">How it works</a>
+    <a href="#modes" onclick="closeLandingMenu()">Learning modes</a>
+    <a href="#why" onclick="closeLandingMenu()">Why OmniEdu</a>
+    <button onclick="openApp()">Demo / Get Started</button>
+  </div>
+
+</nav>
+
+
+<section class="hero">
+
+  <div>
+
+    <div class="eyebrow">
+      <i data-lucide="sparkles"></i>
+      AI-POWERED EXPERIENTIAL LEARNING
     </div>
 
-    <div class="actions">
-      <button class="btn soft" onclick="enterApp()">Demo</button>
-      <button class="btn primary" onclick="enterApp()">Get Started</button>
+    <h1>
+      AI shouldn't just teach you.
+      <span>It should make you think.</span>
+    </h1>
+
+    <p>
+      OmniEdu turns learning from passive information consumption into
+      active experiences where students explain, experiment, discover and
+      solve — while AI analyses how they think.
+    </p>
+
+    <div class="herob">
+
+      <button class="btn primary" onclick="openApp()">
+        Try OmniEdu
+        <i data-lucide="arrow-right"
+           style="width:15px;vertical-align:middle"></i>
+      </button>
+
+      <a class="btn soft" href="#how">
+        See how it works
+      </a>
+
     </div>
 
-    <button class="mobile" onclick="toggleLandingMenu()" aria-label="Open menu">
-      <i data-lucide="menu"></i>
-    </button>
-
-    <div id="landingMenu" class="landing-mobile-menu">
-      <a href="#how" onclick="closeLandingMenu()">How it works</a>
-      <a href="#modes" onclick="closeLandingMenu()">Learning modes</a>
-      <a href="#why" onclick="closeLandingMenu()">Why MindLab</a>
-      <button onclick="closeLandingMenu();enterApp()">Get Started</button>
+    <div class="note">
+      <i data-lucide="shield-check"></i>
+      Designed around active learning, not answer consumption.
     </div>
 
-  </nav>
+  </div>
 
-  <!-- HERO -->
 
-  <section class="hero">
+  <div class="visual">
+
+    <div class="mock">
+
+      <div class="mtop">
+
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="mtitle">
+          AI Student · Binary Search
+        </div>
+
+      </div>
+
+      <div class="bubble ai">
+
+        Hey! I'm trying to understand <strong>Binary Search.</strong>
+
+        <br><br>
+
+        From what I understand, it works by repeatedly dividing
+        the array in half. So I think it should work on any array,
+        even if the elements aren't sorted.
+
+        <br><br>
+
+        Am I missing something?
+
+      </div>
+
+      <div class="bubble you">
+
+        I think because you compare the middle element with the target
+        and then choose a half.
+
+      </div>
+
+      <div class="notice">
+
+        <strong>OmniEdu notices something.</strong>
+
+        Your explanation understands the comparison step, but may be
+        missing why sorted order guarantees that one entire half can
+        be discarded.
+
+      </div>
+
+    </div>
+
+    <div class="float">
+      <i data-lucide="activity"
+         style="width:14px;vertical-align:middle"></i>
+      Learning signal detected
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section tint" id="how">
+
+  <div class="inner">
+
+    <div class="head">
+
+      <div class="kicker">The problem</div>
+
+      <h2>
+        Most digital learning still rewards remembering answers.
+      </h2>
+
+      <p>
+        Students can watch explanations, complete quizzes and receive
+        scores without ever being asked to reveal how they actually reasoned.
+      </p>
+
+    </div>
+
+
+    <div class="grid3">
+
+      <div class="icard">
+
+        <div class="ibox">
+          <i data-lucide="play-circle"></i>
+        </div>
+
+        <h3>Consume</h3>
+
+        <p>
+          Watch videos, read explanations and move through content
+          without necessarily engaging deeply with the concept.
+        </p>
+
+      </div>
+
+
+      <div class="icard">
+
+        <div class="ibox">
+          <i data-lucide="check-circle"></i>
+        </div>
+
+        <h3>Answer</h3>
+
+        <p>
+          Traditional assessments mostly tell us whether the final
+          answer was right or wrong.
+        </p>
+
+      </div>
+
+
+      <div class="icard">
+
+        <div class="ibox">
+          <i data-lucide="help-circle"></i>
+        </div>
+
+        <h3>But why?</h3>
+
+        <p>
+          The reasoning behind an incorrect answer — and the misconception
+          causing it — often remains invisible.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="inner">
+
+    <div class="head">
+
+      <div class="kicker">Our learning loop</div>
+
+      <h2>
+        Make the learner part of the process.
+      </h2>
+
+      <p>
+        Instead of simply delivering information, OmniEdu creates an
+        interaction loop that continuously learns from the student's responses.
+      </p>
+
+    </div>
+
+
+    <div class="loop">
+
+      <div class="step">Experience</div>
+      <div class="arrow">→</div>
+      <div class="step">Think</div>
+      <div class="arrow">→</div>
+      <div class="step">Respond</div>
+      <div class="arrow">→</div>
+      <div class="step">Analyse</div>
+      <div class="arrow">→</div>
+      <div class="step">Diagnose</div>
+      <div class="arrow">→</div>
+      <div class="step">Adapt</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section tint" id="modes">
+
+  <div class="inner">
+
+    <div class="head">
+
+      <div class="kicker">Learning modes</div>
+
+      <h2>
+        Different ways to make a concept stick.
+      </h2>
+
+      <p>
+        OmniEdu is designed around experiences instead of a single
+        one-size-fits-all teaching method.
+      </p>
+
+    </div>
+
+
+    <div class="grid3">
+
+      <div class="icard">
+
+        <div class="ibox">
+          <i data-lucide="message-circle"></i>
+        </div>
+
+        <h3>Teach · AI Student</h3>
+
+        <p>
+          The AI becomes the student. Explain a concept to it,
+          answer its questions and expose how well you actually understand the idea.
+        </p>
+
+      </div>
+
+
+      <div class="icard">
+
+        <div class="ibox">
+          <i data-lucide="search"></i>
+        </div>
+
+        <h3>Discover · Knowledge Detective</h3>
+
+        <p>
+          Investigate clues, connect evidence and discover the underlying
+          concept instead of receiving the explanation immediately.
+
+          <br><br>
+
+          <span class="soon">Coming Soon</span>
+        </p>
+
+      </div>
+
+
+      <div class="icard">
+
+        <div class="ibox">
+          <i data-lucide="flask-conical"></i>
+        </div>
+
+        <h3>Experiment · Experiment Lab</h3>
+
+        <p>
+          Change variables, observe outcomes and build understanding
+          through experimentation.
+
+          <br><br>
+
+          <span class="soon">Coming Soon</span>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="why">
+
+  <div class="inner feature">
 
     <div>
 
-      <div class="eyebrow">
-        <i data-lucide="sparkles"></i>
-        AI-Powered Experiential Learning
+      <div class="kicker">
+        The killer feature
       </div>
 
-      <h1>
-        AI shouldn't just teach you.
-        <span>It should make you think.</span>
-      </h1>
+      <h2>
+        What if students had to teach the AI?
+      </h2>
 
       <p>
-        MindLab turns learning from passive consumption into
-        active thinking, explaining, experimenting and discovering.
+        Teaching forces a learner to organise knowledge, make connections
+        and explain why something works. OmniEdu turns that natural learning
+        behaviour into an AI-powered experience.
       </p>
 
-      <div class="herob">
-        <button class="btn primary" onclick="enterApp()">
-          Explore MindLab
-          <i data-lucide="arrow-right" style="width:16px;vertical-align:middle"></i>
-        </button>
 
-        <a class="btn soft" href="#how">
-          See how it works
-        </a>
-      </div>
+      <div class="points">
 
-      <div class="note">
-        <i data-lucide="check-circle-2"></i>
-        Learn by doing, not just watching.
-      </div>
+        <div class="point">
 
-    </div>
-
-    <div class="visual">
-
-      <div class="mock">
-
-        <div class="mtop">
-          <div class="dots">
-            <span></span>
-            <span></span>
-            <span></span>
+          <div class="check">
+            <i data-lucide="check"></i>
           </div>
 
-          <div class="mtitle">
-            AI Student
-          </div>
-        </div>
-
-        <div class="bubble ai">
-          Hey! I'm trying to understand Binary Search.
-          I think it should work even if the array isn't sorted.
-          Am I missing something?
-        </div>
-
-        <div class="bubble you">
-          Yes. The array needs to be sorted because...
-        </div>
-
-        <div class="notice">
-          <strong>What MindLab noticed</strong>
-          You understand divide-and-conquer, but the reason
-          sorted order allows half the search space to be removed
-          could use more exploration.
-        </div>
-
-      </div>
-
-      <div class="float">
-        Understanding · 82%
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- PROBLEM -->
-
-  <section id="how" class="section tint">
-
-    <div class="inner">
-
-      <div class="head">
-        <div class="kicker">The problem</div>
-
-        <h2>
-          Learning shouldn't stop at the answer.
-        </h2>
-
-        <p>
-          Traditional digital learning can tell us whether an answer
-          is right or wrong, but often misses the reasoning behind it.
-        </p>
-      </div>
-
-      <div class="grid3">
-
-        <div class="icard">
-          <div class="ibox">
-            <i data-lucide="play"></i>
+          <div>
+            <strong>Explain</strong><br>
+            Students explain concepts in their own words.
           </div>
 
-          <h3>Passive consumption</h3>
-
-          <p>
-            Students watch, read and consume information without
-            always actively processing it.
-          </p>
         </div>
 
-        <div class="icard">
-          <div class="ibox">
-            <i data-lucide="clipboard-check"></i>
+
+        <div class="point">
+
+          <div class="check">
+            <i data-lucide="check"></i>
           </div>
 
-          <h3>Answer-focused</h3>
-
-          <p>
-            Most systems measure the final answer instead of
-            understanding the student's reasoning.
-          </p>
-        </div>
-
-        <div class="icard">
-          <div class="ibox">
-            <i data-lucide="brain"></i>
+          <div>
+            <strong>Challenge</strong><br>
+            The AI asks follow-up questions instead of immediately correcting them.
           </div>
-
-          <h3>Hidden gaps</h3>
-
-          <p>
-            A student can get an answer right while still having
-            an incomplete mental model.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- LOOP -->
-
-  <section class="section">
-
-    <div class="inner">
-
-      <div class="head">
-        <div class="kicker">MindLab loop</div>
-
-        <h2>
-          Experience → Think → Learn
-        </h2>
-
-        <p>
-          Every interaction becomes a learning signal.
-        </p>
-      </div>
-
-      <div class="loop">
-
-        <div class="step">Experience</div>
-        <div class="arrow">→</div>
-
-        <div class="step">Think</div>
-        <div class="arrow">→</div>
-
-        <div class="step">Respond</div>
-        <div class="arrow">→</div>
-
-        <div class="step">Analyse</div>
-        <div class="arrow">→</div>
-
-        <div class="step">Diagnose</div>
-        <div class="arrow">→</div>
-
-        <div class="step">Adapt</div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- MODES -->
-
-  <section id="modes" class="section tint">
-
-    <div class="inner">
-
-      <div class="head">
-        <div class="kicker">Learning modes</div>
-
-        <h2>
-          Different ways to understand.
-        </h2>
-
-        <p>
-          MindLab is designed around active learning experiences.
-        </p>
-      </div>
-
-      <div class="grid3">
-
-        <div class="icard">
-
-          <div class="ibox">
-            <i data-lucide="graduation-cap"></i>
-          </div>
-
-          <h3>Teach · AI Student</h3>
-
-          <p>
-            Teach a confused AI student and strengthen your own
-            understanding by explaining concepts.
-          </p>
 
         </div>
 
-        <div class="icard">
 
-          <div class="ibox">
-            <i data-lucide="search"></i>
+        <div class="point">
+
+          <div class="check">
+            <i data-lucide="check"></i>
           </div>
 
-          <h3>
-            Discover · Knowledge Detective
-            <span class="soon">Coming Soon</span>
-          </h3>
-
-          <p>
-            Investigate clues and information to discover how
-            concepts work.
-          </p>
+          <div>
+            <strong>Diagnose</strong><br>
+            Responses reveal strengths and probable conceptual gaps.
+          </div>
 
         </div>
 
-        <div class="icard">
 
-          <div class="ibox">
-            <i data-lucide="flask-conical"></i>
+        <div class="point">
+
+          <div class="check">
+            <i data-lucide="check"></i>
           </div>
 
-          <h3>
-            Experiment Lab
-            <span class="soon">Coming Soon</span>
-          </h3>
-
-          <p>
-            Change variables and observe outcomes to understand
-            concepts through experimentation.
-          </p>
+          <div>
+            <strong>Adapt</strong><br>
+            The next learning activity can target the identified gap.
+          </div>
 
         </div>
 
@@ -1789,630 +2231,855 @@ footer{
 
     </div>
 
-  </section>
 
-  <!-- AI STUDENT FEATURE -->
+    <div class="demo">
 
-  <section id="why" class="section">
+      <div class="drow">
 
-    <div class="inner feature">
+        <div class="av ai">
+          <i data-lucide="bot"></i>
+        </div>
 
-      <div>
-
-        <div class="kicker">The killer feature</div>
-
-        <h2>
-          What if you had to teach the AI?
-        </h2>
-
-        <p>
-          Instead of AI immediately giving students an answer,
-          MindLab creates a conversation where the student has
-          to explain, reason and correct the AI Student.
-        </p>
-
-        <div class="points">
-
-          <div class="point">
-            <span class="check">
-              <i data-lucide="check"></i>
-            </span>
-
-            AI Student intentionally has believable misconceptions.
-          </div>
-
-          <div class="point">
-            <span class="check">
-              <i data-lucide="check"></i>
-            </span>
-
-            Follow-up questions challenge the student's reasoning.
-          </div>
-
-          <div class="point">
-            <span class="check">
-              <i data-lucide="check"></i>
-            </span>
-
-            Explanations become signals about conceptual understanding.
-          </div>
-
-          <div class="point">
-            <span class="check">
-              <i data-lucide="check"></i>
-            </span>
-
-            Students can type or use their voice.
-          </div>
-
+        <div class="db ai">
+          <strong>AI Student</strong><br>
+          Why does sorted order matter in Binary Search?
         </div>
 
       </div>
 
-      <div class="demo">
 
-        <div class="drow">
+      <div class="drow">
 
-          <div class="av ai">
-            <i data-lucide="bot"></i>
-          </div>
-
-          <div class="db ai">
-            I think Binary Search works on any array
-            because we keep dividing it in half.
-          </div>
-
+        <div class="av you">
+          <i data-lucide="user"></i>
         </div>
 
-        <div class="drow">
-
-          <div class="av you">
-            <i data-lucide="user"></i>
-          </div>
-
-          <div class="db you">
-            Actually, it needs sorted data because...
-          </div>
-
-        </div>
-
-        <div class="drow">
-
-          <div class="av ai">
-            <i data-lucide="bot"></i>
-          </div>
-
-          <div class="db ai">
-            But why does sorted order let you discard
-            the entire other half?
-          </div>
-
-        </div>
-
-        <div class="dnotice">
-
-          <strong>
-            MindLab is learning about the learner.
-          </strong>
-
-          The conversation reveals more than a simple
-          right-or-wrong answer.
-
+        <div class="db you">
+          Because when the middle element is smaller than the target,
+          we know the target must be somewhere to the right.
         </div>
 
       </div>
 
-    </div>
 
-  </section>
+      <div class="drow">
 
-  <!-- STATS -->
+        <div class="av ai">
+          <i data-lucide="bot"></i>
+        </div>
 
-  <section class="section tint">
+        <div class="db ai">
+          Exactly. But what gives you that guarantee?
+          What would happen if the array wasn't sorted?
+        </div>
 
-    <div class="inner">
-
-      <div class="head">
-        <div class="kicker">Beyond scores</div>
-
-        <h2>
-          Build a learner model.
-        </h2>
-
-        <p>
-          MindLab aims to understand concepts, reasoning and
-          probable conceptual gaps over time.
-        </p>
       </div>
+
+
+      <div class="dnotice">
+
+        <strong>Learning signal</strong>
+
+        The student understands the comparison step but is being
+        challenged on the deeper guarantee behind eliminating a search half.
+
+      </div>
+
 
       <div class="mini">
 
         <div class="stat">
-          <strong>Concepts</strong>
-          <span>What the learner understands</span>
+          <strong>95%</strong>
+          <span>Sorted-data requirement</span>
         </div>
 
         <div class="stat">
-          <strong>Reasoning</strong>
-          <span>How the learner explains ideas</span>
+          <strong>85%</strong>
+          <span>Divide & conquer</span>
         </div>
 
         <div class="stat">
-          <strong>Gaps</strong>
-          <span>Where understanding may be incomplete</span>
+          <strong>62%</strong>
+          <span>Search-space elimination</span>
         </div>
 
         <div class="stat">
-          <strong>Next Step</strong>
-          <span>What the learner should explore next</span>
+          <strong>82</strong>
+          <span>Understanding score</span>
         </div>
 
       </div>
 
     </div>
 
-  </section>
+  </div>
 
-  <!-- CTA -->
+</section>
 
-  <section class="cta">
 
-    <h2>
-      Stop just consuming knowledge.
-    </h2>
+<section class="section tint">
 
-    <p>
-      Start interacting with it.
-    </p>
+  <div class="inner">
 
-    <button class="btn primary" onclick="enterApp()">
-      Try MindLab
-      <i data-lucide="arrow-right" style="width:16px;vertical-align:middle"></i>
+    <div class="head">
+
+      <div class="kicker">Learner model</div>
+
+      <h2>
+        Don't just store marks. Store understanding.
+      </h2>
+
+      <p>
+        OmniEdu builds a lightweight learner model from explanations,
+        responses and interactions — helping identify what a student knows,
+        where they struggle and what to try next.
+      </p>
+
+    </div>
+
+
+    <div class="grid3">
+
+      <div class="icard">
+
+        <div class="ibox">
+          <i data-lucide="brain"></i>
+        </div>
+
+        <h3>Concept understanding</h3>
+
+        <p>
+          Track understanding at the concept level instead of relying
+          only on overall scores.
+        </p>
+
+      </div>
+
+
+      <div class="icard">
+
+        <div class="ibox">
+          <i data-lucide="triangle-alert"></i>
+        </div>
+
+        <h3>Probable misconceptions</h3>
+
+        <p>
+          Identify patterns in explanations that suggest a learner
+          may have misunderstood a key relationship.
+        </p>
+
+      </div>
+
+
+      <div class="icard">
+
+        <div class="ibox">
+          <i data-lucide="route"></i>
+        </div>
+
+        <h3>Adaptive next step</h3>
+
+        <p>
+          Recommend a next activity based on what the learner
+          appears ready to understand.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="cta">
+
+  <h2>Ready to learn differently?</h2>
+
+  <p>
+    Stop asking only whether students got the answer.
+    Start asking how they think.
+  </p>
+
+  <button class="btn primary" onclick="openApp()">
+    Enter OmniEdu
+  </button>
+
+</section>
+
+
+<footer>
+
+  <div>
+    © 2026 OmniEdu · AI-Powered Experiential Learning
+  </div>
+
+  <div class="footerlinks">
+    <a href="#how">How it works</a>
+    <a href="#modes">Modes</a>
+    <a href="#why">Why OmniEdu</a>
+  </div>
+
+</footer>
+
+</div>
+
+
+<!-- =========================================================
+     APPLICATION
+========================================================= -->
+
+<div id="app">
+
+<aside class="sidebar" id="sidebar">
+
+  <div class="brand">
+
+    <div class="mark">
+      <i data-lucide="brain"></i>
+    </div>
+
+    <span>OmniEdu</span>
+
+  </div>
+
+
+  <div class="label">
+    Workspace
+  </div>
+
+
+  <div class="snav">
+
+    <button
+      class="active"
+      data-page="dashboard"
+      onclick="showPage('dashboard')">
+
+      <i data-lucide="layout-dashboard"></i>
+      Dashboard
+
     </button>
 
-  </section>
 
-  <footer>
+    <button
+      data-page="student"
+      onclick="showPage('student')">
 
-    <div>
-      © 2026 MindLab · Smart Education
-    </div>
+      <i data-lucide="message-circle"></i>
+      AI Student
 
-    <div class="footerlinks">
-      <a href="#how">How it works</a>
-      <a href="#modes">Learning modes</a>
-      <a href="#why">Why MindLab</a>
-    </div>
-
-  </footer>
-
-</section>
+    </button>
 
 
-<!-- =====================================================
-     APPLICATION
-===================================================== -->
+    <button
+      data-page="detective"
+      onclick="showPage('detective')">
 
-<section id="app" class="hidden">
+      <i data-lucide="search"></i>
+      Knowledge Detective
 
-  <!-- SIDEBAR -->
-
-  <aside id="sidebar" class="sidebar">
-
-    <a href="#" class="brand" onclick="showLanding();return false;">
-      <span class="mark">
-        <i data-lucide="brain-circuit"></i>
+      <span class="soon" style="margin-left:auto">
+        Soon
       </span>
 
-      MindLab
-    </a>
-
-    <div class="label">Workspace</div>
-
-    <nav class="snav">
-
-      <button data-page="dashboard" class="active">
-        <i data-lucide="layout-dashboard"></i>
-        Dashboard
-      </button>
-
-      <button data-page="ai-student">
-        <i data-lucide="graduation-cap"></i>
-        AI Student
-      </button>
-
-      <button data-page="detective">
-        <i data-lucide="search"></i>
-        Knowledge Detective
-        <span class="soon">Soon</span>
-      </button>
-
-      <button data-page="experiment">
-        <i data-lucide="flask-conical"></i>
-        Experiment Lab
-        <span class="soon">Soon</span>
-      </button>
-
-      <button data-page="map">
-        <i data-lucide="network"></i>
-        Learner Map
-      </button>
-
-      <button data-page="report">
-        <i data-lucide="chart-no-axes-column"></i>
-        Understanding Report
-      </button>
-
-    </nav>
-
-  </aside>
+    </button>
 
 
-  <!-- APP MAIN -->
+    <button
+      data-page="experiment"
+      onclick="showPage('experiment')">
 
-  <main class="appmain">
+      <i data-lucide="flask-conical"></i>
+      Experiment Lab
 
-    <header class="top">
+      <span class="soon" style="margin-left:auto">
+        Soon
+      </span>
+
+    </button>
+
+
+    <button
+      data-page="map"
+      onclick="showPage('map')">
+
+      <i data-lucide="network"></i>
+      Learner Map
+
+    </button>
+
+
+    <button
+      data-page="report"
+      onclick="showPage('report')">
+
+      <i data-lucide="file-chart-column"></i>
+      Understanding Report
+
+    </button>
+
+  </div>
+
+
+  <div style="margin-top:30px" class="label">
+    Account
+  </div>
+
+
+  <div class="snav">
+
+    <button onclick="closeApp()">
+
+      <i data-lucide="arrow-left"></i>
+      Back to landing
+
+    </button>
+
+  </div>
+
+</aside>
+
+
+<main class="appmain">
+
+  <div class="top">
+
+    <button class="menuBtn" onclick="toggleSidebar()">
+      <i data-lucide="menu"></i>
+    </button>
+
+    <div class="crumb">
+      OmniEdu / <strong id="crumbText">Dashboard</strong>
+    </div>
+
+  </div>
+
+
+  <div class="content">
+
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+<section class="page active" id="page-dashboard">
+
+  <div class="ptitle">
+
+    <div>
+      <h1>Good to see you.</h1>
+      <p>Choose how you want to learn today.</p>
+    </div>
+
+    <button
+      class="btn primary"
+      onclick="showPage('student')">
+
+      Start learning
+      <i data-lucide="arrow-right"
+         style="width:15px;vertical-align:middle"></i>
+
+    </button>
+
+  </div>
+
+
+  <div class="dashboardgrid">
+
+    <div class="card">
+
+      <div class="cardhead">
+
+        <h3>Choose an experience</h3>
+
+        <span class="muted" style="font-size:11px">
+          3 learning modes
+        </span>
+
+      </div>
+
+
+      <div class="modegrid">
+
+
+        <div
+          class="modecard"
+          onclick="showPage('student')">
+
+          <div class="modeicon">
+            <i data-lucide="message-circle"></i>
+          </div>
+
+          <strong>Teach · AI Student</strong>
+
+          <p>
+            Explain a concept to an AI that behaves like a curious student.
+          </p>
+
+        </div>
+
+
+        <div
+          class="modecard"
+          onclick="showPage('detective')">
+
+          <div class="modeicon">
+            <i data-lucide="search"></i>
+          </div>
+
+          <strong>Discover · Knowledge Detective</strong>
+
+          <p>
+            Investigate clues and discover the concept yourself.
+          </p>
+
+          <span class="soon">
+            Coming Soon
+          </span>
+
+        </div>
+
+
+        <div
+          class="modecard"
+          onclick="showPage('experiment')">
+
+          <div class="modeicon">
+            <i data-lucide="flask-conical"></i>
+          </div>
+
+          <strong>Experiment · Experiment Lab</strong>
+
+          <p>
+            Change variables, observe results and learn from experimentation.
+          </p>
+
+          <span class="soon">
+            Coming Soon
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="cardhead">
+
+        <h3>Your learner snapshot</h3>
+
+        <i data-lucide="brain"
+           style="width:18px;color:var(--p)"></i>
+
+      </div>
+
+
+      <div class="snapshot">
+
+        <div>
+
+          <div class="snapshot-row">
+            <span>Binary Search</span>
+            <strong>82%</strong>
+          </div>
+
+          <div class="progress">
+            <div style="width:82%"></div>
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="snapshot-row">
+            <span>Data Structures</span>
+            <strong>74%</strong>
+          </div>
+
+          <div class="progress">
+            <div style="width:74%"></div>
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="snapshot-row">
+            <span>Algorithms</span>
+            <strong>68%</strong>
+          </div>
+
+          <div class="progress">
+            <div style="width:68%"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="kpi">
+
+        <div class="kbox">
+          <strong>12</strong>
+          <span>Concepts explored</span>
+        </div>
+
+        <div class="kbox">
+          <strong>8</strong>
+          <span>Strong concepts</span>
+        </div>
+
+        <div class="kbox">
+          <strong>3</strong>
+          <span>Gaps detected</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div style="height:18px"></div>
+
+
+  <div class="card yellow">
+
+    <div class="cardhead">
+
+      <h3>Continue where you left off</h3>
+
+      <span class="soon">
+        Recommended
+      </span>
+
+    </div>
+
+
+    <div style="
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      flex-wrap:wrap">
+
+      <div>
+
+        <strong style="font-size:15px">
+          Binary Search
+        </strong>
+
+        <p style="
+          margin:6px 0 0;
+          color:var(--m);
+          font-size:12px">
+
+          Your last session revealed a possible gap around why
+          sorted order allows half the search space to be discarded.
+
+        </p>
+
+      </div>
 
       <button
-        class="menuBtn"
-        onclick="toggleSidebar()"
-        aria-label="Open sidebar"
-      >
-        <i data-lucide="menu"></i>
+        class="btn primary"
+        onclick="showPage('student')">
+
+        Continue
+
       </button>
 
-      <div id="crumb" class="crumb">
-        <strong>Dashboard</strong> · Your learning space
-      </div>
+    </div>
 
-    </header>
+  </div>
 
-
-    <div class="content">
-
-      <!-- DASHBOARD -->
-
-      <div id="page-dashboard" class="page active">
-
-        <div class="ptitle">
-
-          <div>
-            <h1>Welcome to MindLab</h1>
-
-            <p>
-              Learn through interaction, not just information.
-            </p>
-          </div>
-
-        </div>
-
-        <div class="dashboardgrid">
-
-          <div class="card">
-
-            <div class="cardhead">
-              <h3>Choose a learning experience</h3>
-            </div>
-
-            <div class="modegrid">
-
-              <div class="modecard" onclick="openPage('ai-student')">
-
-                <div class="modeicon">
-                  <i data-lucide="graduation-cap"></i>
-                </div>
-
-                <h3>Teach · AI Student</h3>
-
-                <p>
-                  Teach an AI student and strengthen your
-                  understanding through explanation.
-                </p>
-
-              </div>
-
-              <div class="modecard">
-
-                <div class="modeicon">
-                  <i data-lucide="search"></i>
-                </div>
-
-                <h3>
-                  Discover · Knowledge Detective
-                  <span class="soon">Soon</span>
-                </h3>
-
-                <p>
-                  Investigate clues to discover concepts yourself.
-                </p>
-
-              </div>
-
-              <div class="modecard">
-
-                <div class="modeicon">
-                  <i data-lucide="flask-conical"></i>
-                </div>
-
-                <h3>
-                  Experiment Lab
-                  <span class="soon">Soon</span>
-                </h3>
-
-                <p>
-                  Learn by changing variables and observing outcomes.
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
+</section>
 
 
-          <div class="card yellow">
+<!-- =========================================================
+     AI STUDENT
+========================================================= -->
 
-            <div class="cardhead">
-              <h3>Your learner snapshot</h3>
-            </div>
+<section class="page" id="page-student">
 
-            <div class="node">
+  <div class="ptitle">
 
-              <div class="nhead">
-                <span>Binary Search</span>
-                <span>82%</span>
-              </div>
+    <div>
 
-              <small>
-                Good conceptual understanding
-              </small>
+      <h1>AI Student</h1>
 
-              <div class="line" style="margin-top:10px">
-                <span style="width:82%"></span>
-              </div>
+      <p>
+        Teach the AI. Its questions reveal how deeply you understand.
+      </p>
 
-            </div>
+    </div>
 
-            <div class="node">
+  </div>
 
-              <div class="nhead">
-                <span>Search-space elimination</span>
-                <span>62%</span>
-              </div>
 
-              <small>
-                Worth exploring further
-              </small>
+<!-- INPUT CHOICE -->
 
-              <div class="line" style="margin-top:10px">
-                <span style="width:62%"></span>
-              </div>
+<div id="studentChoice">
 
-            </div>
+  <div class="card">
 
-          </div>
+    <div style="
+      text-align:center;
+      max-width:650px;
+      margin:auto">
 
-        </div>
+      <div
+        class="chatavatar"
+        style="
+          margin:0 auto 15px;
+          width:52px;
+          height:52px">
+
+        <i data-lucide="bot"></i>
 
       </div>
 
 
-      <!-- AI STUDENT -->
+      <h2 style="
+        margin:0 0 8px;
+        font-size:25px">
 
-      <div id="page-ai-student" class="page">
+        How would you like to explain?
 
-        <div class="ptitle">
+      </h2>
+
+
+      <p style="
+        margin:0;
+        color:var(--m);
+        font-size:13px;
+        line-height:1.6">
+
+        Choose how you want to teach the AI Student.
+        Both methods follow the same learning and analysis flow.
+
+      </p>
+
+
+      <div class="modechoice">
+
+
+        <button
+          class="choice"
+          onclick="startTypeMode()">
+
+          <div class="choiceicon">
+            <i data-lucide="keyboard"></i>
+          </div>
+
+          <strong>
+            Type your answer
+          </strong>
+
+          <small>
+            Explain the concept in your own words using the keyboard.
+          </small>
+
+        </button>
+
+
+        <button
+          class="choice voice"
+          onclick="startVoiceMode()">
+
+          <div class="choiceicon">
+            <i data-lucide="mic"></i>
+          </div>
+
+          <strong>
+            Use your voice
+          </strong>
+
+          <small>
+            Speak your explanation in English and let your browser
+            turn it into text.
+          </small>
+
+        </button>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     TYPE MODE
+========================================================= -->
+
+<div id="studentType" class="hidden">
+
+  <button
+    class="modeback"
+    onclick="backToChoice()">
+
+    ← Choose another input method
+
+  </button>
+
+
+  <div class="student">
+
+
+    <div class="chatcard">
+
+      <div class="chathead">
+
+        <div class="chathead-left">
+
+          <div class="chatavatar">
+            <i data-lucide="bot"></i>
+          </div>
 
           <div>
-            <h1>AI Student</h1>
 
-            <p>
-              Teach through explanation and reasoning.
-            </p>
-          </div>
+            <strong>
+              AI Student
+            </strong>
 
-        </div>
-
-
-        <!-- CHOICE -->
-
-        <div id="aiChoiceView" class="card">
-
-          <div class="cardhead">
-            <h3>How would you like to explain?</h3>
-          </div>
-
-          <p class="muted" style="font-size:13px">
-            Choose how you want to interact with your AI Student.
-          </p>
-
-          <div class="modechoice">
-
-            <button
-              class="choice"
-              onclick="startAI('type')"
-            >
-
-              <div class="choiceicon">
-                <i data-lucide="keyboard"></i>
-              </div>
-
-              <strong>Type your answer</strong>
-
-              <small>
-                Write your explanation using the keyboard.
-              </small>
-
-            </button>
-
-
-            <button
-              class="choice voice"
-              onclick="startAI('voice')"
-            >
-
-              <div class="choiceicon">
-                <i data-lucide="mic"></i>
-              </div>
-
-              <strong>Use your voice</strong>
-
-              <small>
-                Explain naturally by speaking into your microphone.
-              </small>
-
-            </button>
+            <span>
+              Curious · Sometimes confused · Ready to learn
+            </span>
 
           </div>
 
         </div>
 
 
-        <!-- TYPE MODE -->
+        <span
+          class="soon"
+          id="questionCount">
 
-        <div id="aiTypeView" class="card hidden">
+          Question 1 / 3
 
-          <button class="modeback" onclick="backToAIChoice()">
-            ← Choose another interaction method
+        </span>
+
+      </div>
+
+
+      <div class="chat" id="chat">
+
+        <div class="msg ai">
+
+          <div class="msgbubble">
+
+            <div class="msgtag">
+              AI STUDENT
+            </div>
+
+            Hey! I'm trying to understand
+            <strong>Binary Search</strong>.
+
+            <br><br>
+
+            From what I understand, it works by repeatedly
+            dividing the array in half. So I think it should
+            work on any array, even if the elements aren't sorted.
+
+            <br><br>
+
+            Am I missing something?
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="inputarea">
+
+        <div class="inputrow">
+
+          <textarea
+            id="responseInput"
+            placeholder="Explain your thinking to the AI Student..."></textarea>
+
+          <button
+            class="btn primary send"
+            onclick="submitTypedResponse()">
+
+            <i data-lucide="send"></i>
+
           </button>
 
-          <div class="cardhead">
+        </div>
 
-            <div>
-              <h3>AI Student · Binary Search</h3>
+        <div class="chatnote">
+          There is no perfect answer here.
+          Your explanation is what OmniEdu analyses.
+        </div>
 
-              <span class="muted" style="font-size:11px">
-                Explain your reasoning. Don't worry about being perfect.
-              </span>
-            </div>
+      </div>
 
+    </div>
+
+
+    <div>
+
+      <div class="sidecard">
+
+        <h3>
+          What the AI is looking for
+        </h3>
+
+
+        <div class="signal">
+
+          <div class="signaltop">
+            <span>Concept accuracy</span>
+            <span>95%</span>
           </div>
 
-          <div id="chat" class="chat"></div>
-
-          <div class="composer">
-
-            <textarea
-              id="response"
-              maxlength="500"
-              placeholder="Explain your reasoning..."
-              aria-label="Your explanation"
-            ></textarea>
-
-            <button
-              id="send"
-              class="btn primary send"
-              onclick="submitResponse()"
-              aria-label="Send response"
-            >
-              <i data-lucide="send"></i>
-            </button>
-
-          </div>
-
-          <div id="count" class="counter">
-            0 / 500
+          <div class="signalbar">
+            <div style="width:95%"></div>
           </div>
 
         </div>
 
 
-        <!-- VOICE MODE -->
+        <div class="signal">
 
-        <div id="aiVoiceView" class="card hidden">
-
-          <button class="modeback" onclick="backToAIChoice()">
-            ← Choose another interaction method
-          </button>
-
-          <div class="cardhead">
-
-            <div>
-              <h3>AI Student · Voice</h3>
-
-              <span class="muted" style="font-size:11px">
-                Explain your reasoning naturally using your voice.
-              </span>
-            </div>
-
+          <div class="signaltop">
+            <span>Reasoning depth</span>
+            <span>78%</span>
           </div>
 
-
-          <div class="chat">
-
-            <div class="msg">
-
-              <div class="cav ai">
-                <i data-lucide="bot"></i>
-              </div>
-
-              <div class="chatbubble ai">
-
-                Hey! I'm trying to understand Binary Search.
-
-                <br><br>
-
-                From what I understand, it works by repeatedly
-                dividing the array in half. So I think it should
-                work on any array, even if the elements aren't sorted.
-
-                <br><br>
-
-                <b>Am I missing something?</b>
-
-              </div>
-
-            </div>
-
+          <div class="signalbar">
+            <div style="width:78%"></div>
           </div>
 
-
-          <div class="voicebox">
-
-            <div class="voicecontrols">
-
-              <button
-                id="recordBtn"
-                class="btn primary record"
-                onclick="toggleRecording()"
-              >
-                <i data-lucide="mic"></i>
-                Start speaking
-              </button>
-
-              <span
-                id="voiceStatus"
-                class="voice-status"
-              >
-                Ready — click the microphone to record.
-              </span>
-
-            </div>
+        </div>
 
 
-            <div
-              id="transcript"
-              class="transcript"
-            >
-              Your speech transcript will appear here once
-              Whisper is connected.
-            </div>
+        <div class="signal">
 
+          <div class="signaltop">
+            <span>Key relationships</span>
+            <span>62%</span>
+          </div>
 
-            <audio
-              id="audioPreview"
-              class="audio-preview hidden"
-              controls
-            ></audio>
-
-
-            <div class="micnote">
-              Microphone access is handled by your browser.
-              Speech-to-text will be connected through the Python
-              backend using Whisper.
-            </div>
-
+          <div class="signalbar">
+            <div style="width:62%"></div>
           </div>
 
         </div>
@@ -2420,387 +3087,785 @@ footer{
       </div>
 
 
-      <!-- DETECTIVE -->
+      <div class="sidecard">
 
-      <div id="page-detective" class="page">
+        <h3>
+          Hint
+        </h3>
 
-        <div class="ptitle">
+        <p style="
+          font-size:12px;
+          line-height:1.6;
+          color:var(--m);
+          margin:0">
 
-          <div>
-            <h1>
-              Knowledge Detective
-              <span class="soon">Coming Soon</span>
-            </h1>
+          Don't just explain <em>what</em> Binary Search does.
+          Explain <em>why</em> it is allowed to eliminate half the array.
 
-            <p>
-              Discover concepts by investigating clues.
-            </p>
-          </div>
+        </p>
 
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     VOICE MODE
+========================================================= -->
+
+<div id="studentVoice" class="hidden">
+
+  <button
+    class="modeback"
+    onclick="backToChoice()">
+
+    ← Choose another input method
+
+  </button>
+
+
+  <div class="voice-layout">
+
+
+    <div class="voicechat">
+
+
+      <div class="voice-intro">
+
+        <div class="chatavatar">
+          <i data-lucide="bot"></i>
         </div>
 
-        <div class="card">
+        <div>
 
-          <h3>Coming soon</h3>
+          <strong>
+            AI Student
+          </strong>
 
-          <p class="muted">
-            This mode will let learners investigate evidence,
-            connect clues and discover concepts instead of
-            receiving the explanation directly.
-          </p>
+          <span>
+            Ask a question → listen → explain your thinking
+          </span>
 
         </div>
 
       </div>
 
 
-      <!-- EXPERIMENT -->
+      <!-- CURRENT AI QUESTION -->
 
-      <div id="page-experiment" class="page">
+      <div
+        class="voice-question"
+        id="voiceQuestion">
 
-        <div class="ptitle">
-
-          <div>
-            <h1>
-              Experiment Lab
-              <span class="soon">Coming Soon</span>
-            </h1>
-
-            <p>
-              Learn by changing variables and observing outcomes.
-            </p>
-
-          </div>
-
+        <div class="msgtag">
+          AI STUDENT
         </div>
 
-        <div class="card">
+        Hey! I'm trying to understand
+        <strong>Binary Search</strong>.
 
-          <h3>Coming soon</h3>
+        <br><br>
 
-          <p class="muted">
-            This mode will let students experiment with concepts
-            and observe the results of changing conditions.
-          </p>
+        From what I understand, it works by repeatedly
+        dividing the array in half. So I think it should
+        work on any array, even if the elements aren't sorted.
 
-        </div>
+        <br><br>
+
+        Am I missing something?
 
       </div>
 
 
-      <!-- LEARNER MAP -->
+      <!-- VOICE CONTROLS -->
 
-      <div id="page-map" class="page">
+      <div class="voicebox">
 
-        <div class="ptitle">
+        <div class="voicecontrols">
 
-          <div>
-            <h1>Learner Map</h1>
+          <button
+            class="btn primary record"
+            id="recordBtn"
+            onclick="toggleRecording()">
 
-            <p>
-              Your evolving concept model.
-            </p>
-          </div>
+            <span class="recorddot"></span>
 
-        </div>
-
-        <div class="mapgrid">
-
-          <div class="card">
-
-            <div class="cardhead">
-              <h3>Concept understanding</h3>
-            </div>
-
-            <div class="node">
-
-              <div class="nhead">
-                <span>Sorted-data requirement</span>
-                <span>95%</span>
-              </div>
-
-              <small>Strong understanding</small>
-
-              <div class="line" style="margin-top:10px">
-                <span style="width:90%"></span>
-              </div>
-
-            </div>
-
-
-            <div class="node">
-
-              <div class="nhead">
-                <span>Divide & conquer</span>
-                <span>85%</span>
-              </div>
-
-              <small>Strong understanding</small>
-
-              <div class="line" style="margin-top:10px">
-                <span style="width:85%"></span>
-              </div>
-
-            </div>
-
-
-            <div class="node">
-
-              <div class="nhead">
-                <span>Search-space elimination</span>
-                <span>62%</span>
-              </div>
-
-              <small>Worth exploring further</small>
-
-              <div class="line" style="margin-top:10px">
-                <span style="width:62%"></span>
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="card yellow">
-
-            <div class="cardhead">
-              <h3>Next recommended path</h3>
-            </div>
-
-            <div
-              class="anotice"
-              style="background:#fff8e9;padding:16px;border-radius:15px"
-            >
-
-              <strong style="color:#9a6a18">
-                Experiment Lab
-              </strong>
-
-              <br>
-
-              Test what happens when the sorted-data guarantee
-              is removed. This targets the concept that currently
-              appears less certain.
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- REPORT -->
-
-      <div id="page-report" class="page">
-
-        <div class="ptitle">
-
-          <div>
-
-            <h1>Understanding Report</h1>
-
-            <p>
-              What MindLab inferred from your explanation —
-              not a diagnosis, but a learning signal.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="reporttop">
-
-          <div class="scorecard">
-
-            <div class="score">
-              82
-            </div>
-
-            <div
-              class="muted"
-              style="font-size:12px"
-            >
-              Understanding score
-            </div>
-
-          </div>
-
-
-          <div class="summary">
-
-            <h2>
-              Good conceptual understanding
-            </h2>
-
-            <p>
-              You demonstrated a solid grasp of divide-and-conquer
-              and comparing against the middle element. One area is
-              worth exploring further: why sorted order lets you
-              confidently eliminate half of the search space.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="reportgrid">
-
-          <div class="card">
-
-            <div class="cardhead">
-              <h3>Strengths</h3>
-            </div>
-
-            <div class="li">
-
-              <i
-                class="good"
-                data-lucide="check-circle-2"
-              ></i>
-
-              Understands divide-and-conquer.
-
-            </div>
-
-            <div class="li">
-
-              <i
-                class="good"
-                data-lucide="check-circle-2"
-              ></i>
-
-              Understands middle-element comparison.
-
-            </div>
-
-            <div class="li">
-
-              <i
-                class="good"
-                data-lucide="check-circle-2"
-              ></i>
-
-              Recognises that the search space gets smaller.
-
-            </div>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="cardhead">
-              <h3>Area to explore</h3>
-            </div>
-
-            <div class="li">
-
-              <i
-                class="warn"
-                data-lucide="alert-circle"
-              ></i>
-
-              Search-space elimination — why can half be discarded
-              with confidence?
-
-            </div>
-
-            <div class="li">
-
-              <i
-                class="warn"
-                data-lucide="alert-circle"
-              ></i>
-
-              <b>Probable conceptual gap:</b>
-              the role of sorted order in guaranteeing the
-              discarded half cannot contain the target.
-
-            </div>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="cardhead">
-              <h3>Concept signals</h3>
-            </div>
-
-            <div class="concept">
-
-              <div class="crow">
-                <span>Sorted-data requirement</span>
-                <b>95%</b>
-              </div>
-
-              <div class="bar">
-                <span style="width:95%"></span>
-              </div>
-
-            </div>
-
-
-            <div class="concept">
-
-              <div class="crow">
-                <span>Divide & conquer</span>
-                <b>85%</b>
-              </div>
-
-              <div class="bar">
-                <span style="width:85%"></span>
-              </div>
-
-            </div>
-
-
-            <div class="concept">
-
-              <div class="crow">
-                <span>Search-space elimination</span>
-                <b>62%</b>
-              </div>
-
-              <div class="bar">
-                <span style="width:62%"></span>
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="card yellow">
-
-            <div class="cardhead">
-              <h3>Recommended next activity</h3>
-            </div>
-
-            <div
+            <i
+              data-lucide="mic"
               style="
-                background:#fff8e9;
-                padding:16px;
-                border-radius:15px;
-              "
-            >
+                width:15px;
+                vertical-align:middle"></i>
 
-              <strong style="color:#9a6a18">
-                Experiment Lab
-              </strong>
+            Start speaking
 
-              <br><br>
+          </button>
 
-              Run an experiment comparing sorted and unsorted
-              arrays. The goal is to make the hidden guarantee
-              visible through experience.
 
-            </div>
+          <span
+            class="voice-status"
+            id="voiceStatus">
+
+            Ready — click the microphone to speak in English.
+
+          </span>
+
+        </div>
+
+
+        <div
+          class="transcript empty"
+          id="transcript">
+
+          Your English speech will appear here...
+
+        </div>
+
+
+        <div
+          class="voice-actions"
+          id="voiceActions">
+
+          <button
+            class="btn primary hidden"
+            id="useVoiceBtn"
+            onclick="submitVoiceResponse()">
+
+            Use this explanation
+
+            <i
+              data-lucide="arrow-right"
+              style="
+                width:15px;
+                vertical-align:middle"></i>
+
+          </button>
+
+
+          <button
+            class="btn soft hidden"
+            id="clearVoiceBtn"
+            onclick="clearVoiceTranscript()">
+
+            Clear
+
+          </button>
+
+        </div>
+
+
+        <div class="micnote">
+
+          English only · You can speak naturally.
+          If the browser briefly ends a recognition segment,
+          OmniEdu automatically attempts to continue listening.
+
+        </div>
+
+      </div>
+
+
+      <!-- PREVIOUS VOICE RESPONSES -->
+
+      <div
+        id="voiceHistory"
+        style="margin-top:18px">
+
+      </div>
+
+
+    </div>
+
+
+    <div>
+
+
+      <div class="sidecard">
+
+        <h3>
+          Voice learning flow
+        </h3>
+
+        <div class="voice-hint">
+
+          <strong>
+            Speak naturally
+          </strong>
+
+          You don't need to give a perfect answer.
+          Explain the idea as if you were teaching another student.
+
+        </div>
+
+      </div>
+
+
+      <div class="sidecard">
+
+        <h3>
+          What OmniEdu analyses
+        </h3>
+
+
+        <div class="signal">
+
+          <div class="signaltop">
+            <span>Concept accuracy</span>
+            <span>95%</span>
+          </div>
+
+          <div class="signalbar">
+            <div style="width:95%"></div>
+          </div>
+
+        </div>
+
+
+        <div class="signal">
+
+          <div class="signaltop">
+            <span>Reasoning depth</span>
+            <span>78%</span>
+          </div>
+
+          <div class="signalbar">
+            <div style="width:78%"></div>
+          </div>
+
+        </div>
+
+
+        <div class="signal">
+
+          <div class="signaltop">
+            <span>Key relationships</span>
+            <span>62%</span>
+          </div>
+
+          <div class="signalbar">
+            <div style="width:62%"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="sidecard">
+
+        <h3>
+          Important
+        </h3>
+
+        <p style="
+          font-size:12px;
+          line-height:1.6;
+          color:var(--m);
+          margin:0">
+
+          Your voice is converted into text by the browser.
+          OmniEdu then processes the text through the same
+          learning flow as typed answers.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     KNOWLEDGE DETECTIVE
+========================================================= -->
+
+<section class="page" id="page-detective">
+
+  <div class="soonpage">
+
+    <div class="soonbox">
+
+      <div class="soonicon">
+        <i data-lucide="search"></i>
+      </div>
+
+      <span class="soon">
+        Coming Soon
+      </span>
+
+      <h2>
+        Knowledge Detective
+      </h2>
+
+      <p>
+        Instead of being given the explanation, you'll investigate clues,
+        compare evidence and discover the underlying concept yourself.
+      </p>
+
+      <div style="margin-top:22px">
+
+        <button
+          class="btn soft"
+          onclick="showPage('dashboard')">
+
+          Back to dashboard
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     EXPERIMENT LAB
+========================================================= -->
+
+<section class="page" id="page-experiment">
+
+  <div class="soonpage">
+
+    <div class="soonbox">
+
+      <div class="soonicon">
+        <i data-lucide="flask-conical"></i>
+      </div>
+
+      <span class="soon">
+        Coming Soon
+      </span>
+
+      <h2>
+        Experiment Lab
+      </h2>
+
+      <p>
+        Change variables, run experiments, observe outcomes and learn
+        by seeing how a system behaves.
+      </p>
+
+      <div style="margin-top:22px">
+
+        <button
+          class="btn soft"
+          onclick="showPage('dashboard')">
+
+          Back to dashboard
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     LEARNER MAP
+========================================================= -->
+
+<section class="page" id="page-map">
+
+  <div class="ptitle">
+
+    <div>
+
+      <h1>Learner Map</h1>
+
+      <p>
+        A concept-level view of your current understanding.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="mapgrid">
+
+
+    <div class="mapcard">
+
+      <h3>
+        Concept understanding
+      </h3>
+
+
+      <div class="concept">
+
+        <div class="conceptname">
+          Binary Search
+        </div>
+
+        <div class="conceptbar">
+          <div style="width:82%"></div>
+        </div>
+
+        <div class="conceptpct">
+          82%
+        </div>
+
+      </div>
+
+
+      <div class="concept">
+
+        <div class="conceptname">
+          Sorting
+        </div>
+
+        <div class="conceptbar">
+          <div style="width:91%"></div>
+        </div>
+
+        <div class="conceptpct">
+          91%
+        </div>
+
+      </div>
+
+
+      <div class="concept">
+
+        <div class="conceptname">
+          Divide & Conquer
+        </div>
+
+        <div class="conceptbar">
+          <div style="width:85%"></div>
+        </div>
+
+        <div class="conceptpct">
+          85%
+        </div>
+
+      </div>
+
+
+      <div class="concept">
+
+        <div class="conceptname">
+          Search-space elimination
+        </div>
+
+        <div class="conceptbar">
+          <div style="width:62%"></div>
+        </div>
+
+        <div class="conceptpct">
+          62%
+        </div>
+
+      </div>
+
+
+      <div class="concept">
+
+        <div class="conceptname">
+          Recursion
+        </div>
+
+        <div class="conceptbar">
+          <div style="width:74%"></div>
+        </div>
+
+        <div class="conceptpct">
+          74%
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="mapcard">
+
+      <h3>
+        Recent learning signals
+      </h3>
+
+
+      <div class="timeline">
+
+
+        <div class="titem">
+
+          <div class="tdot"></div>
+
+          <div>
+
+            <strong>
+              Probable gap detected
+            </strong>
+
+            <span>
+              Role of sorted order in Binary Search
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="titem">
+
+          <div class="tdot"></div>
+
+          <div>
+
+            <strong>
+              Strong understanding
+            </strong>
+
+            <span>
+              Middle-element comparison
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="titem">
+
+          <div class="tdot"></div>
+
+          <div>
+
+            <strong>
+              Improving
+            </strong>
+
+            <span>
+              Divide-and-conquer reasoning
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="titem">
+
+          <div class="tdot"></div>
+
+          <div>
+
+            <strong>
+              Recommended next
+            </strong>
+
+            <span>
+              Experiment with sorted vs unsorted arrays
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <div class="mapcard">
+
+      <h3>
+        Learning activity
+      </h3>
+
+
+      <div class="mini" style="margin-top:0">
+
+        <div class="stat">
+          <strong>12</strong>
+          <span>Concepts explored</span>
+        </div>
+
+        <div class="stat">
+          <strong>27</strong>
+          <span>Responses analysed</span>
+        </div>
+
+        <div class="stat">
+          <strong>8</strong>
+          <span>Strong concepts</span>
+        </div>
+
+        <div class="stat">
+          <strong>3</strong>
+          <span>Probable gaps</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="mapcard">
+
+      <h3>
+        How OmniEdu sees your learning
+      </h3>
+
+      <p style="
+        font-size:12px;
+        color:var(--m);
+        line-height:1.7;
+        margin:0">
+
+        Your learner profile is not simply a collection of marks.
+        It represents signals inferred from your explanations,
+        reasoning and interactions across learning experiences.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     REPORT
+========================================================= -->
+
+<section class="page" id="page-report">
+
+  <div class="ptitle">
+
+    <div>
+
+      <h1>
+        Understanding Report
+      </h1>
+
+      <p>
+        What OmniEdu learned from your Binary Search explanation.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="reportgrid">
+
+
+    <div>
+
+
+      <div class="scorecard">
+
+        <div class="kicker">
+          Overall understanding
+        </div>
+
+        <div class="score">
+          82
+        </div>
+
+        <div class="scorelabel">
+          out of 100
+        </div>
+
+
+        <div class="summary">
+
+          You have a good conceptual understanding of Binary Search
+          and correctly understand the divide-and-conquer approach
+          and middle-element comparison.
+
+          The main gap appears to be explaining
+          <strong>
+            why sorted order guarantees that one half can be safely discarded.
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div style="height:18px"></div>
+
+
+      <div class="reportcard">
+
+        <h3>
+          What you understand well
+        </h3>
+
+
+        <div class="strength">
+
+          <i data-lucide="check-circle"></i>
+
+          <div>
+
+            <strong>
+              Divide-and-conquer
+            </strong>
+
+            <br>
+
+            You understand that the search space is repeatedly reduced.
+
+          </div>
+
+        </div>
+
+
+        <div class="strength">
+
+          <i data-lucide="check-circle"></i>
+
+          <div>
+
+            <strong>
+              Middle-element comparison
+            </strong>
+
+            <br>
+
+            You correctly understand the role of comparing the target
+            with the middle element.
+
+          </div>
+
+        </div>
+
+
+        <div class="strength">
+
+          <i data-lucide="check-circle"></i>
+
+          <div>
+
+            <strong>
+              Search-space reduction
+            </strong>
+
+            <br>
+
+            You recognise that Binary Search avoids checking every
+            element individually.
 
           </div>
 
@@ -2810,902 +3875,1591 @@ footer{
 
     </div>
 
-  </main>
+
+    <div>
+
+
+      <div class="reportcard">
+
+        <h3>
+          Probable conceptual gap
+        </h3>
+
+
+        <div class="gapbox">
+
+          <strong>
+            Why sorted order matters
+          </strong>
+
+          You initially treated "divide in half" as the core reason
+          Binary Search works.
+
+          The deeper guarantee comes from sorted order:
+          after comparing the middle element with the target,
+          the ordering tells us which entire half cannot contain the target.
+
+        </div>
+
+      </div>
+
+
+      <div style="height:18px"></div>
+
+
+      <div class="reportcard">
+
+        <h3>
+          Concept signals
+        </h3>
+
+
+        <div class="signal-list">
+
+
+          <div>
+
+            <div class="signaltop">
+
+              <span>
+                Sorted-data requirement
+              </span>
+
+              <span>
+                95%
+              </span>
+
+            </div>
+
+            <div class="signalbar">
+              <div style="width:95%"></div>
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="signaltop">
+
+              <span>
+                Divide & conquer
+              </span>
+
+              <span>
+                85%
+              </span>
+
+            </div>
+
+            <div class="signalbar">
+              <div style="width:85%"></div>
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="signaltop">
+
+              <span>
+                Search-space elimination
+              </span>
+
+              <span>
+                62%
+              </span>
+
+            </div>
+
+            <div class="signalbar">
+              <div style="width:62%"></div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <div style="height:18px"></div>
+
+
+      <div class="next">
+
+        <strong>
+          Recommended next activity
+        </strong>
+
+        Experiment Lab: compare Binary Search on sorted and
+        unsorted arrays to observe exactly why ordering is necessary.
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<div id="toast" class="toast"></div>
+  </div>
+</main>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
 
 
 <script>
-
-/* =====================================================
+/* =========================================================
    GLOBAL STATE
-===================================================== */
+========================================================= */
 
-const landing = document.getElementById("landing");
-const app = document.getElementById("app");
-const sidebar = document.getElementById("sidebar");
-const crumb = document.getElementById("crumb");
+let currentPage = "dashboard";
 
-let step = 0;
-let busy = false;
+let questionStep = 0;
 
-let recording = false;
-let mediaRecorder = null;
-let audioChunks = [];
+let voiceRecognition = null;
+let voiceSupported = false;
+let isRecording = false;
+
+let finalTranscript = "";
+let interimTranscript = "";
+
+let voiceRestartTimer = null;
 
 
-/* =====================================================
-   ICONS
-===================================================== */
+/* =========================================================
+   QUESTIONS
+========================================================= */
 
-function icons(){
+const aiQuestions = [
 
-  if(window.lucide){
-    lucide.createIcons();
+  `Okay, but why does sorted order matter? If the middle value is
+   smaller than the target, what tells us that everything before it
+   can be ignored?`,
+
+  `I think I get the comparison part. But explain this:
+   why are you allowed to throw away the entire left half?
+   What guarantee does sorted order give you?`,
+
+  `That makes sense. The important part is not simply
+   "divide in half" — it is that sorted order lets us know
+   which half cannot contain the target. I think I understand
+   the key guarantee now.`
+
+];
+
+
+/* =========================================================
+   INIT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  lucide.createIcons();
+
+  setupVoiceRecognition();
+
+});
+
+
+/* =========================================================
+   VOICE RECOGNITION SETUP
+========================================================= */
+
+function setupVoiceRecognition(){
+
+  const SpeechRecognition =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
+
+  voiceSupported = !!SpeechRecognition;
+
+  if(!voiceSupported){
+    return;
+  }
+
+  voiceRecognition = new SpeechRecognition();
+
+  /*
+   * English only.
+   */
+  voiceRecognition.lang = "en-US";
+
+  /*
+   * continuous asks Chrome to keep the recognition session alive.
+   * Chrome can still terminate a recognition segment, so onend()
+   * below automatically restarts it while the user is recording.
+   */
+  voiceRecognition.continuous = true;
+
+  /*
+   * This lets the user see words while speaking.
+   */
+  voiceRecognition.interimResults = true;
+
+  /*
+   * We want multiple results instead of a single result.
+   */
+  voiceRecognition.maxAlternatives = 1;
+
+
+  voiceRecognition.onstart = () => {
+
+    isRecording = true;
+
+    updateRecordingButton(true);
+
+    const status =
+      document.getElementById("voiceStatus");
+
+    if(status){
+
+      status.textContent =
+        "Listening… you can keep speaking naturally.";
+
+    }
+
+  };
+
+
+  voiceRecognition.onresult = event => {
+
+    let newFinal = "";
+    let newInterim = "";
+
+    /*
+     * Only process results from this event.
+     */
+    for(
+      let i = event.resultIndex;
+      i < event.results.length;
+      i++
+    ){
+
+      const result =
+        event.results[i];
+
+      const text =
+        result[0].transcript;
+
+      if(result.isFinal){
+
+        newFinal += text + " ";
+
+      }else{
+
+        newInterim += text;
+
+      }
+
+    }
+
+
+    /*
+     * Accumulate final results.
+     */
+    if(newFinal){
+
+      finalTranscript +=
+        newFinal;
+
+    }
+
+
+    interimTranscript =
+      newInterim;
+
+
+    updateTranscript();
+
+
+    /*
+     * Once we have final text, show the submit button.
+     */
+    if(
+      finalTranscript.trim() ||
+      interimTranscript.trim()
+    ){
+
+      showVoiceActions(true);
+
+    }
+
+  };
+
+
+  voiceRecognition.onerror = event => {
+
+    /*
+     * "no-speech" is not treated as a fatal error.
+     * Chrome commonly emits this when the user pauses.
+     */
+    if(
+      event.error === "no-speech" ||
+      event.error === "audio-capture"
+    ){
+
+      if(isRecording){
+
+        const status =
+          document.getElementById("voiceStatus");
+
+        if(status){
+
+          status.textContent =
+            "Still listening… continue speaking.";
+
+        }
+
+      }
+
+      return;
+
+    }
+
+
+    if(event.error === "not-allowed"){
+
+      isRecording = false;
+
+      updateRecordingButton(false);
+
+      const status =
+        document.getElementById("voiceStatus");
+
+      if(status){
+
+        status.textContent =
+          "Microphone permission was blocked. Allow microphone access and try again.";
+
+      }
+
+      return;
+
+    }
+
+
+    /*
+     * Other temporary recognition errors should not
+     * immediately destroy the whole voice session.
+     */
+    if(isRecording){
+
+      const status =
+        document.getElementById("voiceStatus");
+
+      if(status){
+
+        status.textContent =
+          "Voice recognition briefly paused — attempting to continue…";
+
+      }
+
+    }
+
+  };
+
+
+  voiceRecognition.onend = () => {
+
+    /*
+     * THIS IS THE IMPORTANT FIX.
+     *
+     * Chrome can end SpeechRecognition even when
+     * continuous=true.
+     *
+     * If the user has not pressed Stop, restart it.
+     */
+    if(isRecording){
+
+      clearTimeout(voiceRestartTimer);
+
+      voiceRestartTimer =
+        setTimeout(() => {
+
+          if(!isRecording){
+            return;
+          }
+
+          try{
+
+            voiceRecognition.start();
+
+          }catch(error){
+
+            /*
+             * start() can throw if Chrome thinks
+             * another recognition session is active.
+             * Wait briefly and try again.
+             */
+
+            clearTimeout(voiceRestartTimer);
+
+            voiceRestartTimer =
+              setTimeout(() => {
+
+                if(!isRecording){
+                  return;
+                }
+
+                try{
+                  voiceRecognition.start();
+                }catch(e){}
+
+              },700);
+
+          }
+
+        },250);
+
+    }else{
+
+      updateRecordingButton(false);
+
+    }
+
+  };
+
+}
+
+
+/* =========================================================
+   RECORD BUTTON
+========================================================= */
+
+function toggleRecording(){
+
+  if(!voiceSupported){
+
+    showToast(
+      "English voice input is not supported here. Try Chrome."
+    );
+
+    return;
+
+  }
+
+
+  if(isRecording){
+
+    stopRecording();
+
+  }else{
+
+    startRecording();
+
   }
 
 }
 
 
-/* =====================================================
-   LANDING / APP NAVIGATION
-===================================================== */
+/* =========================================================
+   START RECORDING
+========================================================= */
 
-function showLanding(){
+function startRecording(){
 
-  app.classList.add("hidden");
-  landing.classList.remove("hidden");
+  if(!voiceRecognition){
 
-  sidebar.classList.remove("open");
+    showToast(
+      "Voice recognition is not available in this browser."
+    );
 
-  closeLandingMenu();
+    return;
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  }
 
-  icons();
+
+  clearTimeout(voiceRestartTimer);
+
+
+  /*
+   * Start a fresh answer.
+   */
+  finalTranscript = "";
+  interimTranscript = "";
+
+
+  const transcript =
+    document.getElementById("transcript");
+
+  if(transcript){
+
+    transcript.textContent =
+      "Listening…";
+
+    transcript.classList.remove("empty");
+
+  }
+
+
+  showVoiceActions(false);
+
+
+  isRecording = true;
+
+
+  try{
+
+    voiceRecognition.start();
+
+  }catch(error){
+
+    /*
+     * Sometimes Chrome reports "already started".
+     * Don't reset the state in that case.
+     */
+    if(
+      String(error.message || "")
+        .toLowerCase()
+        .includes("already started")
+    ){
+
+      isRecording = true;
+
+    }else{
+
+      isRecording = false;
+
+      updateRecordingButton(false);
+
+      showToast(
+        "Could not start voice recognition. Try again."
+      );
+
+    }
+
+  }
 
 }
 
 
-function enterApp(){
+/* =========================================================
+   STOP RECORDING
+========================================================= */
 
-  landing.classList.add("hidden");
-  app.classList.remove("hidden");
+function stopRecording(){
 
-  openPage("dashboard");
+  isRecording = false;
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  clearTimeout(voiceRestartTimer);
 
-  icons();
+
+  if(voiceRecognition){
+
+    try{
+
+      voiceRecognition.stop();
+
+    }catch(error){}
+
+  }
+
+
+  updateRecordingButton(false);
+
+
+  const status =
+    document.getElementById("voiceStatus");
+
+  if(status){
+
+    if(
+      finalTranscript.trim()
+    ){
+
+      status.textContent =
+        "Stopped. Review your explanation and submit it.";
+
+    }else{
+
+      status.textContent =
+        "Stopped. Click Start speaking to try again.";
+
+    }
+
+  }
 
 }
 
 
-function scrollToSection(id){
+/* =========================================================
+   RECORD BUTTON UI
+========================================================= */
+
+function updateRecordingButton(recording){
+
+  const btn =
+    document.getElementById("recordBtn");
+
+  if(!btn){
+    return;
+  }
+
+
+  if(recording){
+
+    btn.classList.add("recording");
+
+    btn.innerHTML = `
+      <span class="recorddot"></span>
+      <i data-lucide="square"
+         style="width:15px;vertical-align:middle"></i>
+      Stop speaking
+    `;
+
+  }else{
+
+    btn.classList.remove("recording");
+
+    btn.innerHTML = `
+      <span class="recorddot"></span>
+      <i data-lucide="mic"
+         style="width:15px;vertical-align:middle"></i>
+      Start speaking
+    `;
+
+  }
+
+
+  lucide.createIcons();
+
+}
+
+
+/* =========================================================
+   UPDATE TRANSCRIPT
+========================================================= */
+
+function updateTranscript(){
+
+  const box =
+    document.getElementById("transcript");
+
+  if(!box){
+    return;
+  }
+
+
+  const finalText =
+    finalTranscript.trim();
+
+  const interimText =
+    interimTranscript.trim();
+
+
+  const combined =
+    (finalText + " " + interimText).trim();
+
+
+  if(!combined){
+
+    box.textContent =
+      "Your English speech will appear here...";
+
+    box.classList.add("empty");
+
+    return;
+
+  }
+
+
+  box.classList.remove("empty");
+
+  box.textContent =
+    combined;
+
+}
+
+
+/* =========================================================
+   VOICE ACTION BUTTONS
+========================================================= */
+
+function showVoiceActions(show){
+
+  const useBtn =
+    document.getElementById("useVoiceBtn");
+
+  const clearBtn =
+    document.getElementById("clearVoiceBtn");
+
+  if(!useBtn || !clearBtn){
+    return;
+  }
+
+
+  if(show){
+
+    useBtn.classList.remove("hidden");
+    clearBtn.classList.remove("hidden");
+
+  }else{
+
+    useBtn.classList.add("hidden");
+    clearBtn.classList.add("hidden");
+
+  }
+
+}
+
+
+/* =========================================================
+   CLEAR VOICE
+========================================================= */
+
+function clearVoiceTranscript(){
+
+  stopRecording();
+
+  finalTranscript = "";
+  interimTranscript = "";
+
+
+  const box =
+    document.getElementById("transcript");
+
+  if(box){
+
+    box.textContent =
+      "Your English speech will appear here...";
+
+    box.classList.add("empty");
+
+  }
+
+
+  showVoiceActions(false);
+
+
+  const status =
+    document.getElementById("voiceStatus");
+
+  if(status){
+
+    status.textContent =
+      "Ready — click the microphone to speak in English.";
+
+  }
+
+}
+
+
+/* =========================================================
+   SUBMIT VOICE RESPONSE
+========================================================= */
+
+function submitVoiceResponse(){
+
+  /*
+   * If recognition is still processing an interim phrase,
+   * include it too.
+   */
+  const text =
+    (
+      finalTranscript +
+      " " +
+      interimTranscript
+    ).trim();
+
+
+  if(!text){
+
+    showToast(
+      "Please speak an explanation first."
+    );
+
+    return;
+
+  }
+
+
+  stopRecording();
+
+
+  /*
+   * Put the voice response into the SAME AI conversation.
+   */
+  addVoiceMessageToHistory(text);
+
+
+  /*
+   * Reset transcript area for the next question.
+   */
+  finalTranscript = "";
+  interimTranscript = "";
+
+  const box =
+    document.getElementById("transcript");
+
+  if(box){
+
+    box.textContent =
+      "Your next voice explanation will appear here...";
+
+    box.classList.add("empty");
+
+  }
+
+  showVoiceActions(false);
+
+
+  /*
+   * Advance AI conversation.
+   */
+  questionStep++;
+
+
+  /*
+   * After the third response, show report.
+   */
+  if(questionStep >= 3){
+
+    setTimeout(() => {
+
+      showPage("report");
+
+    },1000);
+
+    return;
+
+  }
+
+
+  /*
+   * Show next AI question.
+   */
+  setTimeout(() => {
+
+    updateVoiceQuestion();
+
+  },650);
+
+}
+
+
+/* =========================================================
+   VOICE HISTORY
+========================================================= */
+
+function addVoiceMessageToHistory(text){
+
+  const history =
+    document.getElementById("voiceHistory");
+
+  if(!history){
+    return;
+  }
+
+
+  const wrapper =
+    document.createElement("div");
+
+  wrapper.style.marginBottom =
+    "12px";
+
+
+  wrapper.innerHTML = `
+    <div style="
+      background:var(--blue);
+      border-radius:16px;
+      padding:14px 16px;
+      font-size:13px;
+      line-height:1.6">
+
+      <div class="msgtag">
+        YOU · VOICE
+      </div>
+
+      ${escapeHtml(text)}
+
+    </div>
+  `;
+
+
+  history.appendChild(wrapper);
+
+
+  /*
+   * Keep only the most recent few response bubbles
+   * so the page doesn't grow endlessly.
+   */
+  while(history.children.length > 4){
+
+    history.removeChild(
+      history.firstElementChild
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   UPDATE VOICE AI QUESTION
+========================================================= */
+
+function updateVoiceQuestion(){
+
+  const question =
+    document.getElementById("voiceQuestion");
+
+  if(!question){
+    return;
+  }
+
+
+  if(questionStep >= aiQuestions.length){
+
+    return;
+
+  }
+
+
+  question.innerHTML = `
+    <div class="msgtag">
+      AI STUDENT
+    </div>
+
+    ${aiQuestions[questionStep]}
+  `;
+
+}
+
+
+/* =========================================================
+   TYPE MODE
+========================================================= */
+
+function startTypeMode(){
 
   document
-    .getElementById(id)
-    ?.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-
-}
+    .getElementById("studentChoice")
+    .classList.add("hidden");
 
 
-/* =====================================================
-   LANDING MOBILE MENU
-===================================================== */
-
-function toggleLandingMenu(){
-
-  const menu =
-    document.getElementById("landingMenu");
-
-  if(!menu) return;
-
-  menu.classList.toggle("show");
-
-}
+  document
+    .getElementById("studentVoice")
+    .classList.add("hidden");
 
 
-/* =====================================================
-   CLOSE LANDING MENU
-===================================================== */
+  document
+    .getElementById("studentType")
+    .classList.remove("hidden");
 
-function closeLandingMenu(){
 
-  const menu =
-    document.getElementById("landingMenu");
+  const input =
+    document.getElementById("responseInput");
 
-  if(menu){
-    menu.classList.remove("show");
+  if(input){
+
+    input.focus();
+
   }
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   VOICE MODE
+========================================================= */
+
+function startVoiceMode(){
+
+  document
+    .getElementById("studentChoice")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("studentType")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("studentVoice")
+    .classList.remove("hidden");
+
+
+  /*
+   * Start a fresh conversation.
+   */
+  questionStep = 0;
+
+  finalTranscript = "";
+  interimTranscript = "";
+
+
+  const history =
+    document.getElementById("voiceHistory");
+
+  if(history){
+
+    history.innerHTML = "";
+
+  }
+
+
+  const question =
+    document.getElementById("voiceQuestion");
+
+  if(question){
+
+    question.innerHTML = `
+      <div class="msgtag">
+        AI STUDENT
+      </div>
+
+      Hey! I'm trying to understand
+      <strong>Binary Search</strong>.
+
+      <br><br>
+
+      From what I understand, it works by repeatedly
+      dividing the array in half. So I think it should
+      work on any array, even if the elements aren't sorted.
+
+      <br><br>
+
+      Am I missing something?
+    `;
+
+  }
+
+
+  const transcript =
+    document.getElementById("transcript");
+
+  if(transcript){
+
+    transcript.textContent =
+      "Your English speech will appear here...";
+
+    transcript.classList.add("empty");
+
+  }
+
+
+  showVoiceActions(false);
+
+
+  const status =
+    document.getElementById("voiceStatus");
+
+  if(status){
+
+    if(voiceSupported){
+
+      status.textContent =
+        "Ready — click the microphone to speak in English.";
+
+    }else{
+
+      status.textContent =
+        "English voice input is not supported here. Try Chrome.";
+
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   BACK TO CHOICE
+========================================================= */
+
+function backToChoice(){
+
+  stopRecording();
+
+
+  document
+    .getElementById("studentType")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("studentVoice")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("studentChoice")
+    .classList.remove("hidden");
+
+}
+
+
+/* =========================================================
+   TYPED RESPONSE
+========================================================= */
+
+function submitTypedResponse(){
+
+  const input =
+    document.getElementById("responseInput");
+
+  if(!input){
+    return;
+  }
+
+
+  const text =
+    input.value.trim();
+
+
+  if(!text){
+
+    showToast(
+      "Explain your thinking before sending."
+    );
+
+    return;
+
+  }
+
+
+  const chat =
+    document.getElementById("chat");
+
+
+  const userMsg =
+    document.createElement("div");
+
+  userMsg.className =
+    "msg you";
+
+
+  userMsg.innerHTML = `
+    <div class="msgbubble">
+
+      <div class="msgtag">
+        YOU
+      </div>
+
+      ${escapeHtml(text)}
+
+    </div>
+  `;
+
+
+  chat.appendChild(userMsg);
+
+
+  input.value = "";
+
+
+  chat.scrollTop =
+    chat.scrollHeight;
+
+
+  questionStep++;
+
+
+  setTimeout(() => {
+
+    if(questionStep < 3){
+
+      addTypedAIQuestion(
+        aiQuestions[questionStep]
+      );
+
+    }else{
+
+      addTypedAIQuestion(
+        aiQuestions[2]
+      );
+
+
+      setTimeout(() => {
+
+        showPage("report");
+
+      },900);
+
+    }
+
+  },700);
+
+}
+
+
+/* =========================================================
+   ADD TYPED AI QUESTION
+========================================================= */
+
+function addTypedAIQuestion(text){
+
+  const chat =
+    document.getElementById("chat");
+
+  if(!chat){
+    return;
+  }
+
+
+  const aiMsg =
+    document.createElement("div");
+
+  aiMsg.className =
+    "msg ai";
+
+
+  aiMsg.innerHTML = `
+    <div class="msgbubble">
+
+      <div class="msgtag">
+        AI STUDENT
+      </div>
+
+      ${text}
+
+    </div>
+  `;
+
+
+  chat.appendChild(aiMsg);
+
+
+  const count =
+    document.getElementById("questionCount");
+
+
+  if(count){
+
+    count.textContent =
+      "Question " +
+      Math.min(questionStep + 1,3) +
+      " / 3";
+
+  }
+
+
+  chat.scrollTop =
+    chat.scrollHeight;
+
+}
+
+
+/* =========================================================
+   APP NAVIGATION
+========================================================= */
+
+const pageNames = {
+
+  dashboard:"Dashboard",
+  student:"AI Student",
+  detective:"Knowledge Detective",
+  experiment:"Experiment Lab",
+  map:"Learner Map",
+  report:"Understanding Report"
+
+};
+
+
+function showPage(page){
+
+  currentPage =
+    page;
+
+
+  document
+    .querySelectorAll(".page")
+    .forEach(p => {
+
+      p.classList.remove("active");
+
+    });
+
+
+  const target =
+    document.getElementById(
+      "page-" + page
+    );
+
+
+  if(target){
+
+    target.classList.add("active");
+
+  }
+
+
+  document
+    .querySelectorAll(".snav button")
+    .forEach(btn => {
+
+      btn.classList.remove("active");
+
+      if(
+        btn.dataset.page === page
+      ){
+
+        btn.classList.add("active");
+
+      }
+
+    });
+
+
+  const crumb =
+    document.getElementById("crumbText");
+
+
+  if(crumb){
+
+    crumb.textContent =
+      pageNames[page] || page;
+
+  }
+
+
+  const sidebar =
+    document.getElementById("sidebar");
+
+
+  if(
+    window.innerWidth <= 800
+  ){
+
+    sidebar.classList.remove("open");
+
+  }
+
+
+  window.scrollTo(0,0);
+
+
+  /*
+   * If the user opens AI Student after
+   * finishing a previous session, reset only
+   * when they are opening the main Student page.
+   */
+  if(page === "student"){
+
+    resetStudentChoice();
+
+  }
+
+}
+
+
+/* =========================================================
+   RESET STUDENT CHOICE
+========================================================= */
+
+function resetStudentChoice(){
+
+  /*
+   * Don't interrupt an already active voice session.
+   */
+  if(
+    !document
+      .getElementById("studentVoice")
+      .classList.contains("hidden")
+  ){
+
+    return;
+
+  }
+
+
+  /*
+   * Don't interrupt type mode either.
+   */
+  if(
+    !document
+      .getElementById("studentType")
+      .classList.contains("hidden")
+  ){
+
+    return;
+
+  }
+
+}
+
+
+/* =========================================================
    SIDEBAR
-===================================================== */
+========================================================= */
 
 function toggleSidebar(){
+
+  const sidebar =
+    document.getElementById("sidebar");
 
   sidebar.classList.toggle("open");
 
 }
 
 
-/* =====================================================
-   APP PAGES
-===================================================== */
+/* =========================================================
+   LANDING
+========================================================= */
 
-function openPage(page){
+function openApp(){
 
-  document
-    .querySelectorAll(".page")
-    .forEach(x =>
-      x.classList.remove("active")
-    );
+  document.body.classList.add("appmode");
 
+  window.scrollTo(0,0);
 
-  const target =
-    document.getElementById("page-" + page);
-
-  if(target){
-    target.classList.add("active");
-  }
-
-
-  document
-    .querySelectorAll(".snav button")
-    .forEach(x => {
-
-      x.classList.toggle(
-        "active",
-        x.dataset.page === page
-      );
-
-    });
-
-
-  const names = {
-
-    dashboard:[
-      "Dashboard",
-      "Your learning space"
-    ],
-
-    "ai-student":[
-      "AI Student",
-      "Teach through explanation"
-    ],
-
-    detective:[
-      "Knowledge Detective",
-      "Discover through clues"
-    ],
-
-    experiment:[
-      "Experiment Lab",
-      "Learn through experimentation"
-    ],
-
-    map:[
-      "Learner Map",
-      "Your evolving concept model"
-    ],
-
-    report:[
-      "Understanding Report",
-      "What MindLab noticed"
-    ]
-
-  };
-
-
-  const n =
-    names[page] ||
-    names.dashboard;
-
-
-  crumb.innerHTML =
-    "<strong>" +
-    n[0] +
-    "</strong> · " +
-    n[1];
-
-
-  sidebar.classList.remove("open");
-
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-
-  icons();
+  showPage("dashboard");
 
 }
 
 
-/* =====================================================
-   SIDEBAR BUTTON EVENTS
-===================================================== */
+function closeApp(){
 
-document
-  .querySelectorAll(".snav button")
-  .forEach(button => {
+  stopRecording();
 
-    button.onclick = () =>
-      openPage(button.dataset.page);
+  document.body.classList.remove("appmode");
 
-  });
+  window.scrollTo(0,0);
+
+}
 
 
-/* =====================================================
+/* =========================================================
+   LANDING MOBILE MENU
+========================================================= */
+
+function toggleLandingMenu(){
+
+  const menu =
+    document.getElementById(
+      "landingMobileMenu"
+    );
+
+  menu.classList.toggle("show");
+
+}
+
+
+function closeLandingMenu(){
+
+  const menu =
+    document.getElementById(
+      "landingMobileMenu"
+    );
+
+  menu.classList.remove("show");
+
+}
+
+
+/* =========================================================
    TOAST
-===================================================== */
+========================================================= */
 
-function toast(message){
+function showToast(message){
 
-  const t =
+  const toast =
     document.getElementById("toast");
 
-  t.textContent = message;
 
-  t.classList.add("show");
+  toast.textContent =
+    message;
 
-  clearTimeout(window.toastTimer);
 
-  window.toastTimer =
-    setTimeout(() => {
+  toast.classList.add("show");
 
-      t.classList.remove("show");
-
-    },2400);
-
-}
-
-
-/* =====================================================
-   AI STUDENT CHOICE
-===================================================== */
-
-function startAI(mode){
-
-  document
-    .getElementById("aiChoiceView")
-    .classList.add("hidden");
-
-
-  document
-    .getElementById("aiTypeView")
-    .classList.toggle(
-      "hidden",
-      mode !== "type"
-    );
-
-
-  document
-    .getElementById("aiVoiceView")
-    .classList.toggle(
-      "hidden",
-      mode !== "voice"
-    );
-
-
-  if(mode === "type"){
-
-    resetAI();
-
-    setTimeout(() => {
-
-      document
-        .getElementById("response")
-        ?.focus();
-
-    },100);
-
-  }
-
-
-  icons();
-
-}
-
-
-/* =====================================================
-   BACK TO CHOICE
-===================================================== */
-
-function backToAIChoice(){
-
-  stopRecordingIfNeeded();
-
-
-  document
-    .getElementById("aiChoiceView")
-    .classList.remove("hidden");
-
-
-  document
-    .getElementById("aiTypeView")
-    .classList.add("hidden");
-
-
-  document
-    .getElementById("aiVoiceView")
-    .classList.add("hidden");
-
-
-  icons();
-
-}
-
-
-/* =====================================================
-   RESET AI STUDENT
-===================================================== */
-
-function resetAI(){
-
-  step = 0;
-  busy = false;
-
-
-  const chat =
-    document.getElementById("chat");
-
-
-  if(chat){
-
-    chat.innerHTML = `
-
-      <div class="msg">
-
-        <div class="cav ai">
-          <i data-lucide="bot"></i>
-        </div>
-
-        <div class="chatbubble ai">
-
-          Hey! I'm trying to understand Binary Search.
-
-          <br><br>
-
-          From what I understand, it works by repeatedly
-          dividing the array in half. So I think it should
-          work on any array, even if the elements aren't sorted.
-
-          <br><br>
-
-          <b>Am I missing something?</b>
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-  const r =
-    document.getElementById("response");
-
-  const s =
-    document.getElementById("send");
-
-
-  if(r){
-    r.value = "";
-  }
-
-
-  if(s){
-    s.disabled = false;
-  }
-
-
-  updateCount();
-
-  icons();
-
-}
-
-
-/* =====================================================
-   TYPE INPUT
-===================================================== */
-
-const response =
-  document.getElementById("response");
-
-const send =
-  document.getElementById("send");
-
-const count =
-  document.getElementById("count");
-
-
-function updateCount(){
-
-  if(response && count){
-
-    count.textContent =
-      response.value.length +
-      " / 500";
-
-  }
-
-}
-
-
-if(response){
-
-  response.addEventListener(
-    "input",
-    updateCount
-  );
-
-
-  response.addEventListener(
-    "keydown",
-    event => {
-
-      if(
-        (event.ctrlKey || event.metaKey) &&
-        event.key === "Enter"
-      ){
-
-        event.preventDefault();
-
-        submitResponse();
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function esc(value){
-
-  return value.replace(
-    /[&<>"']/g,
-    character => ({
-
-      "&":"&amp;",
-      "<":"&lt;",
-      ">":"&gt;",
-      '"':"&quot;",
-      "'":"&#039;"
-
-    }[character])
-  );
-
-}
-
-
-/* =====================================================
-   VOICE RECORDING
-===================================================== */
-
-async function toggleRecording(){
-
-  if(recording){
-
-    stopRecordingIfNeeded();
-
-    return;
-
-  }
-
-
-  if(
-    !navigator.mediaDevices ||
-    !navigator.mediaDevices.getUserMedia
-  ){
-
-    toast(
-      "Microphone recording is not supported in this browser."
-    );
-
-    return;
-
-  }
-
-
-  try{
-
-    const stream =
-      await navigator
-        .mediaDevices
-        .getUserMedia({
-          audio:true
-        });
-
-
-    audioChunks = [];
-
-
-    mediaRecorder =
-      new MediaRecorder(stream);
-
-
-    mediaRecorder.ondataavailable =
-      event => {
-
-        if(event.data.size){
-
-          audioChunks.push(
-            event.data
-          );
-
-        }
-
-      };
-
-
-    mediaRecorder.onstop = () => {
-
-      stream
-        .getTracks()
-        .forEach(track =>
-          track.stop()
-        );
-
-
-      const blob =
-        new Blob(
-          audioChunks,
-          {
-            type:
-              mediaRecorder.mimeType ||
-              "audio/webm"
-          }
-        );
-
-
-      const url =
-        URL.createObjectURL(blob);
-
-
-      const audio =
-        document.getElementById(
-          "audioPreview"
-        );
-
-
-      audio.src = url;
-
-      audio.classList.remove(
-        "hidden"
-      );
-
-
-      document.getElementById(
-        "transcript"
-      ).textContent =
-        "Audio recorded successfully. " +
-        "Whisper transcription will be connected " +
-        "in the Python backend next.";
-
-
-      document.getElementById(
-        "voiceStatus"
-      ).textContent =
-        "Recording complete — ready for transcription";
-
-
-      icons();
-
-    };
-
-
-    mediaRecorder.start();
-
-    recording = true;
-
-
-    const button =
-      document.getElementById(
-        "recordBtn"
-      );
-
-
-    button.classList.add(
-      "recording"
-    );
-
-
-    button.innerHTML =
-      '<span class="recorddot"></span>' +
-      " Stop speaking";
-
-
-    document.getElementById(
-      "voiceStatus"
-    ).textContent =
-      "Listening… speak your explanation";
-
-
-  }
-
-  catch(error){
-
-    toast(
-      "Microphone permission was not granted."
-    );
-
-  }
-
-}
-
-
-/* =====================================================
-   STOP RECORDING
-===================================================== */
-
-function stopRecordingIfNeeded(){
-
-  if(
-    mediaRecorder &&
-    recording
-  ){
-
-    mediaRecorder.stop();
-
-    recording = false;
-
-
-    const button =
-      document.getElementById(
-        "recordBtn"
-      );
-
-
-    if(button){
-
-      button.classList.remove(
-        "recording"
-      );
-
-
-      button.innerHTML =
-        '<i data-lucide="mic"></i>' +
-        " Start speaking";
-
-    }
-
-
-    icons();
-
-  }
-
-}
-
-
-/* =====================================================
-   TYPE AI RESPONSE
-===================================================== */
-
-function submitResponse(){
-
-  if(busy){
-    return;
-  }
-
-
-  const text =
-    response.value.trim();
-
-
-  if(!text){
-
-    toast(
-      "Explain your reasoning first."
-    );
-
-    response.focus();
-
-    return;
-
-  }
-
-
-  busy = true;
-
-  send.disabled = true;
-
-
-  const chat =
-    document.getElementById("chat");
-
-
-  /* USER MESSAGE */
-
-  const userMessage =
-    document.createElement("div");
-
-
-  userMessage.className =
-    "msg user";
-
-
-  userMessage.innerHTML = `
-
-    <div class="chatbubble user">
-      ${esc(text)}
-    </div>
-
-    <div class="cav user">
-      <i data-lucide="user"></i>
-    </div>
-
-  `;
-
-
-  chat.appendChild(
-    userMessage
-  );
-
-
-  response.value = "";
-
-  updateCount();
-
-
-  /* LOADING */
-
-  const loading =
-    document.createElement("div");
-
-
-  loading.className =
-    "msg";
-
-
-  loading.id =
-    "loading";
-
-
-  loading.innerHTML = `
-
-    <div class="cav ai">
-      <i data-lucide="bot"></i>
-    </div>
-
-    <div class="chatbubble ai">
-      <span class="muted">
-        Thinking…
-      </span>
-    </div>
-
-  `;
-
-
-  chat.appendChild(
-    loading
-  );
-
-
-  icons();
-
-
-  /* SIMULATED CURRENT AI FLOW */
 
   setTimeout(() => {
 
-    loading.remove();
+    toast.classList.remove("show");
 
-    step++;
-
-
-    let message;
-
-
-    if(step === 1){
-
-      message =
-        "Okay, but <b>why does sorted order matter?</b> " +
-        "If the middle value is smaller than the target, " +
-        "what tells us that everything before it can be ignored?";
-
-    }
-
-    else if(step === 2){
-
-      message =
-        "I think I get the comparison part. But explain this: " +
-        "<b>why are you allowed to throw away the entire left half?</b> " +
-        "What guarantee does sorted order give you?";
-
-    }
-
-    else{
-
-      message =
-        "That makes sense. The important part is not simply " +
-        "“divide in half” — it is that sorted order lets us " +
-        "know which half cannot contain the target." +
-        "<br><br>" +
-        "<b>I think I understand the key guarantee now.</b>";
-
-    }
-
-
-    const aiMessage =
-      document.createElement("div");
-
-
-    aiMessage.className =
-      "msg";
-
-
-    aiMessage.innerHTML = `
-
-      <div class="cav ai">
-        <i data-lucide="bot"></i>
-      </div>
-
-      <div class="chatbubble ai">
-        ${message}
-      </div>
-
-    `;
-
-
-    chat.appendChild(
-      aiMessage
-    );
-
-
-    icons();
-
-
-    busy = false;
-
-    send.disabled = false;
-
-
-    /* OPEN REPORT AFTER 3 RESPONSES */
-
-    if(step >= 3){
-
-      setTimeout(
-        () => openPage("report"),
-        900
-      );
-
-    }
-
-  },850);
+  },3000);
 
 }
 
 
-/* =====================================================
-   INITIALIZE ICONS
-===================================================== */
+/* =========================================================
+   HTML ESCAPE
+========================================================= */
 
-icons();
+function escapeHtml(text){
+
+  const div =
+    document.createElement("div");
+
+  div.textContent =
+    text;
+
+  return div.innerHTML;
+
+}
+
+
+/* =========================================================
+   CTRL + ENTER
+========================================================= */
+
+document.addEventListener("keydown", event => {
+
+  if(
+    event.key === "Enter" &&
+    event.ctrlKey
+  ){
+
+    const active =
+      document.activeElement;
+
+
+    if(
+      active &&
+      active.id === "responseInput"
+    ){
+
+      submitTypedResponse();
+
+    }
+
+  }
+
+});
+
+
+/* =========================================================
+   CLEANUP
+========================================================= */
+
+window.addEventListener("beforeunload", () => {
+
+  isRecording = false;
+
+  clearTimeout(
+    voiceRestartTimer
+  );
+
+  if(voiceRecognition){
+
+    try{
+      voiceRecognition.abort();
+    }catch(e){}
+
+  }
+
+});
+
+
+/* =========================================================
+   ICON REFRESH
+========================================================= */
+
+setTimeout(() => {
+
+  lucide.createIcons();
+
+},100);
 
 </script>
 
