@@ -1,6 +1,12 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
+import os
 
 app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return send_from_directory(".", "index.html")
 
 
 @app.route("/api/health")
@@ -17,11 +23,3 @@ def api_home():
         "success": True,
         "message": "MindLab API"
     })
-
-
-@app.route("/")
-def home():
-    return """
-    <h1>MindLab Backend</h1>
-    <p>Backend is running.</p>
-    """
